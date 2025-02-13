@@ -1,11 +1,11 @@
 package com.example.ecommercect;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,20 +29,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
+        holder.productName.setText(product.getName());
+        holder.productPrice.setText("$" + product.getPrice());
+        Glide.with(context).load(product.getImageUrl()).into(holder.productImage);
 
-        holder.nameTextView.setText(product.getName());
-        holder.priceTextView.setText("$" + product.getPrice());
-
-        // Load image using Glide
-        Glide.with(context)
-                .load(product.getImageUrl())
-//                .placeholder(R.drawable.placeholder)  // Optional: Add a placeholder image
-//                .error(R.drawable.error_image)  // Optional: Handle error case
-                .into(holder.imageView);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ProductDetailsActivity.class);
+            intent.putExtra("product", product);
+            context.startActivity(intent);
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -50,14 +51,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTextView, priceTextView;
-        ImageView imageView;
+        TextView productName, productPrice;
+        ImageView productImage;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.product_name);
-            priceTextView = itemView.findViewById(R.id.product_price);
-            imageView = itemView.findViewById(R.id.product_image);
+            productName = itemView.findViewById(R.id.productName); // Ensure this matches product_item.xml
+            productPrice = itemView.findViewById(R.id.productPrice);
+            productImage = itemView.findViewById(R.id.productImage);
         }
     }
 }
