@@ -60,7 +60,11 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
                 if ("pt_big_img".equals(entry.getKey())) {
                     imageUrl = entry.getValue();
                 }
+
+                CleverTapAPI.processPushNotification(getApplicationContext(),extras);
+
             }
+
 
             Log.d("MyFcmMessageListener", "isCustom: " + isCustom);
 

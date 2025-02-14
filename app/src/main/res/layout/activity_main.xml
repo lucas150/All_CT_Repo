@@ -557,6 +557,37 @@
                     android:padding="0dp"
                     android:includeFontPadding="false" />
             </LinearLayout>
+<!--        logou-->
+            <LinearLayout
+                android:id="@+id/logout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/logoutbtn1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:srcCompat="@drawable/logout" />
+
+                <Button
+                    android:id="@+id/btnlogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="logout"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="4dp"
+                    android:padding="0dp"
+                    android:includeFontPadding="false" />
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -30,9 +30,16 @@
     <activity
         android:name=".MainActivity"
         android:exported="true"/>
-    <activity
-        android:name=".AllProductActivity"
-        android:exported="true"/>
+    <activity android:name=".AllProductActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="ecommercect" android:host="all_products"/>
+        </intent-filter>
+    </activity>
+
     <activity android:name=".ProductDetailsActivity"
         android:exported="true"/>
     <activity

@@ -3,6 +3,7 @@ package com.example.ecommercect;
 import android.app.Activity;
 import android.app.Application;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,19 +11,22 @@ import android.widget.Button;
 
 import com.clevertap.android.sdk.ActivityLifecycleCallback;
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.clevertap.android.sdk.pushnotification.amp.CTPushAmpListener;
+import com.google.gson.Gson;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class CTapp extends Application {
+public class CTapp extends Application implements CTPushAmpListener {
     private CleverTapAPI clevertapDefaultInstance;
 
     @Override
     public void onCreate() {
         ActivityLifecycleCallback.register(this);
         super.onCreate();
+        clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
+        clevertapDefaultInstance.setCTPushAmpListener(this);
 
-        //clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
         CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
         if (clevertapDefaultInstance == null) {
             Log.e("CTapp", "CleverTap instance is NULL!");
@@ -72,6 +76,26 @@ public class CTapp extends Application {
 //            @Override public void onActivitySaveInstanceState(Activity activity, Bundle outState) {}
 //            @Override public void onActivityDestroyed(Activity activity) {}
 //        });
+    }
+
+    @Override
+    public void onPushAmpPayloadReceived(Bundle bundle) {
+        Log.d("MyFcmMessageListener", "Push AMP payload received, ignoring...");
+
+        // Convert Bundle to HashMap
+        HashMap<String, String> dataMap = new HashMap<>();
+        for (String key : bundle.keySet()) {
+            dataMap.put(key, bundle.getString(key));
+        }
+
+        // Serialize HashMap to JSON
+        Gson gson = new Gson();
+        String jsonPayload = gson.toJson(dataMap);
+
+        // ✅ Send via Intent to MyFcmMessageListenerService
+        Intent intent = new Intent(this, MyFcmMessageListenerService.class);
+        intent.putExtra("amp_payload_json", jsonPayload);
+        startService(intent);
     }
 
     // Helper method to retrieve the existing OnClickListener using reflection
