@@ -302,8 +302,8 @@
                         android:layout_gravity="center"
                         android:background="@drawable/btn_cat_background">
 
-                        <ImageView
-                            android:id="@+id/imageView8"
+                        <ImageButton
+                            android:id="@+id/gaming"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -336,8 +336,8 @@
                         android:layout_gravity="center"
                         android:background="@drawable/btn_cat_background">
 
-                        <ImageView
-                            android:id="@+id/imageView4"
+                        <ImageButton
+                            android:id="@+id/btnmore"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="parent"

@@ -3,8 +3,10 @@ package com.example.ecommercect;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,13 +26,15 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
+import com.clevertap.android.sdk.inbox.CTInboxMessage;
 import com.example.ecommercect.ui.login.LoginActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CTInboxListener, DisplayUnitListener {
-
+    private String messageId;
     private RecyclerView recyclerView;
     private ProductAdapter productAdapter;
     private List<Product> productList;
@@ -46,7 +50,16 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             cartList.add(product);
         }
     }
+    @Override
+    protected void onNewIntent(final Intent intent) {
+        super.onNewIntent(intent);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            clevertapDefaultInstance.pushNotificationClickedEvent(intent.getExtras());
+            Log.d("CleverTap", "onNewIntent: Reached");
+            NotificationUtils.dismissNotification(intent, getApplicationContext());
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         // ✅ Set username in the welcome message
         welcomeText.setText( username + "!");
 
+
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
         if (!isLoggedIn) {
             redirectToLogin();
@@ -69,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
         clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
         clevertapDefaultInstance.setCTNotificationInboxListener(this);
+
         clevertapDefaultInstance.initializeInbox();
         clevertapDefaultInstance.setDisplayUnitListener(this);
         clevertapDefaultInstance.pushEvent("Native Display");
@@ -81,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             }
         }
 
+//        clevertapDefaultInstance.promptPushPrimer(jsonObject);// Returns true if permission is granted, else returns false if permission is denied.
         // Set up UI
         setupRecyclerView();
         setupNotificationBell();
@@ -88,18 +104,35 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
         Button seeAllButton = findViewById(R.id.btnSeeAll);
         seeAllButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AllProductActivity.class);
-            intent.putExtra("productList", new ArrayList<>(productList));
-            startActivity(intent);
+            Intent product = new Intent(MainActivity.this, AllProductActivity.class);
+            product.putExtra("productList", new ArrayList<>(productList));
+            startActivity(product);
         });
 
         Button cartButton = findViewById(R.id.btnCart);
         cartButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CartActivity.class);
-            intent.putParcelableArrayListExtra("cartList", new ArrayList<>(cartList));
-            startActivity(intent);
+            Intent mainIntent = new Intent(MainActivity.this, CartActivity.class);
+            mainIntent.putParcelableArrayListExtra("cartList", new ArrayList<>(cartList));
+            startActivity(mainIntent);
+        });
+
+        Button profile = findViewById(R.id.Profile);
+        profile.setOnClickListener(v->{
+            clevertapDefaultInstance.pushEvent("In-app_2 Notification Triggered");
+        });
+
+        ImageButton more = findViewById(R.id.btnmore);
+        more.setOnClickListener(v->{
+            //internal deeplink through clevertap
+            clevertapDefaultInstance.pushEvent("Internal Deep Link");
+        });
+
+        ImageButton gaming = findViewById(R.id.gaming);
+        gaming.setOnClickListener(v->{
+            clevertapDefaultInstance.pushEvent("Gaming Event");
         });
     }
+
 
     private void setupRecyclerView() {
         recyclerView = findViewById(R.id.view1);
@@ -116,19 +149,12 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     }
 
     private void setupNotificationBell() {
-        ImageButton bellIcon = findViewById(R.id.bellIcon);
+
         notificationBadge = findViewById(R.id.notificationBadge);
         notificationCount = findViewById(R.id.notificationCount);
 
         unreadNotifications = getUnreadNotifications();
         updateNotificationBadge();
-
-        bellIcon.setOnClickListener(v -> {
-            if (clevertapDefaultInstance != null) {
-                clevertapDefaultInstance.showAppInbox();
-            }
-            markNotificationsAsRead();
-        });
     }
 
     private void setupLogoutButton() {
@@ -173,13 +199,58 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     }
 
     @Override
-    public void inboxDidInitialize() {}
+    public void inboxDidInitialize() {
+        ImageButton bellIcon = findViewById(R.id.bellIcon);
+        bellIcon.setOnClickListener(v -> {
+            ArrayList<String> tabs = new ArrayList<>();
+            tabs.add("Promotions");
+            tabs.add("Offers");//We support upto 2 tabs only. Additional tabs will be ignored
+
+            CTInboxStyleConfig styleConfig = new CTInboxStyleConfig();
+            styleConfig.setFirstTabTitle("First Tab");
+            styleConfig.setTabs(tabs);//Do not use this if you don't want to use tabs
+            styleConfig.setTabBackgroundColor("#FF0000");
+            styleConfig.setSelectedTabIndicatorColor("#0000FF");
+            styleConfig.setSelectedTabColor("#0000FF");
+            styleConfig.setUnselectedTabColor("#FFFFFF");
+            styleConfig.setBackButtonColor("#FF0000");
+            styleConfig.setNavBarTitleColor("#FF0000");
+            styleConfig.setNavBarTitle("MY INBOX");
+            styleConfig.setNavBarColor("#FFFFFF");
+            styleConfig.setInboxBackgroundColor("#ADD8E6");
+            if (clevertapDefaultInstance != null) {
+                clevertapDefaultInstance.showAppInbox(styleConfig); //With Tabs
+            }
+            //ct.showAppInbox();//Opens Activity with default style configs
+            markNotificationsAsRead();
+        });
+        clevertapDefaultInstance.setInboxMessageButtonListener(message -> {
+            String clickedMessageId = message.get("id");
+            Log.d("CleverTap", "User clicked on Inbox Message ID: " + clickedMessageId);
+            //Raise Notification Viewed event for Inbox Message. Message id should be a String
+            clevertapDefaultInstance.pushInboxNotificationViewedEvent(clickedMessageId);
+            clevertapDefaultInstance.pushInboxNotificationClickedEvent(clickedMessageId);
+        });
+
+    }
 
     @Override
     public void inboxMessagesDidUpdate() {
+        ArrayList<CTInboxMessage> messages = clevertapDefaultInstance.getAllInboxMessages();
+
+        for (CTInboxMessage message : messages) {
+            messageId = message.getMessageId(); // ✅ Correct way to get Message ID
+            Log.d("CleverTap", "Inbox Message ID: " + messageId);
+        }
+
         unreadNotifications = getUnreadNotifications();
         updateNotificationBadge();
     }
+
+
+
+
+
 
     @Override
     public void onDisplayUnitsLoaded(ArrayList<CleverTapDisplayUnit> units) {
@@ -206,4 +277,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         });
 
     }
+
 }
+
+

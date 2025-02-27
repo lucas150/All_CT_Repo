@@ -22,6 +22,7 @@ public class AllProductActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
+
         // Use StaggeredGridLayoutManager for flexible column layout
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);

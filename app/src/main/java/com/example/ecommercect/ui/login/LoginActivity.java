@@ -2,9 +2,12 @@ package com.example.ecommercect.ui.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,15 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("DEEPLINK_URL")) {
+            String deepLink = intent.getStringExtra("DEEPLINK_URL");
+            Log.d("CleverTap", "Received Deep Link: " + deepLink);
+
+            Intent deepLinkIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(deepLink));
+            deepLinkIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(deepLinkIntent);
+        }
 
         sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
 
@@ -120,6 +132,13 @@ public class LoginActivity extends AppCompatActivity {
             loginViewModel.login(usernameEditText.getText().toString(),
                     passwordEditText.getText().toString());
         });
+    }
+    protected void onNewIntent(final Intent intent) {
+        super.onNewIntent(intent);
+        Log.d("CleverTap", "onNewIntent: Hello called");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            clevertapDefaultInstance.pushNotificationClickedEvent(intent.getExtras());
+        }
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,7 +33,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage message) {
-        Log.d("MyFcmMessageListener", "FCM Message Received");
+        Log.d("CleverTap", "FCM Message Received");
 
         if (message.getData().size() > 0) {
             Bundle extras = new Bundle();
@@ -40,14 +41,18 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
             String nt = "Default Title";
             String nm = "Default Body";
             String imageUrl = null;
+            String dl = "";
 
 
             for (Map.Entry<String, String> entry : message.getData().entrySet()) {
                 extras.putString(entry.getKey(), entry.getValue());
-                Log.d("MyFcmMessageListener", "Key: " + entry.getKey() + ", Value: " + entry.getValue());
+                Log.d("CleverTap", "Key: " + entry.getKey() + ", Value: " + entry.getValue());
 
                 if ("isCustom".equals(entry.getKey())) {
                     isCustom = Boolean.parseBoolean(entry.getValue());
+                }
+                if ("dl".equals(entry.getKey())) {
+                    dl = entry.getValue();
                 }
                 //title
                 if ("nt".equals(entry.getKey())) {
@@ -66,10 +71,10 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
             }
 
 
-            Log.d("MyFcmMessageListener", "isCustom: " + isCustom);
+            Log.d("CleverTap", "isCustom: " + isCustom);
 
             if (isCustom) {
-                sendCustomNotification(nt, nm, imageUrl,extras);
+                sendCustomNotification(nt, nm, imageUrl,dl,extras);
             } else {
                 CleverTapAPI.setNotificationHandler((NotificationHandler) new PushTemplateNotificationHandler());
                 new com.clevertap.android.sdk.pushnotification.fcm.CTFcmMessageHandler()
@@ -80,20 +85,28 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
         }
     }
 
-    private void sendCustomNotification(String title, String body, String imageUrl, Bundle extras) {
-        Log.d("MyFcmMessageListener", "Sending custom notification with image: " + imageUrl);
+    private void sendCustomNotification(String title, String body, String imageUrl,String dl, Bundle extras) {
+        Log.d("CleverTap", "Sending custom notification with image: " + imageUrl);
 
         // Check notification permission (Android 13+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                Log.d("MyFcmMessageListener", "Notification permission not granted.");
+                Log.d("CleverTap", "Notification permission not granted.");
                 return;
             }
         }
 
-        // Intent to open MainActivity when the notification is clicked
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        Intent intent;
+        if (dl != null && !dl.isEmpty()) {
+            // Open the deep link
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(dl));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        } else {
+            // Default fallback: Open MainActivity
+            intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        }
+
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
@@ -109,7 +122,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
 
         // Build notification with default settings
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "custom")
-                .setSmallIcon(R.drawable.btn_3) // Replace with your app's notification icon
+                .setSmallIcon(R.drawable.btn_3)
                 .setContentTitle(title)
                 .setContentText(body)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -124,7 +137,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
                     .into(new CustomTarget<Bitmap>() {
                         @Override
                         public void onResourceReady(@NonNull Bitmap bitmap, @Nullable Transition<? super Bitmap> transition) {
-                            Log.d("MyFcmMessageListener", "Image Loaded Successfully");
+                            Log.d("CleverTap", "Image Loaded Successfully");
 
                             // Set big picture style
                             NotificationCompat.BigPictureStyle style = new NotificationCompat.BigPictureStyle()
@@ -141,7 +154,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
                             CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
                             if (clevertapDefaultInstance != null) {
                                 clevertapDefaultInstance.pushNotificationViewedEvent(extras);
-                                Log.d("MyFcmMessageListener", "Push Notification Viewed Event Sent to CleverTap");
+                                Log.d("CleverTap", "Push Notification Viewed Event Sent to CleverTap");
                             }
                         }
 
@@ -158,7 +171,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
             CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
             if (clevertapDefaultInstance != null) {
                 clevertapDefaultInstance.pushNotificationViewedEvent(extras);
-                Log.d("MyFcmMessageListener", "Push Notification Viewed Event Sent to CleverTap");
+                Log.d("CleverTap", "Push Notification Viewed Event Sent to CleverTap");
             }
         }
     }
