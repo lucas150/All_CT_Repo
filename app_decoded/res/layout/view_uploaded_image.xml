@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/img_remove" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:layout_marginRight="@dimen/dimen_10dp" android:scaleType="fitXY" android:layout_toLeftOf="@id/img_delete" android:layout_below="@id/img_delete" android:layout_alignParentTop="true" app:srcCompat="@drawable/ic_if_ic_delete_48px_352303" />
+    <ImageView android:id="@id/img_delete" android:visibility="visible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="@dimen/dimen_30dp" android:layout_weight="1.0" android:layout_alignParentTop="true" android:layout_alignParentRight="true" app:srcCompat="@drawable/ic_icons8_delete" />
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout2" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="400.0dip" android:layout_margin="20.0dip" android:layout_below="@id/img_remove">
+        <ProgressBar android:id="@id/progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/img_view_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/amber_hhs" android:scaleType="fitXY" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="end" android:orientation="horizontal" android:tag="layout/row_health_category_data_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/lblLeaderBoard" android:orientation="vertical" android:id="@id/txtLabel" android:paddingBottom="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/fitness_tips" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_20dp"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <TextView android:textColor="@color/white" android:id="@id/txtTitle" android:tag="binding_1" android:background="@drawable/row_health_category_data_unselected" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_15dp" android:paddingEnd="@dimen/dimen_15dp" />
+</LinearLayout>

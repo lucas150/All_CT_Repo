@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_member_item" android:background="@color/white" android:padding="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/dimen_5dp" android:paddingRight="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/text_14.2sp" android:textColor="@color/grey2" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_11.3sp" android:textColor="@android:color/holo_green_dark" android:id="@id/text_registered" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Already Registered" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/text_14.2sp" android:textColor="@color/grey2" android:id="@id/member_id" android:padding="@dimen/dimen_5dp" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="@dimen/text_19sp" android:textColor="@color/grey2" android:gravity="center" android:id="@id/mobile" android:background="@drawable/dashboard_white_bg" android:paddingTop="@dimen/dimen_8dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:autoSizeMinTextSize="@dimen/text_15sp" />
+    <ImageView android:id="@id/img_edit_member_details" android:visibility="gone" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:layout_marginBottom="@dimen/dimen_2dp" android:src="@drawable/ic_pencil_black" />
+</LinearLayout>

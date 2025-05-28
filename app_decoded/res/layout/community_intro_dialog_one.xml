@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main_one" android:background="@drawable/modal_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_177dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginBottom="@dimen/dimen_16dp" android:src="@drawable/community" android:layout_marginStart="@dimen/dimen_21dp" android:layout_marginEnd="@dimen/dimen_20dp" />
+    <TextView android:textSize="@dimen/text_23sp" android:textColor="@color/black" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/IntroducingCommunity" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/dimen_12dp" android:text="@string/dialog_text" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_15dp" android:layout_marginEnd="@dimen/dimen_15dp" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <CheckBox android:textColor="@color/black" android:id="@id/checkbox" android:layout_width="wrap_content" android:layout_height="@dimen/dimen_24dp" android:layout_marginBottom="@dimen/dimen_17dp" android:layout_marginStart="@dimen/dimen_17dp" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/checkbox_text" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black" android:id="@id/txt_terms_conditions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:id="@id/txt_get_started" android:background="@drawable/button_bg_red" android:layout_width="fill_parent" android:layout_marginTop="@dimen/dimen_17.8dp" android:text="GET STARTED" style="@style/YellowBgTextView" />
+</LinearLayout>

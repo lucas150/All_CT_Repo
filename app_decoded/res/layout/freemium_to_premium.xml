@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/freemium_to_premium_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@drawable/bg_home_dialog_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/successGIF" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_150dp" android:layout_marginTop="@dimen/dimen_20dp" android:scaleType="fitXY" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/neutral_grey" android:id="@id/text" android:padding="@dimen/dimen_30dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="You're a policyholder now! Click 'Continue' to unlock premium features and benefits." app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/successGIF" />
+            <TextView android:id="@id/continue_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_30dp" android:text="Continue" android:layout_marginStart="@dimen/dp_16" android:layout_marginEnd="@dimen/dp_16" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/text" style="@style/buttonStyle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

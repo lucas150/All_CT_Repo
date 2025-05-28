@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:id="@id/rl_date_layout" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/img_indicator" android:visibility="gone" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:src="@drawable/ic_steps_calendar_new" android:layout_centerInParent="true" />
+    <TextView android:textSize="@dimen/text_17sp" android:textColor="#ff2d2d2d" android:id="@id/txt_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>

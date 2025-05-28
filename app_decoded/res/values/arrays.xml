@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Frequency">
+        <item>Select Frequency</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+    <string-array name="Timings">
+        <item>Select Timings</item>
+        <item>9AM to 10AM</item>
+        <item>10AM to 11AM</item>
+        <item>11AM to 12PM</item>
+        <item>12PM to 1PM</item>
+        <item>1PM to 2PM</item>
+        <item>2PM to 3PM</item>
+        <item>3PM to 4PM</item>
+        <item>4PM to 5PM</item>
+        <item>5PM to 6PM</item>
+    </string-array>
+    <string-array name="assume_strong_biometrics_models">
+        <item>Pixel 4</item>
+        <item>Pixel 4 XL</item>
+    </string-array>
+    <array name="crypto_fingerprint_fallback_prefixes" />
+    <string-array name="crypto_fingerprint_fallback_vendors">
+        <item>samsung</item>
+    </string-array>
+    <string-array name="default_array">
+        <item></item>
+    </string-array>
+    <array name="default_dark">
+        <item>@color/colorPrimary</item>
+        <item>@android:color/white</item>
+        <item>@android:color/black</item>
+        <item>@android:color/white</item>
+        <item>#ffda6c6c</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorPrimary</item>
+        <item>@android:color/black</item>
+        <item>@android:color/white</item>
+        <item>@android:color/white</item>
+        <item>@color/chevronBgColor</item>
+        <item>#ffda6c6c</item>
+        <item>#ffda6c6c</item>
+        <item>#ffda6c6c</item>
+        <item>#ffda6c6c</item>
+    </array>
+    <array name="default_light">
+        <item>@color/colorPrimary</item>
+        <item>@android:color/white</item>
+        <item>@android:color/white</item>
+        <item>@android:color/black</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorAccent</item>
+        <item>@color/colorPrimary</item>
+        <item>@android:color/white</item>
+        <item>@android:color/black</item>
+        <item>@android:color/white</item>
+        <item>@color/chevronBgColor</item>
+        <item>#ffda6c6c</item>
+        <item>#ffda6c6c</item>
+        <item>#ffda6c6c</item>
+        <item>@color/colorPrimary</item>
+    </array>
+    <string-array name="delay_showing_prompt_models">
+        <item>Pixel 4</item>
+        <item>Pixel 4 XL</item>
+    </string-array>
+    <string-array name="email_name">
+        <item>adityabirlacapital.com</item>
+        <item>adityabirla.com</item>
+        <item>abfrl.adityabirla.com</item>
+        <item>abgtrading.com</item>
+    </string-array>
+    <string-array name="feedback_array">
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+        <item>Problem With App</item>
+    </string-array>
+    <string-array name="feedback_dropdown_array">
+        <item>Choose a topic</item>
+        <item>Problem with the app</item>
+        <item>Policy Related</item>
+        <item>Profile Related</item>
+        <item>Claims Related</item>
+        <item>Benefits related</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="food_habit_wellness_dietician">
+        <item>Select</item>
+        <item>Vegetarian</item>
+        <item>Non Vegetarian</item>
+        <item>Ovo-Lacto-Vegetarian (including eggs and dairy only)</item>
+    </string-array>
+    <string-array name="ft_wellness_dietician">
+        <item>ft</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="hide_fingerprint_instantly_prefixes">
+        <item>SM-A50</item>
+        <item>SM-G973</item>
+        <item>SM-G975</item>
+        <item>SM-G977</item>
+        <item>SM-G770</item>
+        <item>SM-N970</item>
+        <item>SM-N971</item>
+        <item>SM-N975</item>
+        <item>SM-N976</item>
+        <item>SM-N770</item>
+        <item>SC-03L</item>
+        <item>SC-04L</item>
+        <item>SC-05L</item>
+        <item>SC-01M</item>
+        <item>SCV41</item>
+        <item>SCV42</item>
+        <item>SCV45</item>
+    </string-array>
+    <string-array name="inches_wellness_dietician">
+        <item>inches</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <array name="keyguard_biometric_and_credential_exclude_vendors" />
+    <string-array name="lifestyle_wellness_dietician">
+        <item>Select</item>
+        <item>Sedentary</item>
+        <item>Moderate Activity</item>
+        <item>Heavy Activity</item>
+    </string-array>
+    <string-array name="obj_of_diet_req_wellness_dietician">
+        <item>Select</item>
+        <item>Weight Gain</item>
+        <item>Weight Loss</item>
+        <item>Balanced / Weight Management Diet</item>
+        <item>Special Medical Condition</item>
+        <item>High Protein diet for muscle development</item>
+    </string-array>
+    <string-array name="unit_name">
+        <item>ABC Digital Limited</item>
+        <item>Aditya Birla ARC Limited</item>
+        <item>Aditya Birla Capital Limited</item>
+        <item>Aditya Birla Capital Technology Services Limited</item>
+        <item>Aditya Birla Fashion and Retail Ltd.</item>
+        <item>Aditya Birla Finance Limited</item>
+        <item>Aditya Birla Finance Infrastructure Finance</item>
+        <item>Aditya Birla Financial Shared Services Limited</item>
+        <item>Aditya Birla Health Insurance Company Limited</item>
+        <item>Aditya Birla Housing Finance Limited</item>
+        <item>Aditya Birla Insurance Brokers Limited</item>
+        <item>Aditya Birla Management Corporation Private</item>
+        <item>Aditya Birla Money Insurance Advisory Services Limited</item>
+        <item>Aditya Birla Money Limited</item>
+        <item>Aditya Birla Money Mart Limited</item>
+        <item>Aditya Birla Renewables Limited</item>
+        <item>Aditya Birla Stressed Asset AMC Private Limited</item>
+        <item>Aditya Birla Sun Life AMC Limited</item>
+        <item>Aditya Birla Sun Life Insurance Company Limited</item>
+        <item>Aditya Birla Sun Life Pension Management Limited</item>
+        <item>Aditya Birla Sun Life Trustee Private Limited</item>
+        <item>Aditya Birla Wellness Private Limited</item>
+        <item>Birla Carbon India Private Limited</item>
+        <item>Birla Estates Private Limited</item>
+        <item>Birla Paints</item>
+        <item>Century Enka Limited</item>
+        <item>Century Textiles &amp; Industries Ltd</item>
+        <item>Essel Mining &amp; Industries Ltd</item>
+        <item>GRASIM INDUSTRIES LIMITED</item>
+        <item>Grasim Industries Ltd</item>
+        <item>Grasim Industries Ltd. (Jaya Shree Textiles)</item>
+        <item>Grasim Industries Ltd. (Vikram Woollens)</item>
+        <item>Grasim Premium Fabric Pvt Ltd.</item>
+        <item>Hindalco Industries Limited</item>
+        <item>Swiss Singapore India Pvt Ltd.</item>
+        <item>UltraTech Cement Limited</item>
+    </string-array>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff8f8f8" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/toolbar_layout" layout="@layout/toolbar_layout" />
+    <RelativeLayout android:id="@id/rl_comments" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/recycler_comments" android:background="#fff8f8f8" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp" android:layout_above="@id/ll_comments" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <ProgressBar android:id="@id/progress_bar_comments" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_no_comments" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerHorizontal="true">
+            <ImageView android:id="@id/img_no_comments" android:layout_width="@dimen/dimen_200dp" android:layout_height="@dimen/dimen_200dp" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_comment" />
+            <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/black" android:gravity="center" android:id="@id/txt_no_comments" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:layout_below="@id/img_no_comments" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_comments" android:background="@color/white" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_alignParentBottom="true" android:paddingStart="@dimen/dimen_16dp" android:paddingEnd="@dimen/dimen_16dp">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/img_profile_pic" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" android:src="@drawable/ic_avatars_1" android:layout_marginEnd="@dimen/dimen_12dp" />
+            <EditText android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="center|left" android:id="@id/edt_comment" android:background="@drawable/health_tools_adapter_card_bg" android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:hint="Enter your comment...." android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_20dp" />
+            <ImageView android:id="@id/img_add_comment" android:background="@drawable/line_chart_bg" android:padding="@dimen/dimen_20dp" android:layout_width="@dimen/dimen_55dp" android:layout_height="@dimen/dimen_50dp" android:scaleType="fitXY" app:srcCompat="@drawable/button_right_arrow_white" />
+        </LinearLayout>
+    </RelativeLayout>
+    <include android:id="@id/ll_no_internet" layout="@layout/ll_no_internet" />
+</LinearLayout>

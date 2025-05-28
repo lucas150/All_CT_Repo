@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker$$ExternalSyntheticLambda11;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Landroidx/lifecycle/Observer;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker$$ExternalSyntheticLambda11;->f$0:Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onChanged(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker$$ExternalSyntheticLambda11;->f$0:Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;
+
+    check-cast p1, Lcom/adityabirlahealth/insurance/networking/Resource;
+
+    invoke-static {v0, p1}, Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;->$r8$lambda$Sc9Plyj8ZLKGfLYXmC6csjwG6c4(Lcom/adityabirlahealth/insurance/ClaimsTrackerRevamp/ClaimsTracker;Lcom/adityabirlahealth/insurance/networking/Resource;)V
+
+    return-void
+.end method

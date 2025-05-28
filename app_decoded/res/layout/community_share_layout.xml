@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rl_banner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.adityabirlahealth.insurance.utils.CustomImageView android:id="@id/img_banner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/combined_shape" />
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_8dp" android:layout_alignBottom="@id/img_banner" android:layout_marginEnd="@dimen/dimen_8dp" android:layout_alignParentEnd="true">
+            <ImageView android:id="@id/img_watermark" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_30dp" android:src="@drawable/activ_health_splash_logo" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+        <ImageView android:id="@id/img_logo" android:layout_width="100.0dip" android:layout_height="40.0dip" android:src="@drawable/activ_health_logo_white_bg" android:layout_marginEnd="@dimen/dimen_5dp" android:layout_alignParentEnd="true" />
+        <ImageView android:id="@id/img_profile_pic" android:layout_width="@dimen/dimen_65dp" android:layout_height="@dimen/dimen_65dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_profile_picture_default" android:scaleType="fitXY" android:layout_centerVertical="true" android:layout_marginStart="@dimen/dimen_13dp" />
+        <TextView android:textSize="@dimen/text_18sp" android:textColor="#ff636060" android:id="@id/txt_profile_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_13dp" android:layout_toEndOf="@id/img_profile_pic" />
+        <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/black" android:ellipsize="end" android:id="@id/txt_profile_desc" android:layout_width="@dimen/dimen_300dp" android:layout_height="wrap_content" android:maxLines="3" android:layout_below="@id/txt_profile_name" android:layout_marginStart="@dimen/dimen_13dp" android:layout_toEndOf="@id/img_profile_pic" />
+    </RelativeLayout>
+</LinearLayout>

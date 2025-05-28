@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/rl_bottom_diet_chart" android:layout_alignParentTop="true" />
+    <ProgressBar android:id="@id/progressbar" android:visibility="gone" android:layout_width="@dimen/dimen_30dp" android:layout_height="@dimen/dimen_30dp" android:layout_centerInParent="true" />
+    <androidx.cardview.widget.CardView android:id="@id/cardEmpty" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_15dp" android:foreground="?android:selectableItemBackground" android:layout_centerInParent="true" app:cardBackgroundColor="@color/error_state" app:cardCornerRadius="@dimen/dimen_10dp" app:cardElevation="@dimen/dimen_2dp">
+        <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/black" android:gravity="center" android:id="@id/lblEmpty" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginBottom="@dimen/dimen_30dp" android:text="@string/conversation_no_record" android:fontFamily="@font/pf_handbook_pro_regular" style="@style/EmptyResults" />
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout android:id="@id/rl_bottom_diet_chart" android:background="@drawable/round_bg_top_white_new" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_70dp" android:layout_alignParentBottom="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/diet_chart_small" android:layout_centerInParent="true" android:layout_alignParentEnd="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="@dimen/dimen_15dp">
+            <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Your customized diet plan is ready!" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check it out" android:drawablePadding="@dimen/dimen_5dp" android:drawableEnd="@drawable/ic_check_it_now_arrow" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

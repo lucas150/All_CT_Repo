@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/txt_size_18sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:text="Please Enter Your Mobile No." android:fontFamily="@font/pf_handbook_pro_regular" />
+    <EditText android:textSize="@dimen/text_15sp" android:id="@id/edt_mobile_no" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <Button android:textSize="@dimen/txt_size_18sp" android:textColor="@color/white" android:id="@id/btn_send_sms" android:background="@color/orangeIndicator" android:paddingRight="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:text="Send SMS" android:drawableRight="@drawable/ic_arrow_right" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

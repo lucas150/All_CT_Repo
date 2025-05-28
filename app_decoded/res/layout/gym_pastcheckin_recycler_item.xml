@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/pastcheckin_recycler_bg" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_10dp" android:paddingStart="@dimen/dimen_10dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_weight="2.0">
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black_opacity60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fitness Centre" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:id="@id/text_fitness_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="Talwarkar’s Gym" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_weight="2.0">
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black_opacity60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Date" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:id="@id/text_checkin_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="12th Dec ‘17" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/colorPrimary" android:gravity="center" android:layout_gravity="center" android:id="@id/text_check_in" android:background="@drawable/round_bg_rect_red_new" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Check In" android:layout_weight="1.5" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_20dp" />
+</LinearLayout>

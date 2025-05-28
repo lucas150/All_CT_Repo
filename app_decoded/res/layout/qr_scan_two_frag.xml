@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:background="@drawable/round_bg_rect_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" app:cardCornerRadius="@dimen/dimen_5dp" app:cardUseCompatPadding="true">
+        <RelativeLayout android:paddingBottom="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/tutorial_biometric" android:id="@id/lblStep" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="Step 2" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_20dp" />
+            <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/gym_address_city" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_3dp" android:text="Hold your device over the QR Code so that it’s clearly visible on your screen" android:layout_below="@id/lblStep" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_20dp" android:layout_toStartOf="@id/img_qr_scan_two" />
+            <ImageView android:id="@id/img_qr_scan_two" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_20dp" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_qr_scan_two" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

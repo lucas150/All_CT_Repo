@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include" layout="@layout/toolbar_layout" />
+    <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_40dp" android:layout_marginTop="@dimen/dimen_30dp" android:text="Month" android:layout_below="@id/include" android:fontFamily="@font/pf_handbook_pro_bold" />
+    <com.evrencoskun.tableview.TableView android:id="@id/content_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/include" app:column_header_height="@dimen/dimen_80dp" app:row_header_width="@dimen/dimen_150dp" app:selected_color="@color/bluestream_end" app:shadow_color="@color/bluestream_end" app:unselected_color="@color/white" />
+</RelativeLayout>

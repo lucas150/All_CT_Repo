@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/ll_main_qr_loc" android:background="@color/black_opacity50" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/gym_details_footer_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Working out here? Check in now!" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_10dp">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_viaLocationGymList" android:background="@drawable/gym_detail_loc_scan" android:paddingTop="@dimen/dimen_12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_5dp">
+                <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Via Location" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black" android:layout_width="86.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="At the gym? Check-in easily using GPS" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_viaQRScanGymList" android:background="@drawable/gym_detail_qr_scan" android:paddingTop="@dimen/dimen_12dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_5dp" android:layout_toEndOf="@id/ll_viaLocationGymList">
+                <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Via QR Scanner" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black" android:layout_width="86.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="Use your phone to scan the QR code to check-in" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

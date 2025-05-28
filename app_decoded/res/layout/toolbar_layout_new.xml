@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:tag="layout/toolbar_layout_new_0" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_scrollFlags="scroll" app:popupTheme="@style/ThemeOverlay.MyTheme" app:theme="@style/MyToolbarStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize">
+        <ImageView android:layout_gravity="center" android:id="@id/img_toolbar_back" android:visibility="visible" android:layout_width="@dimen/dimen_24dp" android:layout_height="@dimen/dimen_24dp" android:scaleType="fitXY" android:rotation="180.0" app:srcCompat="@drawable/arrow_right_thin" app:tint="@color/black" />
+        <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/neutral_grey" android:gravity="center" android:layout_gravity="center" android:id="@id/toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/aneklatin_medium" android:layout_marginStart="@dimen/dimen_10dp" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

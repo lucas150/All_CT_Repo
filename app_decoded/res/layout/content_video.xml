@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/video_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.twilio.video.VideoView android:layout_gravity="center" android:id="@id/primary_video_view" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    <ProgressBar android:layout_gravity="center" android:id="@id/reconnecting_progress_bar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="true" style="?android:progressBarStyleLarge" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/status" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/button1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <ImageView android:id="@id/back" android:background="@drawable/ic_background_camera_flip" android:padding="14.0dip" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="55.0dip" app:srcCompat="@drawable/ic_arrow_back_white_24dp" />
+    <androidx.cardview.widget.CardView android:id="@id/card_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" app:cardCornerRadius="10.0dip">
+        <com.twilio.video.VideoTextureView android:id="@id/thumbnail_video_view_1" android:layout_width="fill_parent" android:layout_height="fill_parent" app:tviMirror="true" app:tviOverlaySurface="true" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

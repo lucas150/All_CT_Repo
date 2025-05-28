@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/mainLayout" android:tag="layout/jump_leaderboard_card_0" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/neutral_grey" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/txtRank" android:layout_width="@dimen/dimen_35dp" android:layout_height="wrap_content" android:maxLines="1" android:fontFamily="@font/pf_encoresans_pro_medium" android:layout_marginStart="@dimen/dimen_6dp" android:layout_marginEnd="@dimen/dimen_6dp" />
+        <com.google.android.material.card.MaterialCardView android:layout_width="@dimen/dimen_32dp" android:layout_height="@dimen/dimen_32dp" app:cardCornerRadius="54.0dip" app:cardElevation="@dimen/dimen_0dp">
+            <ImageView android:layout_gravity="center" android:id="@id/profile" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+        <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/leaderboard_no_calorie_note" android:layout_gravity="center" android:id="@id/txtName" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_8dp" />
+        <ImageView android:id="@id/imgGrowthIndicator" android:layout_width="@dimen/dimen_16dp" android:layout_height="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_8dp" />
+        <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/neutral_grey" android:id="@id/txtCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_encoresanspro_regular" android:layout_marginStart="@dimen/dimen_5dp" android:layout_marginEnd="@dimen/dimen_14dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

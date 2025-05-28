@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_heading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:text="Member ID" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" />
+    <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:id="@id/txt_heading_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" />
+</LinearLayout>

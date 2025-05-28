@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/member_id" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="@dimen/dimen_40dp" android:elevation="@dimen/dimen_2dp" app:cardUseCompatPadding="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:strokeColor="#ff75748f">
+        <TextView android:layout_gravity="center" android:id="@id/textView" android:padding="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/eligible_member" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

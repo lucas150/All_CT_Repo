@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/grey3" android:paddingTop="@dimen/dimen_1.5dp" android:paddingRight="@dimen/dimen_1.5dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/black" android:id="@id/text_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_4dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13.4" android:textColor="@color/active_days_yellow" android:id="@id/text_activedayz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_6dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_12dp">
+            <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" android:src="@drawable/ic_activdayz_steps" />
+            <TextView android:textSize="@dimen/text_13.4" android:textColor="@color/black" android:id="@id/text_totalsteps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_4dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_6dp">
+            <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" android:src="@drawable/ic_activdayz_gymcheckin" />
+            <TextView android:textSize="@dimen/text_13.4" android:textColor="@color/black" android:id="@id/text_totalgymcheckins" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_4dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_6dp" android:layout_marginBottom="@dimen/dimen_6dp">
+            <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" android:src="@drawable/ic_activdayz_calories" />
+            <TextView android:textSize="@dimen/text_13.4" android:textColor="@color/black" android:id="@id/text_totalcalories" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_4dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

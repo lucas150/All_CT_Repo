@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_user_switch_dashboard" android:id="@id/switch_policy" android:title="@string/switch_policy_plan" />
+    <item android:icon="@drawable/ic_nav_activdayz" android:id="@id/activ_dayz" android:title="@string/activ_dayz" />
+    <item android:icon="@drawable/policy_image" android:id="@id/my_policy" android:title="@string/my_policy" />
+    <item android:icon="@drawable/ic_profile_refer" android:id="@id/refer_friend" android:title="@string/refer_a_friend" />
+    <item android:icon="@drawable/ic_fp" android:id="@id/fingerprint_login" android:title="@string/fingerprint_login_text" />
+    <item android:icon="@drawable/ic_profile_my_hr" android:id="@id/health_records" android:title="@string/health_record" />
+    <item android:icon="@drawable/ic_nav_claims" android:id="@id/claims" android:title="@string/claims" />
+    <item android:icon="@drawable/ic_chat_wth_us" android:id="@id/chatbot" android:title="@string/chat_with_us" />
+    <item android:icon="@drawable/ic_policy_network" android:id="@id/network" android:title="@string/cashless_hospitals" />
+    <item android:icon="@drawable/ic_profile_support" android:id="@id/help_support" android:title="@string/help_support" />
+    <item android:icon="@drawable/ic_mic_nav_menu" android:id="@id/voice_guide" android:title="@string/voice_navigation_guide" />
+    <item android:icon="@drawable/ic_port_harmburger" android:id="@id/port" android:title="@string/port" />
+    <item android:icon="@drawable/advisor" android:id="@id/advisor" android:title="@string/become_an_advisor" />
+    <item android:icon="@drawable/ic_profile_settings" android:id="@id/settings" android:title="@string/settings" />
+</menu>

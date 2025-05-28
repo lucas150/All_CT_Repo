@@ -1,0 +1,235 @@
+.class public abstract Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+.super Landroidx/databinding/ViewDataBinding;
+.source "LayoutHomePolicyBenefitsBinding.java"
+
+
+# instance fields
+.field public final errorLayout:Lcom/adityabirlahealth/insurance/databinding/RevampErrorStateBinding;
+
+.field public final layoutTop:Landroid/widget/LinearLayout;
+
+.field public final mainContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+.field public final rvPolicyBenetits:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public final shimmer:Lcom/facebook/shimmer/ShimmerFrameLayout;
+
+.field public final txtTitleBenefit:Landroid/widget/TextView;
+
+
+# direct methods
+.method protected constructor <init>(Ljava/lang/Object;Landroid/view/View;ILcom/adityabirlahealth/insurance/databinding/RevampErrorStateBinding;Landroid/widget/LinearLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;Lcom/facebook/shimmer/ShimmerFrameLayout;Landroid/widget/TextView;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "errorLayout",
+            "layoutTop",
+            "mainContainer",
+            "rvPolicyBenetits",
+            "shimmer",
+            "txtTitleBenefit"
+        }
+    .end annotation
+
+    .line 43
+    invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
+
+    .line 44
+    iput-object p4, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->errorLayout:Lcom/adityabirlahealth/insurance/databinding/RevampErrorStateBinding;
+
+    .line 45
+    iput-object p5, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->layoutTop:Landroid/widget/LinearLayout;
+
+    .line 46
+    iput-object p6, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->mainContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    .line 47
+    iput-object p7, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->rvPolicyBenetits:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 48
+    iput-object p8, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->shimmer:Lcom/facebook/shimmer/ShimmerFrameLayout;
+
+    .line 49
+    iput-object p9, p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->txtTitleBenefit:Landroid/widget/TextView;
+
+    return-void
+.end method
+
+.method public static bind(Landroid/view/View;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
+
+    .line 92
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->bind(Landroid/view/View;Ljava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bind(Landroid/view/View;Ljava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "view",
+            "component"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const v0, 0x7f0d0288
+
+    .line 105
+    invoke-static {p1, p0, v0}, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "inflater"
+        }
+    .end annotation
+
+    .line 74
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->inflate(Landroid/view/LayoutInflater;Ljava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "inflater",
+            "root",
+            "attachToRoot"
+        }
+    .end annotation
+
+    .line 55
+    invoke-static {}, Landroidx/databinding/DataBindingUtil;->getDefaultComponent()Landroidx/databinding/DataBindingComponent;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, p2, v0}, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;ZLjava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;ZLjava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "inflater",
+            "root",
+            "attachToRoot",
+            "component"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const v0, 0x7f0d0288
+
+    .line 69
+    invoke-static {p0, v0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    return-object p0
+.end method
+
+.method public static inflate(Landroid/view/LayoutInflater;Ljava/lang/Object;)Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "inflater",
+            "component"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    const v2, 0x7f0d0288
+
+    .line 88
+    invoke-static {p0, v2, v0, v1, p1}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/adityabirlahealth/insurance/databinding/LayoutHomePolicyBenefitsBinding;
+
+    return-object p0
+.end method

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/enable_stress_card_0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+        <LinearLayout android:orientation="horizontal" android:id="@id/card" android:background="#fffd8a72" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+            <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtScoreValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="60-80" android:fontFamily="@font/aneklatin_bold" />
+            <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_gravity="end" android:id="@id/txtScoreName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium High" android:fontFamily="@font/aneklatin_bold" />
+                <com.google.android.material.card.MaterialCardView android:id="@id/cardYourStress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" app:cardCornerRadius="@dimen/dimen_16dp" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/layoutYourStress" android:background="@color/wellbeing_bg" android:paddingTop="@dimen/dimen_2dp" android:paddingBottom="@dimen/dimen_2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_8dp" android:paddingEnd="@dimen/dimen_8dp">
+                        <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/black" android:id="@id/txtYourStressScore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your stress score - " android:fontFamily="@font/aneklatin_medium" />
+                        <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/neutral_grey" android:id="@id/txtYourScore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/aneklatin_bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

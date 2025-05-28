@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="@dimen/dimen_110dp" android:layout_height="@dimen/dimen_130dp" android:layout_margin="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dimen_130dp" android:layout_marginTop="@dimen/dimen_3dp">
+        <androidx.cardview.widget.CardView android:id="@id/partner_card" android:layout_width="@dimen/dimen_110dp" android:layout_height="@dimen/dimen_130dp" android:elevation="@dimen/dimen_4dp" app:cardCornerRadius="@dimen/dimen_4dp" app:cardUseCompatPadding="true">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:padding="@dimen/dimen_7dp" android:layout_width="fill_parent" android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+                <ImageView android:layout_gravity="center" android:id="@id/img_partner_logo" android:layout_width="@dimen/dimen_70dp" android:layout_height="@dimen/dimen_30dp" />
+                <TextView android:textSize="14.599976sp" android:textColor="@color/black" android:gravity="start" android:id="@id/text_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <RelativeLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp">
+                    <ImageView android:id="@id/img_discounts" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" app:srcCompat="@drawable/ic_fire" />
+                    <TextView android:textSize="9.399994sp" android:textColor="@color/light_black_vas" android:gravity="bottom" android:id="@id/text_disc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="Discounts upto 45%" android:layout_toRightOf="@id/img_discounts" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+    <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center|top" android:id="@id/exclusive_offer" android:background="@drawable/circle_curve" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_15dp" android:text="Exclusive Offer" android:textAllCaps="true" android:layout_marginStart="@dimen/dimen_7.5dp" android:layout_marginEnd="@dimen/dimen_7.5dp" />
+</FrameLayout>

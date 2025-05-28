@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_music" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/dimen_48sp" android:textColor="@color/colorPrimary" android:gravity="center_horizontal" android:id="@id/txt_song_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_light" android:layout_marginStart="@dimen/dimen_30dp" android:layout_marginEnd="30.0dip" />
+    <TextView android:textSize="@dimen/dimen_24sp" android:textColor="@color/tutorial_biometric" android:id="@id/txt_song_subtitile" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_light" />
+    <LinearLayout android:orientation="horizontal" android:background="#fff4f7f8" android:padding="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_40dp">
+        <TextView android:textSize="@dimen/dimen_24sp" android:textColor="@color/black" android:id="@id/txt_song_time_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/dimen_24sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" - " android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/dimen_24sp" android:textColor="@color/black" android:id="@id/txt_song_time_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_40dp">
+        <ImageView android:id="@id/imgRewind" android:layout_width="@dimen/dimen_60dp" android:layout_height="@dimen/dimen_60dp" android:src="@drawable/ic_player_rewind" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/btn_play_resume" android:visibility="gone" android:layout_width="@dimen/dimen_80dp" android:layout_height="@dimen/dimen_80dp" android:src="@drawable/ic_play_pause" android:layout_marginStart="@dimen/dimen_30dp" android:layout_marginEnd="@dimen/dimen_30dp" />
+            <ProgressBar android:id="@id/circularProgressbar" android:layout_width="@dimen/dimen_80dp" android:layout_height="@dimen/dimen_80dp" android:max="100" android:secondaryProgress="100" android:progressDrawable="@drawable/circular_progressbar" android:layout_centerInParent="true" style="@android:style/Widget.ProgressBar.Horizontal" />
+        </RelativeLayout>
+        <ImageView android:id="@id/imgForward" android:layout_width="@dimen/dimen_60dp" android:layout_height="@dimen/dimen_60dp" android:src="@drawable/ic_30_forward" />
+    </LinearLayout>
+</LinearLayout>

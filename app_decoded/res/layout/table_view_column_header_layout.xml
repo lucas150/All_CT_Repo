@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/white" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/dimen_10dp" android:paddingRight="@dimen/dimen_10dp" android:layout_width="@dimen/dimen_100dp" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/column_header_textView" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" android:fontFamily="@font/pf_handbook_pro_bold" />
+            <ImageButton android:layout_gravity="end|center" android:id="@id/column_header_sortButton" android:background="@android:color/transparent" android:paddingRight="-5.0dip" android:visibility="gone" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="4.0dip" android:scaleType="fitXY" app:srcCompat="@drawable/ic_arrow_down" />
+        </LinearLayout>
+        <View android:layout_gravity="bottom" android:background="@color/hhs_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <View android:layout_gravity="right" android:background="@color/hhs_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <View android:layout_gravity="left" android:background="@color/hhs_grey" android:layout_width="1.0px" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

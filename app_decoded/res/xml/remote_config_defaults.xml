@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>version_number</key>
+        <value>6.0</value>
+    </entry>
+    <entry>
+        <key>dynamic_icon</key>
+        <value>default</value>
+    </entry>
+    <entry>
+        <key>updatePriority</key>
+        <value>0</value>
+    </entry>
+    <entry>
+        <key>minimumVersion</key>
+        <value>6.0</value>
+    </entry>
+    <entry>
+        <key>call_assist</key>
+        <value>Assist America</value>
+    </entry>
+    <entry>
+        <key>call_assist_Hindi</key>
+        <value>असिस्ट अमेरिका</value>
+    </entry>
+    <entry>
+        <key>call_assist_number</key>
+        <value>04023321206</value>
+    </entry>
+    <entry>
+        <key>one_abc_title</key>
+        <value>Link Your One ABC ID</value>
+    </entry>
+    <entry>
+        <key>oneAbc_description</key>
+        <value>Link your ABHI account with your One ABC ID to manage all your money solutions from one place.</value>
+    </entry>
+    <entry>
+        <key>one_abc_title_Hindi</key>
+        <value>अपनी One ABC ID लिंक करें</value>
+    </entry>
+    <entry>
+        <key>one_Abc_Description_Hindi</key>
+        <value>अपने सभी धन समाधानों को एक ही स्थान से प्रबंधित करने के लिए अपने ABHI खाते को अपनी One ABC ID से लिंक करें</value>
+    </entry>
+    <entry>
+        <key>sandbox_title</key>
+        <value>Setup your Username and Password</value>
+    </entry>
+    <entry>
+        <key>sandbox_description</key>
+        <value>Setup your account to enjoy Multiply wellness benefits, this will hardly take a couple of minutes!</value>
+    </entry>
+    <entry>
+        <key>sandbox_title_Hindi</key>
+        <value>अपना उपयोगकर्ता नाम और पासवर्ड सेट करें</value>
+    </entry>
+    <entry>
+        <key>sandbox_description_Hindi</key>
+        <value>मल्टीप्ली वेलनेस लाभों का आनंद लेने के लिए अपना खाता सेटअप करें, इसमें मुश्किल से कुछ मिनट लगेंगे!</value>
+    </entry>
+    <entry>
+        <key>HomeBannerData</key>
+        <value>[
+            {
+            "title": "Vas Cards",
+            "subtitle": "",
+            "nav_to": "vasCards",
+            "bg_image_url": "https://www.adityabirlacapital.com/healthinsurance/assets/Images/AppDashboard/VasCards.png",
+            "link_url": "https://www.adityabirlacapital.com"
+            },
+            {
+            "title": "Meditation",
+            "subtitle": "",
+            "nav_to": "mediation",
+            "bg_image_url": "https://www.adityabirlacapital.com/healthinsurance/assets/Images/AppDashboard/meditation.png",
+            "link_url": "https://www.adityabirlacapital.com"
+            },
+            {
+            "title": "Communities",
+            "subtitle": "",
+            "nav_to": "communities",
+            "bg_image_url": "https://www.adityabirlacapital.com/healthinsurance/assets/Images/AppDashboard/JoinComm.png",
+            "link_url": "https://www.adityabirlacapital.com"
+            },
+            {
+            "title": "Activ Age",
+            "subtitle": "",
+            "nav_to": "activAge",
+            "bg_image_url": "https://www.adityabirlacapital.com/healthinsurance/assets/Images/AppDashboard/ActivAge.png",
+            "link_url": "https://www.adityabirlacapital.com"
+            }
+            ]</value>
+    </entry>
+    <entry>
+        <key>HomeSections</key>
+        <value> "freemium_user_section": [
+            {
+            "index": 1,
+            "title": "Top actions for you",
+            "title_hindi": "आपके लिए शीर्ष कार्य",
+            "key": "topaction4u"
+            },
+            {
+            "index": 2,
+            "title": "Your Health Data",
+            "title_hindi": "आपका स्वास्थ्य डेटा",
+            "key": "health_data"
+            },
+            {
+            "index": 3,
+            "title": "Banner",
+            "title_hindi": "बैनर",
+            "key": "banner"
+            },
+            {
+            "index": 4,
+            "title": "Benefits for you",
+            "title_hindi": "आपके लिए लाभ",
+            "key": "benefits4u"
+            },
+            {
+            "index": 5,
+            "title": "Your Daily Briefing",
+            "title_hindi": "आपका दैनिक ब्रीफिंग",
+            "key": "blogs"
+            },
+            {
+            "index": 6,
+            "title": "Recommended groups",
+            "title_hindi": "अनुशंसित समूह",
+            "key": "groups"
+            },
+            {
+            "index": 7,
+            "title": "Your Wellbeing",
+            "title_hindi": "आपकी भलाई",
+            "key": "your_wellbeing"
+            },
+            {
+            "index": 8,
+            "title": "Looking for something specific? ",
+            "title_hindi": "कुछ खास खोज रहे हैं?",
+            "key": "quick_access_tool"
+            }
+            ],
+            "other_user_section": [
+            {
+            "index": 1,
+            "title": "Top actions for you",
+            "title_hindi": "आपके लिए शीर्ष कार्य",
+            "key": "topaction4u"
+            },
+            {
+            "index": 2,
+            "title": "Your Health Data",
+            "title_hindi": "आपका स्वास्थ्य डेटा",
+            "key": "health_data"
+            },
+            {
+            "index": 3,
+            "title": "Banner",
+            "title_hindi": "बैनर",
+            "key": "banner"
+            },
+            {
+            "index": 4,
+            "title": "Benefits for you",
+            "title_hindi": "आपके लिए लाभ",
+            "key": "benefits4u"
+            },
+            {
+            "index": 5,
+            "title": "Your Daily Briefing",
+            "title_hindi": "आपका दैनिक ब्रीफिंग",
+            "key": "blogs"
+            },
+            {
+            "index": 6,
+            "title": "Access to partners",
+            "title_hindi": "भागीदारों तक पहुंच",
+            "key": "access2partners"
+            },
+            {
+            "index": 7,
+            "title": "Tools for your wellbeing",
+            "title_hindi": "आपके कल्याण के लिए उपकरण",
+            "key": "tools4u"
+            },
+            {
+            "index": 8,
+            "title": "Looking for something specific? ",
+            "title_hindi": "कुछ खास खोज रहे हैं?",
+            "key": "quick_access_tool"
+            }
+            ]
+            }
+            "corporate_user_section": [
+            {
+            "index": 1,
+            "title": "Next up for you",
+            "title_hindi": "आपके लिए अगला",
+            "key": "topaction4u"
+            },
+            {
+            "index": 2,
+            "title": "get Visit",
+            "title_hindi": "get Visit",
+            "key": "getvisit"
+            },
+            {
+            "index": 3,
+            "title": "Your Health Update",
+            "title_hindi": "आपके लिए स्वास्थ्य संबंधी अपडेट",
+            "title1": "Start Your Fitness Journey",
+            "title_hindi1": "अपनी फिटनेस यात्रा शुरू करें",
+            "key": "health_data",
+            "ls_good_impact": "Yay! Your Lifestyle Score has improved this week, keep going.",
+            "ls_good_impact_hindi": "वाह! इस सप्ताह आपके लाइफ़स्टाइल स्कोर में सुधार हुआ है, जारी रखें।",
+            "ls_bad_impact": "Looks like your Lifestyle Score has dropped, don’t worry let’s get it moving now.",
+            "ls_bad_impact_hindi": "ऐसा लगता है कि आपका लाइफ़स्टाइल स्कोर गिर गया है, चिंता न करें, इसे अभी आगे बढ़ाते हैं।",
+            "ws_tips": [
+            "The wellbeing score allows you to understand your overall health better.",
+            "It calculates all your health parameters as well as gives you a breakdown of different aspects you can improve on.",
+            "Improve your score by knowing your score, peer score and full potential of your health."
+            ]
+            },
+            {
+            "index": 4,
+            "title": "Banner",
+            "title_hindi": "बैनर",
+            "key": "banner"
+            },
+            {
+            "index": 5,
+            "title": "Health Shorts",
+            "title_hindi": "हेल्थ शॉर्ट्स",
+            "key": "blogs"
+            },
+            {
+            "index": 6,
+            "title": "Your Wellness Tools",
+            "title_hindi": "आपके लिए वेलनेस समाधान",
+            "key": "tools4u"
+            }
+            ]
+            } </value>
+    </entry>
+    <entry>
+        <key>AHViewFlags</key>
+        <value>{"recommendation":false,"profile_edit":false,"profile_completion_percentage":false,"policy_edit":false}</value>
+    </entry>
+</defaultsMap>

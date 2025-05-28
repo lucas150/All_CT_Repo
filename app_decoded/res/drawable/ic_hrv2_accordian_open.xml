@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="39.0dip" android:width="39.0dip" android:viewportWidth="39.0" android:viewportHeight="39.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$ic_hrv2_accordian_open__0" android:pathData="M10,3L29,3A6,6 0,0 1,35 9L35,28A6,6 0,0 1,29 34L10,34A6,6 0,0 1,4 28L4,9A6,6 0,0 1,10 3z" />
+    <path android:fillColor="#00000000" android:pathData="M15,22.25L20.211,16 25,22.25" android:strokeColor="#ff4c4c4c" android:strokeWidth="1.875" android:strokeLineCap="round" android:strokeLineJoin="round" />
+</vector>

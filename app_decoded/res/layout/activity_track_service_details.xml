@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/main_bg_grey" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include_toolbar" layout="@layout/toolbar_layout" />
+    <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_12dp" android:layout_marginEnd="@dimen/dimen_12dp" app:cardCornerRadius="@dimen/_8dp" app:cardUseCompatPadding="true">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingTop="@dimen/dimen_16dp" android:paddingBottom="@dimen/dimen_18dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_16dp" android:paddingEnd="@dimen/dimen_16dp">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_19sp" android:textColor="@color/black" android:id="@id/txt_resolution_type" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Onboarding-Hard copy not received" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginEnd="@dimen/dimen_20dp" />
+                <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/black_opacity70" android:id="@id/txt_request_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp">
+                <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/request_no" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_15dp" />
+                <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/status_without_semicolon" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_15dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp">
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_case_id" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginEnd="@dimen/dimen_15dp" />
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_case_status" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="-" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_15dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp">
+                <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/category" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_15dp" />
+                <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/sub_category" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_15dp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp">
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_category" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginEnd="@dimen/dimen_15dp" />
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_sub_category" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="-" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_15dp" />
+            </LinearLayout>
+            <View android:id="@id/viewLine" android:background="@color/dots_inactive" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="@dimen/dimen_25dp" />
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:id="@id/lblComments" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp" android:text="@string/comments" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity70" android:id="@id/txt_comment" android:background="@drawable/hr_dashboard_value_empty_bg" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_16dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_12dp" android:paddingEnd="@dimen/dimen_12dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

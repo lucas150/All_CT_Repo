@@ -1,0 +1,268 @@
+.class public final Lcom/google/android/gms/ads/identifier/zzc;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-ads-identifier@@17.1.0"
+
+
+# direct methods
+.method public static final zza(Ljava/lang/String;)V
+    .locals 6
+
+    const-string v0, ". "
+
+    const-string v1, "HttpUrlPinger"
+
+    const/16 v2, 0x107
+
+    .line 1
+    :try_start_0
+    invoke-static {v2}, Lcom/google/android/gms/internal/ads_identifier/zzi;->zzb(I)V
+
+    .line 2
+    new-instance v2, Ljava/net/URL;
+
+    invoke-direct {v2, p0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+
+    .line 3
+    invoke-virtual {v2}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object v2
+
+    .line 4
+    check-cast v2, Ljava/net/HttpURLConnection;
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 5
+    :try_start_1
+    invoke-static {v2}, Lcom/appdynamics/eumagent/runtime/InstrumentationCallbacks;->requestAboutToBeSent(Ljava/net/URLConnection;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I
+
+    move-result v3
+
+    invoke-static {v2}, Lcom/appdynamics/eumagent/runtime/InstrumentationCallbacks;->requestHarvestable(Ljava/net/URLConnection;)V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    const/16 v4, 0xc8
+
+    if-lt v3, v4, :cond_0
+
+    const/16 v4, 0x12c
+
+    if-lt v3, v4, :cond_1
+
+    .line 6
+    :cond_0
+    :try_start_3
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x41
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Received non-success response code "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v3, " from pinging URL: "
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 7
+    :cond_1
+    :try_start_4
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->disconnect()V
+    :try_end_4
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    .line 10
+    invoke-static {}, Lcom/google/android/gms/internal/ads_identifier/zzi;->zza()V
+
+    return-void
+
+    :catch_0
+    move-exception v3
+
+    .line 5
+    :try_start_5
+    invoke-static {v2, v3}, Lcom/appdynamics/eumagent/runtime/InstrumentationCallbacks;->networkError(Ljava/net/URLConnection;Ljava/io/IOException;)V
+
+    throw v3
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :catchall_0
+    move-exception v3
+
+    .line 7
+    :try_start_6
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    .line 8
+    throw v3
+    :try_end_6
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_6 .. :try_end_6} :catch_3
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
+    .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    :catchall_1
+    move-exception p0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v2
+
+    goto :goto_0
+
+    :catch_2
+    move-exception v2
+
+    .line 9
+    :goto_0
+    :try_start_7
+    invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x1b
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Error while pinging URL: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v1, p0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    .line 10
+    invoke-static {}, Lcom/google/android/gms/internal/ads_identifier/zzi;->zza()V
+
+    return-void
+
+    :catch_3
+    move-exception v2
+
+    .line 11
+    :try_start_8
+    invoke-virtual {v2}, Ljava/lang/IndexOutOfBoundsException;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x20
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Error while parsing ping URL: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v1, p0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+
+    .line 10
+    invoke-static {}, Lcom/google/android/gms/internal/ads_identifier/zzi;->zza()V
+
+    return-void
+
+    :goto_1
+    invoke-static {}, Lcom/google/android/gms/internal/ads_identifier/zzi;->zza()V
+
+    .line 12
+    throw p0
+.end method

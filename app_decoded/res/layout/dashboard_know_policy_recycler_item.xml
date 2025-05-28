@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/white" android:layout_width="@dimen/dimen_273dp" android:layout_height="@dimen/dimen_120.6dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_10dp">
+        <ImageView android:id="@id/img_icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/know_your_policy_one" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/text_19.2sp" android:textColor="@color/brown" android:id="@id/txt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_6dp" android:text="Emergency" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_13dp" />
+        <TextView android:textSize="@dimen/txt_size_25sp" android:textColor="@color/brown" android:id="@id/txt_title_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_0dp" android:text="Evacuation" android:layout_below="@id/txt_title" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_13dp" />
+        <TextView android:textSize="@dimen/text_11.5sp" android:textColor="@color/black_opacity60" android:gravity="center|left" android:id="@id/txt_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="Emergency" android:layout_below="@id/txt_title_2" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_13dp" android:layout_marginEnd="@dimen/dimen_10dp" />
+    </RelativeLayout>
+</LinearLayout>

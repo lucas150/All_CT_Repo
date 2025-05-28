@@ -1,0 +1,44 @@
+.class Lcom/facebook/stetho/dumpapp/UnexpectedFrameException;
+.super Lcom/facebook/stetho/dumpapp/DumpappFramingException;
+.source "UnexpectedFrameException.java"
+
+
+# direct methods
+.method public constructor <init>(BB)V
+    .locals 2
+
+    .line 14
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Expected \'"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    const-string v0, "\', got: \'"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    const-string p2, "\'"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/facebook/stetho/dumpapp/DumpappFramingException;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method

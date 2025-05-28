@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparentcolor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/rl_recycler" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/txt_load_results">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_our_network" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_35dp" android:layout_alignParentBottom="false" android:layout_alignParentStart="false" />
+        <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/brown" android:gravity="center" android:id="@id/text_list_length" android:background="@color/white" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_map" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@id/map" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_9.6dp" android:layout_marginTop="@dimen/dimen_9.6dp" android:layout_marginRight="@dimen/dimen_8.6dp" android:layout_marginBottom="@dimen/dimen_9.6dp" />
+    </RelativeLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" shimmer:shimmer_duration="500">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <TextView android:gravity="center" android:id="@id/text_noresultfound" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" android:text="@string/no_data_our_network" android:layout_centerInParent="true" />
+    <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="center" android:id="@id/txt_load_results" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="Loading results.." android:layout_above="@id/progress_bar" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <ProgressBar android:gravity="bottom" android:id="@id/progress_bar" android:visibility="gone" android:layout_width="@dimen/dimen_25dp" android:layout_height="@dimen/dimen_25dp" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/dimen_5dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <include android:visibility="gone" layout="@layout/ll_no_internet" />
+    <include android:visibility="gone" layout="@layout/layout_nodata_healthproviders" />
+</RelativeLayout>

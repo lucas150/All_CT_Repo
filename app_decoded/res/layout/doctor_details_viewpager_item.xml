@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/dimen_11dp" android:paddingRight="@dimen/dimen_11dp" android:paddingBottom="@dimen/dimen_19dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/text_19.2sp" android:textColor="@color/black" android:gravity="start" android:id="@id/fees" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="zdfsd" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:gravity="start" android:id="@id/address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="28.0dip" android:text="zdfsd" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <Button android:textSize="@dimen/text_11.6sp" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_view_map" android:background="@drawable/button_bg_orange" android:layout_width="wrap_content" android:layout_height="@dimen/dimen_23.6dp" android:text="VIEW ON MAPS" android:onClick="call" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <fragment android:name="com.google.android.gms.maps.SupportMapFragment" android:id="@id/map" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/edt_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_timings" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_42dp" android:text="Timings" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <View android:background="@color/edt_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_timings" android:background="@color/white" android:paddingLeft="@dimen/dimen_21dp" android:paddingRight="@dimen/dimen_21dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Monday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/monday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Tuesday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/tuesday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Wednesday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/wednesday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Thursday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/thursday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Friday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/friday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Saturday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/saturday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="•" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Sunday" android:layout_weight="0.5" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/sunday" android:paddingLeft="@dimen/dimen_2dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_21dp">
+            <Button android:textSize="@dimen/txt_size_18sp" android:textColor="@color/white" android:gravity="center|left" android:id="@id/btn_contact" android:background="@drawable/button_bg_orange" android:paddingLeft="@dimen/dimen_15dp" android:paddingRight="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="CONTACT" android:drawableRight="@drawable/button_right_arrow_white" android:onClick="call" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:id="@id/text_ext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_6dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

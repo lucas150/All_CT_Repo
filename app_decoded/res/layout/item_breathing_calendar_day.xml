@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:layout_gravity="center" android:id="@id/dayCard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_8dp" app:cardCornerRadius="@dimen/dimen_7dp" app:cardElevation="@dimen/dimen_0dp" app:strokeColor="@color/red2" app:strokeWidth="@dimen/dimen_1dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:background="@color/fitness_type_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/neutral_grey" android:id="@id/dayText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:fontFamily="@font/aneklatin_medium" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <ImageView android:id="@id/imgAir" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_6dp" android:src="@drawable/ic_air_green" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/dayText" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/dotIndicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2dp" android:layout_marginBottom="@dimen/dimen_6dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/imgAir">
+            <View android:id="@id/dot1" android:background="@drawable/dot_background" android:layout_width="@dimen/dimen_2dp" android:layout_height="@dimen/dimen_2dp" />
+            <View android:id="@id/dot2" android:background="@drawable/dot_background" android:layout_width="@dimen/dimen_2dp" android:layout_height="@dimen/dimen_2dp" android:layout_marginStart="1.0dip" />
+            <View android:id="@id/dot3" android:background="@drawable/dot_background" android:layout_width="@dimen/dimen_2dp" android:layout_height="@dimen/dimen_2dp" android:layout_marginStart="1.0dip" />
+            <View android:id="@id/dot4" android:background="@drawable/dot_background" android:layout_width="@dimen/dimen_2dp" android:layout_height="@dimen/dimen_2dp" android:layout_marginStart="1.0dip" />
+            <View android:id="@id/dot5" android:background="@drawable/dot_background" android:layout_width="@dimen/dimen_2dp" android:layout_height="@dimen/dimen_2dp" android:layout_marginStart="1.0dip" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

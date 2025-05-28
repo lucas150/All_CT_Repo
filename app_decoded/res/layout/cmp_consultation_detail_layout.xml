@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="No. Of Visits\nTaken" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_8dp" android:text="Reimbursement\n(Per Month)" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Reimbursement\n(Per Year)" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp">
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/brown" android:id="@id/txt_visit_taken" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="0/2" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/brown" android:id="@id/txt_reimbursement_month" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="INR 200" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/brown" android:id="@id/txt_reimbursement_anual" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="INR 400" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</LinearLayout>

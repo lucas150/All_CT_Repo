@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_17dp" android:paddingEnd="@dimen/dimen_17dp">
+        <de.hdodenhof.circleimageview.CircleImageView android:id="@id/img_profile" android:layout_width="@dimen/dimen_24dp" android:layout_height="@dimen/dimen_24dp" android:src="@drawable/dance" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black" android:id="@id/text_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" android:layout_toEndOf="@id/img_profile" />
+        <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black_opacity90" android:id="@id/txt_timestamp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_1dp" android:layout_below="@id/text_name" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" android:layout_toEndOf="@id/img_profile" />
+    </RelativeLayout>
+    <View android:background="@color/hhs_grey" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" />
+</LinearLayout>

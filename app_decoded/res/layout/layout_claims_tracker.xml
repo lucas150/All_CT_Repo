@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layout_claim_tracker" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <View android:id="@id/view1" android:background="@color/dashboard_activ_green" android:layout_width="3.0dip" android:layout_height="7.0dip" android:layout_marginTop="@dimen/dimen_5dp" />
+            <View android:id="@id/view2" android:background="@color/dashboard_activ_green" android:layout_width="3.0dip" android:layout_height="7.0dip" android:layout_marginTop="@dimen/dimen_5dp" />
+            <ImageView android:id="@id/img_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_claim_progress_completed" />
+            <View android:id="@id/view3" android:background="@color/dashboard_activ_green" android:layout_width="3.0dip" android:layout_height="7.0dip" android:layout_marginTop="@dimen/dimen_5dp" />
+            <View android:id="@id/view4" android:background="@color/dashboard_activ_green" android:layout_width="3.0dip" android:layout_height="7.0dip" android:layout_marginTop="@dimen/dimen_5dp" />
+            <View android:id="@id/view5" android:background="@color/dashboard_activ_green" android:visibility="visible" android:layout_width="3.0dip" android:layout_height="7.0dip" android:layout_marginTop="@dimen/dimen_5dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/layout_row_claim_tracker" android:background="@drawable/round_bg_rect_white" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_12dp" android:layout_marginStart="@dimen/dimen_5dp">
+            <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/claims_tracker_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/claims_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:fontFamily="@font/pf_encoresanspro_book" />
+            <TextView android:textSize="@dimen/text_11sp" android:textStyle="italic" android:textColor="@color/claims_tracker_des" android:id="@id/txt_tracker_comments" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/text_11sp" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

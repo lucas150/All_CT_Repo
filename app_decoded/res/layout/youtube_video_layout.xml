@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_17sp" android:textColor="@color/black" android:id="@id/txt_link_fit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="Link Google Fit" android:layout_marginStart="@dimen/dimen_8dp" />
+    <RelativeLayout android:id="@id/rl_youtube" android:background="@drawable/cmp_dashbaord_scroll_bg" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_10dp" android:paddingStart="@dimen/dimen_5dp" android:elevation="@dimen/dimen_2dp">
+        <ImageView android:id="@id/img_thumbnail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/youtube_thumnail" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_5dp" android:layout_alignBottom="@id/img_thumbnail" android:layout_marginStart="@dimen/dimen_5dp" app:srcCompat="@drawable/ic_youtube_play" />
+        <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/black" android:id="@id/txt_youtube_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/youtube_link_text" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_8dp" android:layout_marginEnd="@dimen/dimen_30dp" android:layout_toEndOf="@id/img_thumbnail" />
+        <TextView android:textSize="@dimen/txt_size_12sp" android:textColor="#ffd3d3d3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="(2:15)" android:layout_below="@id/txt_youtube_title" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_8dp" android:layout_toEndOf="@id/img_thumbnail" />
+    </RelativeLayout>
+</LinearLayout>

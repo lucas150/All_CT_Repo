@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="@color/neutral_grey" android:id="@id/txt_device_category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_30dp" android:drawablePadding="@dimen/dimen_5dp" android:layout_marginStart="@dimen/dimen_8dp" android:layout_marginEnd="@dimen/dimen_8dp" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_main" android:background="@drawable/tracker_item_bg" android:padding="@dimen/dimen_14dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:foreground="?android:selectableItemBackground">
+        <ImageView android:id="@id/img_tracker_logo" android:layout_width="@dimen/dimen_36dp" android:layout_height="@dimen/dimen_36dp" android:layout_marginLeft="13.0dip" android:src="@drawable/ic_nokia" />
+        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/reg_welcome_black" android:id="@id/txt_tracker_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <ImageView android:id="@id/img_info" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_tooltip_info2" android:paddingStart="@dimen/dimen_10dp" />
+        <RelativeLayout android:gravity="center_vertical" android:id="@id/rl_main" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/txt_click_here" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Click here" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_10dp" android:layout_alignParentEnd="true" />
+            <ImageView android:id="@id/img_right_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/ic_right_arrow_table" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:tint="@color/leaderboard_no_calorie_note" />
+            <ImageView android:id="@id/img_tracker_connected" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="20.0dip" android:src="@drawable/ic_healthtracker_connected_copyy" android:layout_toLeftOf="@id/img_right_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

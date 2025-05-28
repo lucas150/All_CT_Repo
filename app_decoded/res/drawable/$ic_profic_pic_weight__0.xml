@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gradient android:angle="0.0" android:type="linear" android:startX="8.506737" android:startY="7.646185" android:endX="8.511473" android:endY="7.723117"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:color="#ffd4e1f4" android:offset="0.0" />
+    <item android:color="#ffd4e1f4" android:offset="0.1717" />
+    <item android:color="#ffd4e1f4" android:offset="0.2" />
+    <item android:color="#ffdae4f4" android:offset="0.2001" />
+    <item android:color="#ffebebf4" android:offset="0.2007" />
+    <item android:color="#fff6f1f4" android:offset="0.2014" />
+    <item android:color="#fffdf4f4" android:offset="0.2023" />
+    <item android:color="#fffff5f4" android:offset="0.205" />
+    <item android:color="#fffff5f4" android:offset="0.2522" />
+    <item android:color="#fffff5f4" android:offset="0.26" />
+    <item android:color="#ffd4e1f4" android:offset="0.26" />
+    <item android:color="#ffd4e1f4" android:offset="0.39740002" />
+    <item android:color="#ffd4e1f4" android:offset="0.42" />
+    <item android:color="#ffdae4f4" android:offset="0.42009997" />
+    <item android:color="#ffebebf4" android:offset="0.42069998" />
+    <item android:color="#fff6f1f4" android:offset="0.42139998" />
+    <item android:color="#fffdf4f4" android:offset="0.42229998" />
+    <item android:color="#fffff5f4" android:offset="0.425" />
+    <item android:color="#fffff5f4" android:offset="0.4894" />
+    <item android:color="#fffff5f4" android:offset="0.5" />
+    <item android:color="#fff9f2f4" android:offset="0.5" />
+    <item android:color="#ffe8ebf4" android:offset="0.50009996" />
+    <item android:color="#ffdde5f4" android:offset="0.5003" />
+    <item android:color="#ffd6e2f4" android:offset="0.50049996" />
+    <item android:color="#ffd4e1f4" android:offset="0.501" />
+    <item android:color="#ffd4e1f4" android:offset="0.7062" />
+    <item android:color="#ffd4e1f4" android:offset="0.74" />
+    <item android:color="#fffff5f4" android:offset="0.741" />
+    <item android:color="#fffff5f4" android:offset="0.8346" />
+    <item android:color="#fffff5f4" android:offset="0.85" />
+    <item android:color="#ffd4e1f4" android:offset="0.851" />
+</gradient>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@id/card_health_returns" android:tag="layout/row_challenge_0" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_15dp" android:foreground="?android:selectableItemBackground" app:cardBackgroundColor="@color/dashboard_health_return_bg" app:cardCornerRadius="@dimen/dimen_10dp" app:cardElevation="@dimen/dimen_5dp" app:layout_constraintTop_toBottomOf="@id/llStepsWalked"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/dimen_15dp" android:paddingTop="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imgThumbnail" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp">
+                <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/challenge_title" android:id="@id/txtTitle" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black_opacity60" android:id="@id/txtDate" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/challenge_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="@string/task_details" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/black" android:id="@id/txtTaskDetail" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black_opacity60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_10dp" android:text="@string/are_you_up_for_task" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/challenge_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/dimen_15dp" android:drawableRight="@drawable/ic_arrow_red" android:drawablePadding="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

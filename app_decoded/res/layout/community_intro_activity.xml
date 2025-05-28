@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:background="@color/black_opacity60" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/dimen_15dp" android:paddingEnd="@dimen/dimen_15dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/community_intro_dialog_two" />
+    <include android:visibility="gone" layout="@layout/community_intro_dialog_one" />
+</RelativeLayout>

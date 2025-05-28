@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity$$ExternalSyntheticLambda3;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Lcom/yubico/yubikit/core/util/Callback;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity$$ExternalSyntheticLambda3;->f$0:Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity$$ExternalSyntheticLambda3;->f$0:Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity;
+
+    check-cast p1, Lcom/yubico/yubikit/android/transport/usb/UsbYubiKeyDevice;
+
+    invoke-virtual {v0, p1}, Lcom/yubico/yubikit/android/ui/YubiKeyPromptActivity;->lambda$onCreate$6$com-yubico-yubikit-android-ui-YubiKeyPromptActivity(Lcom/yubico/yubikit/android/transport/usb/UsbYubiKeyDevice;)V
+
+    return-void
+.end method

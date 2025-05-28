@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/feedback_editext_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar_layout" />
+    <WebView android:textSize="@dimen/text_15.4sp" android:id="@id/webView_privacypolicy_termscondition" android:background="@color/white" android:paddingLeft="@dimen/dimen_15dp" android:paddingTop="@dimen/dimen_20dp" android:paddingRight="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_20dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/tvPrivacyPolicy" android:background="@color/white" android:paddingLeft="@dimen/dimen_15dp" android:paddingTop="@dimen/dimen_20dp" android:paddingRight="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

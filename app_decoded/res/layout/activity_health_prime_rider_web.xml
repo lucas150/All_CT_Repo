@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:gravity="right" android:id="@id/img_toolbar_back" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="35.0dip" android:layout_height="@dimen/dimen_35dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/back_arrow" app:tint="@color/white" />
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/white" android:ellipsize="end" android:id="@id/toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:fontFamily="@font/pf_handbook_pro_bold" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_80dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/img_toolbar_back" app:layout_constraintTop_toTopOf="parent" />
+            <ImageView android:gravity="right" android:id="@id/closeButton" android:paddingLeft="10.0dip" android:visibility="visible" android:layout_width="@dimen/dimen_25dp" android:layout_height="@dimen/dimen_25dp" android:layout_marginRight="@dimen/dimen_20dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_close_white" app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <WebView android:id="@id/webView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</LinearLayout>

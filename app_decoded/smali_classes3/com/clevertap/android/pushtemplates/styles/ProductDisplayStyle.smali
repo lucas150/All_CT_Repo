@@ -1,0 +1,243 @@
+.class public final Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;
+.super Lcom/clevertap/android/pushtemplates/styles/Style;
+.source "ProductDisplayStyle.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0018\u0010\u0007\u001a\u00020\u00082\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0002\u001a\u00020\u0003H\u0014J\"\u0010\u000b\u001a\u0004\u0018\u00010\u000c2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000eH\u0014J\"\u0010\u000f\u001a\u0004\u0018\u00010\u000c2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000eH\u0014J\u0018\u0010\u0010\u001a\u00020\u00082\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u0002\u001a\u00020\u0003H\u0014R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0011"
+    }
+    d2 = {
+        "Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;",
+        "Lcom/clevertap/android/pushtemplates/styles/Style;",
+        "renderer",
+        "Lcom/clevertap/android/pushtemplates/TemplateRenderer;",
+        "extras",
+        "Landroid/os/Bundle;",
+        "(Lcom/clevertap/android/pushtemplates/TemplateRenderer;Landroid/os/Bundle;)V",
+        "makeBigContentRemoteView",
+        "Landroid/widget/RemoteViews;",
+        "context",
+        "Landroid/content/Context;",
+        "makeDismissIntent",
+        "Landroid/app/PendingIntent;",
+        "notificationId",
+        "",
+        "makePendingIntent",
+        "makeSmallContentRemoteView",
+        "clevertap-pushtemplates_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x7,
+        0x1
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private extras:Landroid/os/Bundle;
+
+.field private renderer:Lcom/clevertap/android/pushtemplates/TemplateRenderer;
+
+
+# direct methods
+.method public constructor <init>(Lcom/clevertap/android/pushtemplates/TemplateRenderer;Landroid/os/Bundle;)V
+    .locals 1
+
+    const-string/jumbo v0, "renderer"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "extras"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 15
+    invoke-direct {p0, p1}, Lcom/clevertap/android/pushtemplates/styles/Style;-><init>(Lcom/clevertap/android/pushtemplates/TemplateRenderer;)V
+
+    iput-object p1, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->renderer:Lcom/clevertap/android/pushtemplates/TemplateRenderer;
+
+    iput-object p2, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->extras:Landroid/os/Bundle;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected makeBigContentRemoteView(Landroid/content/Context;Lcom/clevertap/android/pushtemplates/TemplateRenderer;)Landroid/widget/RemoteViews;
+    .locals 8
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "renderer"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 22
+    invoke-virtual {p2}, Lcom/clevertap/android/pushtemplates/TemplateRenderer;->getPt_product_display_linear$clevertap_pushtemplates_release()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p2}, Lcom/clevertap/android/pushtemplates/TemplateRenderer;->getPt_product_display_linear$clevertap_pushtemplates_release()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    goto :goto_1
+
+    .line 25
+    :cond_1
+    new-instance v0, Lcom/clevertap/android/pushtemplates/content/ProductDisplayLinearBigContentView;
+
+    iget-object v4, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->extras:Landroid/os/Bundle;
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0x8
+
+    const/4 v7, 0x0
+
+    move-object v1, v0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-direct/range {v1 .. v7}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayLinearBigContentView;-><init>(Landroid/content/Context;Lcom/clevertap/android/pushtemplates/TemplateRenderer;Landroid/os/Bundle;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    invoke-virtual {v0}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayLinearBigContentView;->getRemoteView$clevertap_pushtemplates_release()Landroid/widget/RemoteViews;
+
+    move-result-object p1
+
+    goto :goto_2
+
+    .line 23
+    :cond_2
+    :goto_1
+    new-instance v0, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearBigContentView;
+
+    iget-object v1, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->extras:Landroid/os/Bundle;
+
+    invoke-direct {v0, p1, p2, v1}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearBigContentView;-><init>(Landroid/content/Context;Lcom/clevertap/android/pushtemplates/TemplateRenderer;Landroid/os/Bundle;)V
+
+    invoke-virtual {v0}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearBigContentView;->getRemoteView$clevertap_pushtemplates_release()Landroid/widget/RemoteViews;
+
+    move-result-object p1
+
+    :goto_2
+    return-object p1
+.end method
+
+.method protected makeDismissIntent(Landroid/content/Context;Landroid/os/Bundle;I)Landroid/app/PendingIntent;
+    .locals 7
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "extras"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0x1c
+
+    .line 47
+    iget-object v6, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->renderer:Lcom/clevertap/android/pushtemplates/TemplateRenderer;
+
+    move-object v1, p1
+
+    move v2, p3
+
+    move-object v3, p2
+
+    .line 45
+    invoke-static/range {v1 .. v6}, Lcom/clevertap/android/pushtemplates/content/PendingIntentFactory;->getPendingIntent(Landroid/content/Context;ILandroid/os/Bundle;ZILcom/clevertap/android/pushtemplates/TemplateRenderer;)Landroid/app/PendingIntent;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected makePendingIntent(Landroid/content/Context;Landroid/os/Bundle;I)Landroid/app/PendingIntent;
+    .locals 7
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "extras"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v4, 0x1
+
+    const/16 v5, 0x14
+
+    .line 36
+    iget-object v6, p0, Lcom/clevertap/android/pushtemplates/styles/ProductDisplayStyle;->renderer:Lcom/clevertap/android/pushtemplates/TemplateRenderer;
+
+    move-object v1, p1
+
+    move v2, p3
+
+    move-object v3, p2
+
+    .line 34
+    invoke-static/range {v1 .. v6}, Lcom/clevertap/android/pushtemplates/content/PendingIntentFactory;->getPendingIntent(Landroid/content/Context;ILandroid/os/Bundle;ZILcom/clevertap/android/pushtemplates/TemplateRenderer;)Landroid/app/PendingIntent;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected makeSmallContentRemoteView(Landroid/content/Context;Lcom/clevertap/android/pushtemplates/TemplateRenderer;)Landroid/widget/RemoteViews;
+    .locals 1
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "renderer"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 18
+    new-instance v0, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearSmallContentView;
+
+    invoke-direct {v0, p1, p2}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearSmallContentView;-><init>(Landroid/content/Context;Lcom/clevertap/android/pushtemplates/TemplateRenderer;)V
+
+    invoke-virtual {v0}, Lcom/clevertap/android/pushtemplates/content/ProductDisplayNonLinearSmallContentView;->getRemoteView$clevertap_pushtemplates_release()Landroid/widget/RemoteViews;
+
+    move-result-object p1
+
+    return-object p1
+.end method

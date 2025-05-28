@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="74.0dip" android:width="74.0dip" android:viewportWidth="74.0" android:viewportHeight="74.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="#ffffffff" android:pathData="M37,37m-37,0a37,37 0,1 1,74 0a37,37 0,1 1,-74 0" android:strokeAlpha="0.3" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M32,32m-29,0a29,29 0,1 1,58 0a29,29 0,1 1,-58 0" android:strokeAlpha="0.3" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M37,37m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0" android:strokeAlpha="0.4" android:fillAlpha="0.4" />
+    <path android:fillColor="#ffffffff" android:pathData="M37,37.0229m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0" />
+    <group>
+        <clip-path android:pathData="M29,29h16v15.5789h-16z" />
+        <path android:fillColor="@drawable/$ic_abhi_circular_logo__0" android:pathData="M36.7005,44.1476L42.6709,40.127L39.222,37.7812L31.5183,42.8744C31.367,42.9602 31.2292,43.0682 31.1094,43.1949C32.3005,43.6113 34.0249,45.0764 36.7005,44.1476Z" />
+        <path android:fillColor="@drawable/$ic_abhi_circular_logo__1" android:pathData="M29.0889,31.2978L42.3748,40.3187L44.3629,38.8416C44.5053,38.7136 44.6273,38.564 44.7244,38.3983C44.9141,37.883 45.1363,36.7445 43.797,36.0524L34.0192,29.4194C34.0192,29.4194 32.6296,28.5805 31.6489,29.2756L29.0889,31.2978Z" />
+        <path android:fillColor="@drawable/$ic_abhi_circular_logo__2" android:pathData="M38.9136,37.9727L42.3743,40.3185L44.3625,38.8415C44.5049,38.7134 44.6269,38.5639 44.724,38.3981C44.9136,37.8828 45.1358,36.7443 43.7966,36.0522L37.041,31.4595L38.9136,37.9727Z" />
+    </group>
+</vector>

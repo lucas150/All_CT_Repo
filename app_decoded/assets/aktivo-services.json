@@ -1,0 +1,16 @@
+{
+ "config_version": 2,
+ "oauth_client": {
+  "client_id": "abhi_prod",
+  "client_secret": "E893FE7F9FE9D720787CEC9A94EA70C3"
+ },
+ "api_config" : {
+    "base_url" : "https://api.mu2.aktivolabs.com",
+    "accept_header_version" : "application/vnd.aktivolabs.v12.0.0+json"
+  },
+ "log_platform_config": {
+  "base_url": "https://56915c95d8454c61be0fc37d7eb7147f.ap-southeast-1.aws.found.io:9243/android_0002_abhi_prod_v5/",
+  "index": "android_0002_abhi_prod_v5",
+  "api_key": "XzJDb2xZZ0JENDdhQjZ6RmVhbW86TnFIbG5nNGlRb2VlWi1RRVM0cUpMZw=="
+ }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/rel_parent_footer"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/toolbar_layout" />
+        <androidx.cardview.widget.CardView android:background="#fff9f9f9" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_header" android:background="@drawable/diagnostics1" android:paddingLeft="20.0dip" android:paddingTop="20.0dip" android:paddingRight="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+                <TextView android:textSize="19.199982sp" android:textColor="@color/black" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Diagnostics and OPD’s" android:lineSpacingExtra="1.8999939sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="12.5sp" android:textColor="#ff494949" android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Description of what diagnostics and OPD's are. Description of what diagnostics and OPD's are." android:lineSpacingExtra="1.0sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_offering_categories_details" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/rel_parent_footer" android:background="#ffdb9089" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <TextView android:textSize="13.399994sp" android:textColor="#e2ffffff" android:id="@id/text_footer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="How do you avail our value added services via the Wellness Saver Card? Tap on card to find out." android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="10.0dip" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/card_img" android:layout_width="60.0dip" android:layout_height="35.0dip" android:src="@drawable/wsc_card" android:scaleType="fitXY" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:background="@color/white" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingEnd="@dimen/dimen_10dp">
+        <RelativeLayout android:id="@id/rl_profile_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginStart="@dimen/dimen_5dp">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@id/img_profile" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" android:src="@drawable/ic_profile_picture_default" app:civ_border_color="@color/white" app:civ_border_width="@dimen/dimen_1.9dp" />
+            <ImageView android:id="@id/imageView2" android:visibility="visible" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_25dp" android:layout_alignRight="@id/img_profile" android:layout_alignParentTop="true" android:layout_alignEnd="@id/img_profile" app:srcCompat="@drawable/ic_edit_community_profile_pic" />
+        </RelativeLayout>
+        <LinearLayout android:id="@id/rl_new_post" android:background="@drawable/hr_montly_ledger_recycler_bg" android:paddingLeft="@dimen/dimen_10dp" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_15dp" android:elevation="@dimen/dimen_1dp">
+            <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity80" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/community_feed_what_are_you_upto" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_light" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_community_status_img" android:layout_marginEnd="@dimen/dimen_13dp" android:layout_alignParentEnd="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_10dp">
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity50" android:id="@id/txt_showing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/community_feed_showing_label" android:fontFamily="@font/pf_handbook_pro_light" android:layout_marginStart="@dimen/dimen_12dp" />
+        <Spinner android:id="@id/spnr_showing_filter" android:background="@drawable/spinner_down_arrow_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/dimen_90dp" android:minHeight="@dimen/dimen_25dp" android:paddingEnd="@dimen/dimen_8dp" />
+    </LinearLayout>
+</LinearLayout>

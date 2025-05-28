@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:background="@color/transparentcolor" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tab_icon" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:src="@drawable/network_doctors" android:layout_marginEnd="@dimen/dimen_4dp" />
+    <TextView android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/tab_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Network Doctors" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

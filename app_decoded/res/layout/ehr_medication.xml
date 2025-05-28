@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/cardView_medications" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" android:elevation="@dimen/dimen_3dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/dimen_3dp" app:cardElevation="@dimen/dimen_2dp" app:cardPreventCornerOverlap="false">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:padding="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black_opacity60" android:id="@id/txt_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Acute" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <ImageView android:id="@id/img_up_down_arrow" android:padding="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="15.0dip" android:src="@drawable/path_3_copy" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_ehr_medications" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

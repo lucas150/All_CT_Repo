@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/text_18sp" android:textColor="@color/black" android:orientation="vertical" android:id="@id/txtLabel" android:tag="layout/row_product_name_0" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/row_disclaimer_0" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imgDisclaimer" android:layout_width="@dimen/dimen_300dp" android:layout_height="wrap_content" android:scaleType="fitXY" android:adjustViewBounds="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/slider_mask_group_1" />
+    <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/refer_btn_share" android:gravity="center_horizontal" android:id="@id/lblDisclaimer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:fontFamily="@font/pf_encoresanspro_regular" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/imgDisclaimer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

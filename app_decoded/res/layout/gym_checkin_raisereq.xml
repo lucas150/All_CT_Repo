@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/ll_main_checkin_raisereq" android:background="@color/black_opacity50" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/gym_details_footer_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginTop="20.0dip" app:srcCompat="@drawable/ic_checkin_failed" />
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="center_horizontal" android:id="@id/text_gym_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:text="@string/gym_fail_text" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_15dp" android:layout_marginEnd="@dimen/dimen_15dp" />
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="@string/gym_raisereq_text" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_22dp" android:layout_marginEnd="@dimen/dimen_22dp" />
+        <Button android:id="@id/btn_raisereq" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="RAISE A REQUEST" style="@style/RedBorderTextView" />
+    </LinearLayout>
+</LinearLayout>

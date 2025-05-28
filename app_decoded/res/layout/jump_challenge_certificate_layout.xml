@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/jump_challenge_certificate_layout_0" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/imgHeaderImage" android:layout_width="@dimen/dimen_100dp" android:layout_height="@dimen/dimen_100dp" />
+        <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/orangeIndicator" android:gravity="center" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:text="CERTIFICATION OF PARTICIPATION" android:fontFamily="@font/pf_encoresanspro_black" android:layout_marginStart="@dimen/dimen_30dp" android:layout_marginEnd="@dimen/dimen_30dp" />
+        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/neutral_grey" android:id="@id/txtAchievement" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Achievement Summary:" android:fontFamily="@font/pf_encoresanspro_regular" />
+        <View android:background="@color/neutral_grey" android:layout_width="165.0dip" android:layout_height="0.25dip" android:layout_marginTop="@dimen/dimen_2dp" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/neutral_grey" android:id="@id/txtYourType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_encoresanspro_regular" />
+                <TextView android:textSize="@dimen/text_34sp" android:textColor="@color/refer_btn_share" android:id="@id/txtJumpsCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_20dp">
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/neutral_grey" android:id="@id/txtYourRank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your Rank" android:fontFamily="@font/pf_encoresanspro_regular" />
+                <TextView android:textSize="@dimen/text_34sp" android:textColor="@color/refer_btn_share" android:id="@id/txtRank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_yellow_bordered_2dp_curve" android:paddingTop="@dimen/dimen_6dp" android:paddingBottom="@dimen/dimen_6dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/neutral_grey" android:id="@id/txtTotalType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_encoresanspro_regular" />
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/orangeIndicator" android:id="@id/txtTotalJumpsCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_bold" android:layout_marginStart="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/refer_btn_share" android:id="@id/txtName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp" android:text="Name Surname" android:fontFamily="@font/pf_encoresanspro_regular" />
+        <View android:background="@color/refer_btn_share" android:layout_width="165.0dip" android:layout_height="@dimen/dimen_1dp" android:layout_marginTop="@dimen/dimen_2dp" />
+        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/neutral_grey" android:gravity="center" android:id="@id/txtDesc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:fontFamily="@font/pf_handbook_pro_light" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imgLeftBanner" android:layout_width="@dimen/dimen_100dp" android:layout_height="@dimen/dimen_100dp" android:layout_marginEnd="@dimen/dimen_6dp" />
+            <ImageView android:id="@id/imgAbhiLogo" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_100dp" android:layout_marginBottom="@dimen/dimen_8dp" />
+            <ImageView android:id="@id/imgRightBanner" android:layout_width="@dimen/dimen_100dp" android:layout_height="@dimen/dimen_100dp" android:layout_marginStart="@dimen/dimen_6dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

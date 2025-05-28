@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_28sp" android:textColor="@color/black" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="Raise and track your claims effortlessly" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <ImageView android:id="@id/img_onboarding_2" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_10dp" android:src="@drawable/ic_onboarding_3" android:layout_weight="2.0" />
+    <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/black_opacity60" android:gravity="center|top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="Experience the comfort of raising a claim in less than a minute. Check the status of your claims and service requests with just one tap" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

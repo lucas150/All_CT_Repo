@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparentcolor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="12.0sp" android:textColor="@color/white" android:ellipsize="end" android:id="@id/tvContent" android:background="@drawable/ic_chart_text_bg" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="@dimen/dimen_5dp" android:maxLines="2" android:layout_centerHorizontal="true" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_15dp" android:paddingEnd="@dimen/dimen_15dp" />
+</RelativeLayout>

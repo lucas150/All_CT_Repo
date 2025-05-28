@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/topLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.viewpager.widget.ViewPager android:id="@id/introRecyclerView" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_80dp" android:layout_marginTop="@dimen/dimen_5dp" />
+    <me.relex.circleindicator.CircleIndicator android:id="@id/indicator" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_20dp" app:ci_drawable="@drawable/button_bg_orange" app:ci_drawable_unselected="@drawable/button_bg_grey" app:ci_height="@dimen/dimen_2dp" app:ci_margin="@dimen/dimen_6dp" app:ci_width="@dimen/dimen_18dp" />
+    <com.adityabirlahealth.insurance.Barcode.camera.CameraSourcePreview android:id="@id/preview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.adityabirlahealth.insurance.Barcode.camera.GraphicOverlay android:id="@id/graphicOverlay" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.adityabirlahealth.insurance.Barcode.camera.CameraSourcePreview>
+</LinearLayout>

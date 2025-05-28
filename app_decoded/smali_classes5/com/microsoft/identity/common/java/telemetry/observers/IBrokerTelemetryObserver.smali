@@ -1,0 +1,6 @@
+.class public interface abstract Lcom/microsoft/identity/common/java/telemetry/observers/IBrokerTelemetryObserver;
+.super Ljava/lang/Object;
+.source "IBrokerTelemetryObserver.java"
+
+# interfaces
+.implements Lcom/microsoft/identity/common/java/telemetry/observers/ITelemetryAggregatedObserver;

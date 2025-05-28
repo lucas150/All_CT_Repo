@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/accelerometer_data_card_0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout android:id="@id/table_heading_layout" android:background="@drawable/box_stroke" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableRow android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:id="@id/xAxisText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/aneklatin_medium" />
+            <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:id="@id/yAxisTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/aneklatin_medium" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/text_16sp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:id="@id/zAxisTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Z-Axis" android:layout_weight="1.0" android:fontFamily="@font/aneklatin_medium" app:layout_constraintStart_toEndOf="@id/yAxisTime" app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

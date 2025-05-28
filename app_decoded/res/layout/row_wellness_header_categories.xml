@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/txt_size_14sp" android:textColor="@color/white" android:gravity="center" android:orientation="vertical" android:id="@id/txtHeader" android:tag="layout/row_wellness_header_categories_0" android:padding="@dimen/dimen_10dp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/dimen_5dp" android:drawablePadding="@dimen/dimen_5dp" android:alpha="0.6" android:fontFamily="@font/pf_handbook_pro_regular"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

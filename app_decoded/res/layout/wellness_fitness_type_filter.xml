@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/fitness_type_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:background="@color/colorPrimary" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/image_back" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" app:srcCompat="@drawable/ic_arrow_back_white" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="16.299988sp" android:textColor="@color/white" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/header_title" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_fitness_type_filter_title" android:lineSpacingExtra="4.799988sp" android:fontFamily="@font/pf_handbook_pro_bold" android:letterSpacing="-0.01" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+        <TextView android:textSize="12.5sp" android:textColor="@color/profile_text_grey" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select a Fitness Type" android:lineSpacingExtra="6.6999817sp" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_gym" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_gym_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" android:src="@drawable/gyms_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GYMS" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_yoga" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_yoga_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" android:src="@drawable/yoga_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="YOGA" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_dance" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_dance_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" app:srcCompat="@drawable/dance_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DANCE" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_kickboxing" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_kickboxing_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" android:src="@drawable/kickboxing_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="KICKBOXING" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_aerobics" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_aerobics_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" app:srcCompat="@drawable/aerobics_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AEROBICS" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_zumba" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_zumba_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" android:src="@drawable/zumba_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ZUMBA" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_pilates" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_pilates_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" android:src="@drawable/pilates_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PILATES" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_crossfit" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ll_crossfit_img" android:padding="5.0dip" android:layout_width="61.399994dip" android:layout_height="61.399994dip" app:srcCompat="@drawable/crossfit_unselected" />
+                <TextView android:textSize="9.599976sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CROSSFIT" android:fontFamily="@font/sfuit_text_regular" android:letterSpacing="-0.01" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

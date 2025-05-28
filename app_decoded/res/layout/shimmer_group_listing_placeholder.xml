@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_below="@id/name" />
+    <View android:background="#ffdddddd" android:layout_width="@dimen/dimen_150dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_below="@id/name" />
+</LinearLayout>

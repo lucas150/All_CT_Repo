@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/fitness_type_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:background="@color/colorPrimary" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/image_back" android:padding="@dimen/dimen_15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" app:srcCompat="@drawable/ic_arrow_back_white" />
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="@dimen/text_16.3sp" android:textColor="@color/white" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/header_title" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/doctor_detail_title" android:lineSpacingExtra="4.799988sp" android:fontFamily="@font/pf_handbook_pro_bold" />
+        </LinearLayout>
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView android:id="@id/nested_scroll" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true" android:isScrollContainer="false"
+      xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/dimen_12dp" android:paddingRight="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <de.hdodenhof.circleimageview.CircleImageView android:layout_gravity="center_horizontal" android:id="@id/image_pic" android:layout_width="@dimen/dimen_70dp" android:layout_height="@dimen/dimen_70dp" android:layout_marginTop="@dimen/dimen_20dp" android:src="@drawable/group_8" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_9dp">
+                <TextView android:textSize="@dimen/text_19.2sp" android:textColor="@color/black" android:gravity="center_horizontal" android:id="@id/doctor_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:lineSpacingExtra="1.8999939sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_3dp">
+                <TextView android:textSize="@dimen/text_12.5sp" android:textColor="@color/profile_text_grey" android:gravity="center_horizontal" android:id="@id/doctor_qualification" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:lineSpacingExtra="3.0sp" android:fontFamily="@font/sfuit_text_regular" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_main_visiting_hospital" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_11dp" android:layout_marginBottom="@dimen/dimen_5dp">
+                <LinearLayout android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/img_upArrowq_visiting_hospital" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_17dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_visiting_hospital" android:layout_weight="0.1" />
+                    <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_visiting_hospital" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="Visiting Hospitals" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <View android:background="@color/edt_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <LinearLayout android:orientation="vertical" android:id="@id/txt_answers_visiting_hospital" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular">
+                    <com.adityabirlahealth.insurance.customViews.PagerSlidingTabStrip android:id="@id/sliding_tab" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" />
+                    <androidx.viewpager.widget.ViewPager android:id="@id/doctor_detail_pager" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_500dp" android:layout_marginTop="@dimen/dimen_20dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <me.relex.circleindicator.CircleIndicator android:id="@id/doctor_detail_indicator" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_48dp" android:layout_marginBottom="@dimen/dimen_5dp" app:ci_drawable="@drawable/button_bg_orange" app:ci_drawable_unselected="@drawable/button_bg_grey" />
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_3dp">
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_main_specialisation" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="showSpecialisation">
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_specialisation" android:layout_weight="0.1" />
+                        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_specialisation" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="Specialization" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <ImageView android:id="@id/img_upArrow_specialisation" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_arrow_down" android:layout_weight="0.1" />
+                    </LinearLayout>
+                    <com.adityabirlahealth.insurance.customViews.ScrollableGridView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_answers_specialisation" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_40dp" android:numColumns="2" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_main_registration" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:onClick="showRegistration">
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/dimen_14dp" android:layout_height="@dimen/dimen_12dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_registration" android:layout_weight="0.1" />
+                        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_registration" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="Registration" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <ImageView android:id="@id/img_upArrow_registration" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_arrow_down" android:layout_weight="0.1" />
+                    </LinearLayout>
+                    <com.adityabirlahealth.insurance.customViews.ScrollableGridView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_answers_registration" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_main_services" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:onClick="showServices">
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_services" android:layout_weight="0.1" />
+                        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_Services" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="Services" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <ImageView android:id="@id/img_upArrow_Services" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_arrow_down" android:layout_weight="0.1" />
+                    </LinearLayout>
+                    <com.adityabirlahealth.insurance.customViews.ScrollableGridView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_answers_Services" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_40dp" android:numColumns="2" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_main_education" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:onClick="showEducation">
+                    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/dimen_13dp" android:layout_height="@dimen/dimen_12dp" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_education" android:layout_weight="0.1" />
+                        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:id="@id/txt_questions_Education" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="Education" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <ImageView android:id="@id/img_upArrow_Education" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/ic_arrow_down" android:layout_weight="0.1" />
+                    </LinearLayout>
+                    <com.adityabirlahealth.insurance.customViews.ScrollableGridView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_answers_Education" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_19.2dp">
+                <TextView android:textSize="@dimen/text_11.5sp" android:textColor="@color/track_claims_landing_bg" android:gravity="center_horizontal" android:id="@id/powered_by" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Powered by Practo" android:fontFamily="@font/pf_handbook_pro_blackitalic" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_20dp">
+                <TextView android:textSize="@dimen/text_9.6sp" android:textColor="@color/track_claims_landing_bg" android:gravity="left" android:id="@id/powered_by_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/powered_by_practo" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

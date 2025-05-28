@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/home_icon" android:id="@id/home" android:title="@string/home" app:cnb_iconColor="@color/cnb_default_badge_color" />
+    <item android:icon="@drawable/heart_01" android:id="@id/wellness" android:title="@string/wellness" app:cnb_iconColor="@color/cnb_default_badge_color" />
+    <item android:icon="@drawable/first_aid" android:id="@id/community" android:title="@string/news_feed" app:cnb_iconColor="@color/cnb_default_badge_color" />
+    <item android:icon="@drawable/file_document" android:id="@id/my_policy" android:title="@string/my_policy" app:cnb_iconColor="@color/cnb_default_badge_color" />
+</menu>

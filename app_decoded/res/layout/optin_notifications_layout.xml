@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_whatsappnotification" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+        <ImageView android:id="@id/img_switch" android:layout_width="@dimen/dimen_30dp" android:layout_height="@dimen/dimen_30dp" app:srcCompat="@drawable/ic_whatsapp" />
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_gravity="center_vertical" android:id="@id/txt_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:text="@string/whatsapp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <Switch android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/switch_whatsapp_notification" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/dimen_10dp" />
+    </LinearLayout>
+    <View android:background="@color/button_text" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginTop="@dimen/dimen_20dp" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_notification" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+        <ImageView android:layout_width="@dimen/dimen_30dp" android:layout_height="@dimen/dimen_30dp" app:srcCompat="@drawable/ic_notifications_24px" />
+        <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/black" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:text="@string/notification" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <Switch android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/switch_notification" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checked="true" android:layout_marginEnd="@dimen/dimen_10dp" />
+    </LinearLayout>
+    <View android:id="@id/view_notification" android:background="@color/button_text" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginTop="@dimen/dimen_20dp" />
+</LinearLayout>

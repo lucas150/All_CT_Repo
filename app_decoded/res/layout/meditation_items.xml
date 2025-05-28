@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@id/partner_card" android:background="@color/fitness_type_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" android:foreground="?android:selectableItemBackground" android:elevation="@dimen/dimen_4dp" app:cardCornerRadius="@dimen/dimen_4dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/layoutCard" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:foreground="?android:selectableItemBackground">
+        <com.adityabirlahealth.insurance.utils.SquareImageView android:id="@id/img_logo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/call_doctor" android:scaleType="fitXY" />
+        <TextView android:textSize="19.199982sp" android:textColor="@color/black" android:gravity="start" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_10dp" />
+        <RelativeLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_10dp">
+            <TextView android:textSize="11.5sp" android:textColor="@color/light_black_vas" android:id="@id/text_disc" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/img_discounts" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

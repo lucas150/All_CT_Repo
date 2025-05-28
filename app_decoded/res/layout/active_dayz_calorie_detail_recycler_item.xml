@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" android:elevation="@dimen/dimen_2dp" app:cardCornerRadius="@dimen/dimen_10dp">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/rl_top_cal_info" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/img_time_record" android:layout_width="@dimen/dimen_14dp" android:layout_height="@dimen/dimen_18dp" android:tint="@color/black" android:layout_centerInParent="true" android:layout_marginStart="@dimen/dimen_18dp" android:layout_alignParentStart="true" app:srcCompat="@drawable/ic_filter_calories" />
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_calorie_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_11dp" android:layout_toEndOf="@id/img_time_record" />
+                <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="calories" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_5dp" android:layout_toEndOf="@id/txt_calorie_value" />
+                <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/wellbeing_faq_row_title" android:id="@id/txt_activity_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_3dp" android:text="Morning Walk" android:layout_below="@id/txt_calorie_value" android:fontFamily="@font/pf_handbook_pro_light" android:layout_marginStart="@dimen/dimen_12dp" android:layout_toEndOf="@id/img_time_record" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+                    <ImageView android:id="@id/img_stopwatch" android:layout_width="@dimen/dimen_15dp" android:layout_height="@dimen/dimen_18dp" android:layout_toStartOf="@id/txt_total_time" app:srcCompat="@drawable/ic_group_1919_ad" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_8dp" android:layout_marginEnd="@dimen/dimen_20dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txt_total_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/wellbeing_faq_row_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_3dp" android:text="Session Time" android:layout_below="@id/img_stopwatch" android:fontFamily="@font/pf_handbook_pro_light" android:layout_marginEnd="@dimen/dimen_20dp" android:layout_alignParentEnd="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <View android:background="@color/grey_6" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" />
+            <LinearLayout android:orientation="horizontal" android:background="@color/white" android:paddingLeft="@dimen/dimen_15dp" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/dimen_110dp" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="left" android:layout_gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:layout_gravity="center" android:id="@id/img_flag" android:visibility="gone" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" app:srcCompat="@drawable/ic_flag" />
+                        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black_opacity70" android:gravity="center" android:layout_gravity="center" android:id="@id/txt_start_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Start Time" android:fontFamily="@font/pf_handbook_pro_light" />
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:gravity="start" android:layout_gravity="start" android:id="@id/txt_start_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:fontFamily="@font/pf_handbook_pro_light" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/dimen_110dp" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="left" android:layout_gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@id/img_check" android:visibility="gone" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" app:srcCompat="@drawable/ic_check_calories" />
+                        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black_opacity70" android:id="@id/txt_end_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="End Time" android:fontFamily="@font/pf_handbook_pro_light" />
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:gravity="start" android:layout_gravity="start" android:id="@id/txt_end_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:fontFamily="@font/pf_handbook_pro_light" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="@dimen/dimen_110dp" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="left" android:layout_gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <ImageView android:id="@id/img_device" android:visibility="gone" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" app:srcCompat="@drawable/ic_smart_watch" />
+                        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black_opacity70" android:id="@id/txt_device" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Device used" android:fontFamily="@font/pf_handbook_pro_light" />
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:gravity="start" android:layout_gravity="start" android:id="@id/txt_device_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:fontFamily="@font/pf_handbook_pro_light" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

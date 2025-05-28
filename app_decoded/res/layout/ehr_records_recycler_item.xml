@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@drawable/cashless_spinner_white_bg" android:layout_width="@dimen/dimen_300dp" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_5dp" android:layout_marginStart="@dimen/dimen_5dp" android:layout_marginEnd="@dimen/dimen_10dp" android:elevation="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_40dp">
+        <RelativeLayout android:background="@drawable/combined_shape_3" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp">
+            <ImageView android:id="@id/img_blood_pressure" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_5dp" app:srcCompat="@drawable/blood_pressure" />
+            <TextView android:textSize="@dimen/text_17.2sp" android:textColor="@color/white" android:id="@id/txt_blood_pressure" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:text="Blood Pressure" android:layout_toRightOf="@id/img_blood_pressure" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </RelativeLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center" android:orientation="horizontal" android:id="@id/recycler_ehr_record_values" android:layout_width="@dimen/dimen_265dp" android:layout_height="@dimen/dimen_40dp" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_8dp" />
+    <androidx.cardview.widget.CardView android:layout_gravity="center_horizontal" android:layout_width="@dimen/dimen_265dp" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_10dp">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/rel_ranges_parent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/colorPrimary" android:id="@id/txt_min" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:text="0" android:layout_weight="1.0" android:layout_alignParentLeft="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/colorPrimary" android:gravity="right" android:layout_gravity="right" android:id="@id/txt_max" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="" android:layout_alignParentRight="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp" android:layout_marginTop="0.0dip">
+                <ProgressBar android:id="@id/ptotal" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_115dp" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" style="@android:style/Widget.ProgressBar.Horizontal" />
+                <androidx.appcompat.widget.AppCompatSeekBar android:id="@id/seekBar" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_90dp" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" android:secondaryProgress="@color/transparentcolor" android:progressDrawable="@color/transparentcolor" android:layout_alignParentTop="true" />
+                <View android:id="@id/view" android:background="@color/white" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_3dp" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" android:layout_below="@id/seekBar" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/text_11.9sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_10dp" android:text="Health assessment done on" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.7sp" android:textColor="@color/black" android:id="@id/txt_test_taken_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_3dp" android:layout_marginBottom="@dimen/dimen_10dp" android:text="20/12/2016" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

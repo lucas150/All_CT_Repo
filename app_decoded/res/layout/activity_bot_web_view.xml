@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/toolbar" layout="@layout/toolbar_layout" />
+    <FrameLayout android:id="@id/container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/toolbar" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@id/floatingActionButton" android:background="@android:drawable/ic_btn_speak_now" android:visibility="invisible" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="9.0dip" android:layout_marginBottom="21.0dip" android:tint="@color/white" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_marginEnd="9.0dip" android:layout_alignParentEnd="true" app:srcCompat="@android:drawable/ic_btn_speak_now" />
+    <RelativeLayout android:id="@id/voiceArea" android:background="@color/cardview_dark_background" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_marginLeft="0.0dip" android:layout_marginBottom="0.0dip" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:layout_marginStart="0.0dip" android:layout_alignParentStart="true">
+        <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/speechTranscription" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:text="Start Speaking..." android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" android:layout_alignParentStart="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</RelativeLayout>

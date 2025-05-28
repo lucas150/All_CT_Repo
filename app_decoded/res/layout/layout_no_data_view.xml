@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@id/cardvw_no_data" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_15dp" android:foreground="?android:selectableItemBackground" app:cardBackgroundColor="@color/error_state" app:cardCornerRadius="@dimen/dimen_10dp" app:cardElevation="@dimen/dimen_2dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/black" android:gravity="center" android:id="@id/lblEmpty" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/no_data" android:fontFamily="@font/pf_handbook_pro_regular" style="@style/EmptyResults" />
+</androidx.cardview.widget.CardView>

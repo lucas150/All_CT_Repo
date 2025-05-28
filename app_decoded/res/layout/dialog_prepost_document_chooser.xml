@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/bg_bottom_curve" android:paddingTop="@dimen/dimen_20dp" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_2dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_choose_folder" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:src="@drawable/ic_choose_folder" />
+        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black_opacity70" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/folder" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_choose_gallery" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:src="@drawable/ic_choose_gallery" />
+        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black_opacity70" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gallery" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_choose_camera" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:src="@drawable/ic_choose_camera" />
+        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black_opacity70" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/camera" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</LinearLayout>

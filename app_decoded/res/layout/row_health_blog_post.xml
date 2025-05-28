@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:tag="layout/row_health_blog_post_0" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_230dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/_2dp" android:foreground="?android:selectableItemBackground" android:maxHeight="@dimen/dimen_200dp" android:minHeight="@dimen/dimen_170dp" android:elevation="@dimen/dimen_2dp" app:cardBackgroundColor="@color/leaderboard_border_grey" app:cardCornerRadius="@dimen/dimen_10dp" app:cardElevation="@dimen/dimen_2dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/imgThumbnailBg" android:background="@color/black" android:layout_width="fill_parent" android:layout_height="0.0dip" android:scaleType="fitXY" app:layout_constraintHeight_percent="0.6" app:layout_constraintTop_toTopOf="parent" />
+        <ImageView android:id="@id/imgThumbnail" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintHeight_percent="0.6" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/lblLeaderBoard" android:ellipsize="end" android:id="@id/txtTitle" android:tag="binding_1" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="4" android:singleLine="false" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_constraintTop_toBottomOf="@id/imgThumbnail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

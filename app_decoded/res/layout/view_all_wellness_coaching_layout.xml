@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/wellness_coaching_header_layout" />
+        <RelativeLayout android:orientation="vertical" android:id="@id/view_all_section1" android:background="@color/white" android:paddingLeft="12.0dip" android:paddingTop="12.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/arrow_img" android:layout_alignParentLeft="true">
+                <TextView android:textSize="21.099976sp" android:textColor="@color/black" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:text="@string/wellness_coaching_page_section_1_header" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="13.399994sp" android:textColor="@color/brown" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_1_subheader" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_10dp" android:letterSpacing="-0.01" />
+            </LinearLayout>
+            <ImageView android:id="@id/arrow_img" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@drawable/button_black_arrow_onboarding" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingLeft="12.0dip" android:paddingTop="18.0dip" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip">
+            <TextView android:textSize="21.099976sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:text="@string/wellness_coaching_page_section_2_header" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="13.399994sp" android:textColor="@color/profile_text_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_2_subheader" android:fontFamily="@font/pf_handbook_pro_regular" android:letterSpacing="-0.01" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_ask_doctor" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ask_a_dcotor" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_2_1" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_ask_specialist" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ask_a_specialist_hs" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_2_2" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_ask_dietician" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ask_a_dietician" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_2_3" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingLeft="12.0dip" android:paddingTop="18.0dip" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip">
+            <TextView android:textSize="21.099976sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:text="@string/wellness_coaching_page_section_3_header" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="13.399994sp" android:textColor="@color/profile_text_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_3_subheader" android:fontFamily="@font/pf_handbook_pro_regular" android:letterSpacing="-0.01" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_doctor_on_call" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/doctor_on_call" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_3_1" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_counsellor_on_call" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/counsellor_on_call" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_3_2" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/ll_smoke_cessation_program" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/smoking_cessation_program" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wellness_coaching_page_section_3_3" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

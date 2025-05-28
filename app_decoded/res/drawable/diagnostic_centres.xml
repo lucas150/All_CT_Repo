@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="40.0dip" android:width="34.0dip" android:viewportWidth="47.0" android:viewportHeight="53.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000" android:pathData="M5.2,2.76A3.84,3.84 0,0 0,1.36 6.6v36.48a3.84,3.84 0,0 0,3.84 3.84h30.72a3.84,3.84 0,0 0,3.84 -3.84L39.76,6.6a3.84,3.84 0,0 0,-3.84 -3.84L5.2,2.76z" android:strokeColor="#ff6a4742" android:strokeWidth="1.92" android:fillType="evenOdd" />
+    <path android:fillColor="#00000000" android:pathData="M7.12,16.91h8.648l3.899,-5.51 2.877,9.86 3.511,-4.35h8.19" android:strokeColor="#ffda9089" android:strokeWidth="1.92" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillType="evenOdd" />
+    <path android:fillColor="#00000000" android:pathData="M6.64,28.2h16.32M25.84,28.2h8.64M6.64,33h16.32M25.84,33h8.64M6.64,40.68h16.32M25.84,40.68h8.64M35.44,30.6L18.16,30.6M16.24,30.6h-9.6M35.44,36.36L18.16,36.36M16.24,36.36h-9.6" android:strokeColor="#ff6a4742" android:strokeWidth="0.96" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillType="evenOdd" />
+    <path android:fillColor="#ff6a4742" android:pathData="M14.8,0.84L26.32,0.84A2.88,2.88 0,0 1,29.2 3.72L29.2,3.72A2.88,2.88 0,0 1,26.32 6.6L14.8,6.6A2.88,2.88 0,0 1,11.92 3.72L11.92,3.72A2.88,2.88 0,0 1,14.8 0.84z" android:fillType="evenOdd" />
+    <path android:fillColor="#ffffffff" android:pathData="M32.509,37.749m-10.989,0a10.989,10.989 0,1 1,21.978 0a10.989,10.989 0,1 1,-21.978 0" android:strokeColor="#ff6a4742" android:strokeWidth="1.92" android:fillType="evenOdd" />
+    <path android:fillColor="#fff7a500" android:pathData="M36.4,37.8m-6.24,0a6.24,6.24 0,1 1,12.48 0a6.24,6.24 0,1 1,-12.48 0" android:fillType="evenOdd" />
+    <path android:fillColor="#00000000" android:pathData="M40.24,46.44l5.28,5.28" android:strokeColor="#ff6a4742" android:strokeWidth="1.92" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillType="evenOdd" />
+</vector>

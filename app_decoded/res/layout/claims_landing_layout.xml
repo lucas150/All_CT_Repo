@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/parent" android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar_layout" />
+    <LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/ll_support_claims" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_5dp">
+            <TextView android:textSize="@dimen/text_12.5sp" android:textColor="@color/colorPrimary" android:id="@id/txt_claim" android:background="@color/white" android:paddingLeft="@dimen/dimen_30dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_30dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Claims" android:lineSpacingExtra="4.799988sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_12.5sp" android:textColor="@color/white" android:id="@id/txt_support" android:paddingLeft="@dimen/dimen_30dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_30dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Support" android:lineSpacingExtra="4.799988sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_search_label" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginBottom="@dimen/dimen_10dp" android:text="Use your insurance to pay for your medical expenses" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/claims_support_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp" />
+</LinearLayout>

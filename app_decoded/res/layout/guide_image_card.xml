@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:tag="layout/guide_image_card_0" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_16dp" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+        <LinearLayout android:orientation="vertical" android:id="@id/card" android:padding="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_300dp" android:layout_height="@dimen/dimen_250dp">
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:id="@id/txtDesc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/aneklatin_bold" />
+            <ImageView android:layout_gravity="center" android:id="@id/imgInfo" android:layout_width="wrap_content" android:layout_height="@dimen/dimen_180dp" android:layout_marginTop="@dimen/dimen_5dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="@dimen/dimen_23dp" android:layout_height="@dimen/dimen_23dp" android:src="@drawable/active_dayz_small" />
+        <TextView android:textSize="@dimen/text_19sp" android:textColor="@color/white" android:gravity="center" android:id="@id/txt_calorie_burn" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_active_day_status" android:background="@color/calorie_active_day_earned" android:layout_width="wrap_content" android:layout_height="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_5dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_10dp" android:paddingEnd="@dimen/dimen_10dp" />
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/white" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Burning more than 300 calories in a \nsession gets you an Active Day" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/white" android:gravity="center" android:id="@id/txt_calorie_tracking_from" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Session wise data is available from 15th April 2019" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/text_21sp" android:textColor="@color/black" android:id="@id/txt_your_session" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_13dp" android:text="Your Sessions" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/img_no_session" android:visibility="gone" android:layout_width="@dimen/dimen_45dp" android:layout_height="@dimen/dimen_45dp" android:layout_marginTop="@dimen/dimen_50dp" app:srcCompat="@drawable/ic_no_session" />
+    <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="center" android:id="@id/txt_no_session" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="You did not record any sessions on this day." android:fontFamily="@font/pf_handbook_pro_regular" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/progressBar_calorie_detail" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_calorie_detail" android:padding="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" />
+        <LinearLayout android:orientation="vertical" android:background="@color/bg_color" android:padding="@dimen/dimen_12dp" android:paddingLeft="@dimen/_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <TextView android:textSize="@dimen/dimen_17dp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Note:" android:fontFamily="@font/pf_handbook_pro_bold" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/dimen_17dp" android:id="@id/note1Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1." android:fontFamily="@font/pf_handbook_pro_bold" />
+                <TextView android:textSize="@dimen/dimen_17dp" android:id="@id/note1Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/calorie_message1" android:fontFamily="@font/pf_handbook_pro_bold" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/dimen_17dp" android:id="@id/note2Number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2." android:fontFamily="@font/pf_handbook_pro_bold" />
+                <TextView android:textSize="@dimen/dimen_17dp" android:id="@id/note2Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/calorie_message2" android:fontFamily="@font/pf_handbook_pro_bold" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/dimen_17dp" android:textStyle="bold" android:textColor="@color/black" android:id="@id/txtReadMore" android:paddingLeft="@dimen/_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Read more" android:fontFamily="@font/pf_handbook_pro_bold" />
+        </LinearLayout>
+    </RelativeLayout>
+    <include layout="@layout/ll_no_internet" />
+</LinearLayout>

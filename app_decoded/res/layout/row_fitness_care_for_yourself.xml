@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@id/cardActivDays" android:tag="layout/row_fitness_care_for_yourself_0" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_15dp" android:layout_marginBottom="@dimen/dimen_15dp" android:foreground="?android:selectableItemBackground" app:cardCornerRadius="@dimen/dimen_8dp" app:cardUseCompatPadding="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/dimen_10dp" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/black" android:id="@id/txtTitle" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/black_opacity60" android:id="@id/txtDesc" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <ImageView android:layout_width="@dimen/dimen_0dp" android:layout_height="fill_parent" android:src="@drawable/ic_dietician_banner" android:scaleType="fitXY" android:layout_weight="1.0" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

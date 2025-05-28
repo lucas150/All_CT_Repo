@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:id="@id/topLayout" android:background="@color/colorPrimary" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_alignParentTop="true">
+        <ImageView android:id="@id/image_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_15dp" android:layout_alignParentLeft="true" app:srcCompat="@drawable/ic_arrow_back_white" />
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_10dp" android:layout_toRightOf="@id/image_back"
+          xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@id/img" android:layout_width="@dimen/dimen_48dp" android:layout_height="@dimen/dimen_48dp" android:layout_marginLeft="@dimen/dimen_5dp" android:src="@drawable/default_doctor" android:layout_alignParentLeft="true" app:civ_border_color="@color/white" app:civ_border_width="@dimen/dimen_1.9dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_toRightOf="@id/img">
+                <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/white" android:gravity="left" android:id="@id/title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/white" android:id="@id/desc_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/footerview" android:layout_below="@id/topLayout" />
+    <RelativeLayout android:id="@id/footerview" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <EditText android:textSize="@dimen/txt_size_18sp" android:id="@id/edit_text" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:minHeight="@dimen/dimen_60dp" android:hint="Ask the doctor a question" android:maxLines="3" android:layout_toLeftOf="@id/image_send" style="@style/MyEdittext" />
+        <ImageView android:id="@id/image_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_send" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ProgressBar android:id="@id/progressbar" android:visibility="gone" android:layout_width="@dimen/dimen_30dp" android:layout_height="@dimen/dimen_30dp" android:layout_centerInParent="true" />
+    <TextView android:gravity="center" android:id="@id/textview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_20dp" android:text="No Results Found!" android:layout_centerInParent="true" />
+</RelativeLayout>

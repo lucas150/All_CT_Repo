@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/activity_custom_calendar" android:background="@color/white" android:layout_width="@dimen/dimen_48dp" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="horizontal" android:background="@color/white" android:paddingTop="@dimen/dimen_4dp" android:paddingBottom="@dimen/dimen_4dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textStyle="bold" android:textColor="@color/grey4" android:gravity="center" android:id="@id/day" android:layout_width="@dimen/dimen_0dp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:text="" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_weely" android:background="@color/white" android:padding="@dimen/dimen_2dp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_2dp" android:layout_marginRight="@dimen/dimen_2dp">
+        <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/rl_weekday" android:background="@color/grey_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/image_activeday" android:padding="@dimen/dimen_3dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bitmap" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="@dimen/text_11.5sp" android:textColor="@color/black" android:gravity="center" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp" android:text="" android:fontFamily="@font/pf_handbook_pro_bold" />
+                <TextView android:textSize="@dimen/text_11.5sp" android:textStyle="bold" android:textColor="@color/active_days_brown" android:gravity="center" android:id="@id/steps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="" android:fontFamily="@font/pf_handbook_pro_bold" />
+                <TextView android:textSize="@dimen/text_11.5sp" android:textStyle="bold" android:textColor="@color/active_days_brown" android:gravity="center" android:id="@id/calories" android:paddingBottom="@dimen/dimen_40dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:text="" android:fontFamily="@font/pf_handbook_pro_bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

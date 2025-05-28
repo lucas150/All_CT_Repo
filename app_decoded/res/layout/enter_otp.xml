@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/toolbar_layout" />
+    <ScrollView android:id="@id/scroll_view" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ll_footer" android:layout_below="@id/toolbar"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/text_21sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="30.0dip" android:text="@string/we_have_sent_otp" android:fontFamily="@font/pf_handbook_pro_bold" />
+            <TextView android:gravity="center" android:id="@id/txt_otp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="Enter OTP" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:weightSum="4.0">
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                    <EditText android:gravity="center" android:id="@id/edt_otp_1" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                    <View android:id="@id/view_underline_1" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                    <EditText android:gravity="center" android:id="@id/edt_otp_2" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                    <View android:id="@id/view_underline_2" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                    <EditText android:gravity="center" android:id="@id/edt_otp_3" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                    <View android:id="@id/view_underline_3" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                    <EditText android:gravity="center" android:id="@id/edt_otp_4" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" android:imeOptions="actionDone" />
+                    <View android:id="@id/view_underline_4" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <TextView android:gravity="center" android:id="@id/txt_resend_otp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="@string/didnt_recieve_otp" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/ll_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_alignParentBottom="true">
+        <TextView android:id="@id/text_next" android:layout_width="fill_parent" android:text="@string/button_submit" style="@style/GreyBgTextView" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/light_blue" android:layout_width="@dimen/dimen_100dp" android:layout_height="@dimen/dimen_100dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.399994sp" android:textColor="@color/white" android:gravity="center" android:layout_width="100.0dip" android:layout_height="100.0dip" android:text="Month" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    <View android:background="@color/burn_color" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+    <View android:background="@color/burn_color" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</RelativeLayout>

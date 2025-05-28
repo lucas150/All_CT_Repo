@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/black" android:id="@id/txtCam" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Take Photo" />
+    <View android:id="@id/vwAccSeperator" android:background="#ffe3e3e3" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+    <TextView android:textColor="@color/black" android:id="@id/txtGallery" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Choose from Gallery" />
+    <View android:id="@id/vwSep" android:background="#ffe3e3e3" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+    <TextView android:textColor="@color/black" android:id="@id/txtRemove" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Remove Photo" />
+</LinearLayout>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawableEnd="@drawable/ic_spinner_dropdown" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_20dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

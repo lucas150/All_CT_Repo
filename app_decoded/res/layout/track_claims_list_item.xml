@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_track_claims_list" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:id="@id/txt_id_label" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID: " android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_20dp" />
+        <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:id="@id/txt_claim_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 1110492384239042" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_11.5sp" android:textColor="@color/black_opacity40" android:gravity="end" android:id="@id/txt_intimation_date" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:text="01/12/18" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <ImageView android:id="@id/img_right_arrow" android:paddingTop="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_right_arrow_table" android:layout_marginEnd="@dimen/dimen_10dp" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp">
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:id="@id/txt_claim_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:text="-," android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/hhs_yellow" android:id="@id/txt_claim_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_3dp" android:text="IN -" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</LinearLayout>

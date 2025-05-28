@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/pat_red" android:scaleType="fitXY" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_rate_us_profile" />
+    </RelativeLayout>
+    <TextView android:textSize="23.0sp" android:textColor="@color/black" android:gravity="center" android:id="@id/txt_rate_us" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="Love us? Rate us." android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="15.399994sp" android:textColor="@color/black_opacity60" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="25.0dip" android:text="Help others get more Activ by rating us on the App store." android:fontFamily="@font/pf_handbook_pro_regular" />
+    <Button android:textSize="19.199982sp" android:textColor="@color/white" android:gravity="center|left" android:id="@id/btn_open_store" android:background="@drawable/button_bg_orange" android:paddingLeft="15.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="40.0dip" android:text="RATE ACTIV HEALTH" android:drawableRight="@drawable/button_right_arrow_white" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

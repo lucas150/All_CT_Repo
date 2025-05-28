@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include" layout="@layout/toolbar_layout" />
+    <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/grey_fitness_center" android:id="@id/text_date_range" android:background="@drawable/round_bg_rect_white" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_14dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/text_15sp" android:text="Select a date range" android:layout_below="@id/include" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_12dp" android:layout_marginStart="@dimen/dimen_15dp" android:layout_marginEnd="@dimen/dimen_15dp" android:elevation="@dimen/dimen_2dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_pastcheckin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:layout_below="@id/text_date_range" />
+    <include android:id="@id/include_location_layout" android:visibility="gone" layout="@layout/gym_qr_location_layout" />
+    <include android:id="@id/include_gym_loading" android:visibility="gone" layout="@layout/gym_checkin_loading_layout" />
+    <include android:id="@id/include_gym_success" android:visibility="gone" layout="@layout/gym_sucessful_checkin" />
+    <include android:id="@id/include_gym_fail" android:visibility="gone" layout="@layout/gym_failure_checkin" />
+    <include android:id="@id/include_gym_raisereq" android:visibility="gone" layout="@layout/gym_checkin_raisereq" />
+    <FrameLayout android:id="@id/frameQRScanner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/include">
+        <com.budiyev.android.codescanner.CodeScannerView android:id="@id/scanner_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:autoFocusButtonColor="@android:color/white" app:autoFocusButtonVisible="true" app:flashButtonColor="@android:color/white" app:flashButtonVisible="true" app:frameAspectRatioHeight="1.0" app:frameAspectRatioWidth="1.0" app:frameColor="@android:color/white" app:frameCornersRadius="0.0dip" app:frameCornersSize="50.0dip" app:frameSize="0.75" app:frameThickness="2.0dip" app:frameVerticalBias="0.5" app:maskColor="#77000000" />
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_w" android:tag="layout/graphview_weekly_0" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_300dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" android:layout_above="@id/rl_images_w">
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal7_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal6_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="7" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal6_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal5_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="6" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal5_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal4_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="5" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal4_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal3_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="4" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal3_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal2_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="3" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal2_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal1_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="2" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal1_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_above="@id/ll_horizontal0_w">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="1" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/ll_horizontal0_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_25dp" android:layout_alignParentBottom="true">
+            <TextView android:textSize="@dimen/text_11.5" android:textColor="@color/grey4" android:gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="wrap_content" android:text="0" />
+            <View android:background="@color/grey4" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_marginLeft="@dimen/dimen_4dp" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/ll_vertical_w" android:paddingBottom="@dimen/dimen_0dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/ll_horizontal0_w">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.daasuu.bl.BubbleLayout android:id="@id/bubble_s_w" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_30dp" android:layout_marginLeft="@dimen/dimen_55dp" android:layout_marginTop="@dimen/dimen_12dp" android:layout_marginBottom="@dimen/dimen_10dp" app:bl_arrowDirection="bottom_center" app:bl_arrowHeight="@dimen/dimen_8dp" app:bl_arrowPosition="@dimen/dimen_16dp" app:bl_arrowWidth="@dimen/dimen_8dp" app:bl_bubbleColor="@color/graph_tooltip" app:bl_cornersRadius="@dimen/dimen_4dp" app:bl_strokeWidth="@dimen/dimen_0dp">
+                    <TextView android:textSize="@dimen/text_12.3" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/text_tooltip_steps_w" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </com.daasuu.bl.BubbleLayout>
+                <ImageView android:id="@id/image_stepswalked_w" android:background="@color/active_days_peach" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_0dp" android:layout_marginLeft="@dimen/dimen_50dp" android:layout_marginTop="@dimen/dimen_1dp" android:layout_marginBottom="@dimen/dimen_1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.daasuu.bl.BubbleLayout android:id="@id/bubble_g_w" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_30dp" android:layout_marginLeft="@dimen/dimen_55dp" android:layout_marginTop="@dimen/dimen_12dp" android:layout_marginBottom="@dimen/dimen_10dp" app:bl_arrowDirection="bottom_center" app:bl_arrowHeight="@dimen/dimen_8dp" app:bl_arrowPosition="@dimen/dimen_16dp" app:bl_arrowWidth="@dimen/dimen_8dp" app:bl_bubbleColor="@color/graph_tooltip" app:bl_cornersRadius="@dimen/dimen_4dp" app:bl_strokeWidth="@dimen/dimen_0dp">
+                    <TextView android:textSize="@dimen/text_12.3" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/text_tooltip_gymcheckins_w" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </com.daasuu.bl.BubbleLayout>
+                <ImageView android:id="@id/image_gymcheckins_w" android:background="@color/active_days_brown" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_0dp" android:layout_marginLeft="@dimen/dimen_50dp" android:layout_marginTop="@dimen/dimen_1dp" android:layout_marginBottom="@dimen/dimen_1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.daasuu.bl.BubbleLayout android:id="@id/bubble_c_w" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_30dp" android:layout_marginLeft="@dimen/dimen_55dp" android:layout_marginTop="@dimen/dimen_12dp" android:layout_marginBottom="@dimen/dimen_10dp" app:bl_arrowDirection="bottom_center" app:bl_arrowHeight="@dimen/dimen_8dp" app:bl_arrowPosition="@dimen/dimen_16dp" app:bl_arrowWidth="@dimen/dimen_8dp" app:bl_bubbleColor="@color/graph_tooltip" app:bl_cornersRadius="@dimen/dimen_4dp" app:bl_strokeWidth="@dimen/dimen_0dp">
+                    <TextView android:textSize="@dimen/text_12.3" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/text_tooltip_calories_w" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </com.daasuu.bl.BubbleLayout>
+                <ImageView android:id="@id/image_caloriedburned_w" android:background="@color/active_days_yellow" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_0dp" android:layout_marginLeft="@dimen/dimen_50dp" android:layout_marginTop="@dimen/dimen_1dp" android:layout_marginBottom="@dimen/dimen_1dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/rl_images_w" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/image_circle_steps" android:padding="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_70dp" android:src="@drawable/ic_activdayz_steps" />
+        <ImageView android:id="@id/image_circle_gym" android:padding="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_50dp" android:src="@drawable/ic_activdayz_gymcheckin" />
+        <ImageView android:id="@id/image_circle_calories" android:padding="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_50dp" android:src="@drawable/ic_activdayz_calories" />
+    </LinearLayout>
+</RelativeLayout>

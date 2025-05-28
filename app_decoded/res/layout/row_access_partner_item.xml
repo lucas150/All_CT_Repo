@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/row_access_partner_item_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_16dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/imgPartnerIcon" android:layout_width="wrap_content" android:layout_height="@dimen/dimen_70dp" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black" android:gravity="center_horizontal" android:id="@id/partnerName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pf_encoresanspro_regular" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/imgPartnerIcon" />
+</androidx.constraintlayout.widget.ConstraintLayout>

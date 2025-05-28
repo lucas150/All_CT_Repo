@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:tag="layout/toolbar_layout_0" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_scrollFlags="scroll" app:popupTheme="@style/ThemeOverlay.MyTheme" app:theme="@style/MyToolbarStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="?android:actionBarSize">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/img_toolbar_back" android:paddingLeft="@dimen/dimen_10dp" android:paddingTop="@dimen/dimen_10dp" android:paddingRight="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:foreground="?android:selectableItemBackground" android:layout_centerInParent="true" android:layout_alignParentStart="true" app:srcCompat="@drawable/ic_arrow_back_white" />
+        <TextView android:textSize="@dimen/text_16.3sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:fontFamily="@font/pf_handbook_pro_bold" />
+        <ImageView android:id="@id/health_return_tutorial" android:visibility="gone" android:layout_width="@dimen/dimen_35dp" android:layout_height="@dimen/dimen_35dp" android:scaleType="fitXY" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/dimen_10dp" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_info_white" />
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>

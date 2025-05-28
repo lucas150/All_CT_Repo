@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_9.6dp" android:weightSum="5.3" android:layout_marginStart="@dimen/dimen_9.6dp" android:layout_marginEnd="@dimen/dimen_11.5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/round_bg_rect_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="5.3">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@id/image_pic" android:paddingLeft="@dimen/dimen_15dp" android:paddingRight="@dimen/dimen_15dp" android:layout_width="@dimen/dimen_70dp" android:layout_height="@dimen/dimen_70dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/list_item_main_row" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.5">
+            <TextView android:textSize="@dimen/text_19.2sp" android:textColor="@color/black" android:id="@id/text_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/our_network_subtitle" android:lineSpacingExtra="1.8999939sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/address_color" android:id="@id/text_add" android:paddingBottom="@dimen/dimen_2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/our_network_subtitle" android:fontFamily="@font/sfuit_text_regular" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/text_fees" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/black" android:id="@id/text_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/our_network_subtitle" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/location_img" android:layout_width="@dimen/dimen_10dp" android:layout_height="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_1dp" android:src="@drawable/location_pin_black" />
+                <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/black" android:id="@id/text_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/our_network_subtitle" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingTop="@dimen/dimen_8dp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.8">
+            <ImageView android:id="@id/map_button" android:padding="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_hs_location" />
+            <ImageView android:id="@id/call_button" android:padding="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_hs_call" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/dis_claimer" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_11.5sp" android:textColor="@color/track_claims_landing_bg" android:id="@id/powered_by" android:padding="@dimen/dimen_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_blackitalic" />
+        <TextView android:textSize="@dimen/text_9.6sp" android:textColor="@color/track_claims_landing_bg" android:id="@id/powered_by_content" android:padding="@dimen/dimen_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="@dimen/dimen_50dp" android:layout_marginEnd="@dimen/dimen_50dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_header" android:background="@drawable/round_bg_top_red" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_90dp">
+        <ImageView android:id="@id/image_header" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" app:srcCompat="@drawable/ic_gym_visits" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/round_bg_bottom_white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_23sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/text_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" android:text="@string/gymcheckin_title" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" android:text="@string/gymcheckin_text" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_16dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_16dp">
+            <RelativeLayout android:id="@id/rl_gymcheckin" android:background="@color/colorPrimary" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_60dp" android:layout_marginTop="@dimen/dimen_16dp">
+                <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/white" android:id="@id/text_rateus" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_12dp" android:text="@string/gymcheckin_button" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_12dp" android:layout_alignParentStart="true" />
+                <ImageView android:id="@id/image_rateus_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_12dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/dimen_12dp" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_arrow_right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/rl_other" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp">
+                <TextView android:id="@id/text_nodata_found" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_30dp" android:text="Scanning..." android:layout_centerHorizontal="true" />
+                <Button android:textColor="@color/white" android:id="@id/btRetry" android:background="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" android:layout_marginTop="@dimen/dimen_40dp" android:text="Retry" android:layout_below="@id/text_nodata_found" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

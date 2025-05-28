@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp" android:layout_marginTop="@dimen/dimen_4dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:layout_gravity="center" android:id="@id/cardView" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dimen_4dp" android:divider="@android:color/transparent" android:dividerHeight="0.0px" android:elevation="@dimen/dimen_1dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/dimen_4dp" app:cardElevation="@dimen/dimen_1dp" app:cardPreventCornerOverlap="false">
+        <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/wellbeing_faq_row_title" android:gravity="center" android:layout_gravity="center" android:id="@id/textAnswer" android:background="@drawable/round_bg_rect_white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fontFamily="@font/pf_handbook_pro_bold" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

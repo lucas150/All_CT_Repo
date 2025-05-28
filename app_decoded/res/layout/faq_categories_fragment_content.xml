@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/grey_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.adityabirlahealth.insurance.customViews.PagerSlidingTabStrip android:id="@id/faq_sliding_tab" android:background="@color/grey_bg" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" />
+    <View android:background="@color/grey_bg" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_10dp" />
+    <androidx.viewpager.widget.ViewPager android:id="@id/faq_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:orientation="vertical" android:id="@id/cordinator_layout" android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shimmer="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" android:id="@id/appbarLayout" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout android:layout_gravity="center" android:id="@id/collapsingToolbar" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content" app:contentScrim="?colorPrimary" app:expandedTitleMarginBottom="20.0dip" app:expandedTitleMarginEnd="64.0dip" app:expandedTitleMarginStart="48.0dip" app:expandedTitleTextAppearance="@android:color/transparent" app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_collapseMode="parallax">
+                <RelativeLayout android:id="@id/llGroupData" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/image_group_detail" android:layout_width="fill_parent" android:layout_height="240.0dip" android:scaleType="centerCrop" />
+                    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:background="@color/bgCommmunityDetail" android:paddingLeft="@dimen/dimen_18dp" android:paddingRight="15.099976dip" android:paddingBottom="20.199982dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentBottom="true">
+                        <TextView android:textSize="@dimen/text_26sp" android:textColor="@color/white" android:id="@id/text_group_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="-" android:fontFamily="@font/pf_handbook_pro_bold" />
+                        <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/white" android:id="@id/text_group_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <TextView android:textSize="@dimen/btn_text_size_20sp" android:textColor="@color/white" android:id="@id/text_total_members_posts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" />
+                        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <TextView android:id="@id/text_join" android:background="@color/colorPrimary" android:paddingRight="@dimen/dimen_19dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_marginTop="@dimen/dimen_7dp" android:layout_marginBottom="@dimen/dimen_0dp" android:text="join group" android:layout_marginStart="@dimen/dimen_0dp" style="@style/YellowBgTextView" />
+                            <ProgressBar android:layout_gravity="center" android:id="@id/prgBar" android:background="#ffc7222a" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:indeterminate="true" android:indeterminateTint="@color/yellow" android:indeterminateTintMode="src_atop" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <com.facebook.shimmer.ShimmerFrameLayout android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:shimmer_duration="500">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <include layout="@layout/shimmer_community_group_detail_header" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/llJoinGroup" android:background="@color/white" android:padding="@dimen/dimen_15dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_marginTop="@dimen/dimen_10dp" android:layout_below="@id/llGroupData" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                    <TextView android:textSize="@dimen/text_19sp" android:textColor="@color/black" android:layout_gravity="center" android:id="@id/textNoData" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="@string/community_group_post" android:drawableTop="@drawable/ic_community_postlock" android:drawablePadding="@dimen/dimen_10dp" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+            </RelativeLayout>
+            <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" android:elevation="10.0dip" app:layout_collapseMode="pin" app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/shimmer_view_container_recycler" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:shimmer_duration="500">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+            <include layout="@layout/shimmer_feeds_recycler_placeholder" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <ProgressBar android:layout_gravity="center" android:id="@id/progress_bar_group" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_200dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_group_posts" android:visibility="gone" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2dp" android:fadeScrollbars="true" app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <ProgressBar android:id="@id/progress_bar" android:background="@color/white_opacity65" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" app:layout_anchor="@id/recycler_group_posts" app:layout_anchorGravity="bottom" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

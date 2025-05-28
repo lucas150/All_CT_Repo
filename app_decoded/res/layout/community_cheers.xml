@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include" layout="@layout/toolbar_layout" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_cheers" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/include" />
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/include" shimmer:shimmer_duration="500">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_no_data" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:src="@drawable/ic_test_expired" />
+        <TextView android:textSize="@dimen/text_19sp" android:textColor="@color/black" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No data to show" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <ProgressBar android:id="@id/progress_bar" android:background="@color/white_opacity65" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</RelativeLayout>

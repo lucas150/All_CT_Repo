@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_report_comment" android:id="@id/report_item" android:title="Report" />
+    <item android:icon="@drawable/ic_delete_comment" android:id="@id/delete_item" android:title="Delete" />
+    <item android:icon="@drawable/ic_edit_comment" android:id="@id/edit_item" android:title="Edit" />
+</menu>

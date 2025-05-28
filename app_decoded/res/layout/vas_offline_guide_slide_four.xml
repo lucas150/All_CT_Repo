@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="19.199982sp" android:textColor="#ff6e4c47" android:gravity="center_horizontal" android:id="@id/text_title" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="Anything goes wrong, we are here to help." android:layout_weight="0.6" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.3">
+        <ImageView android:layout_gravity="center" android:id="@id/image_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_undraw_online_world_mc_1_t" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_footer" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="10.0dip" android:layout_weight="1.2" android:layout_below="@id/img_line" android:layout_centerHorizontal="true">
+        <TextView android:textSize="19.199982sp" android:textColor="#ff2a2a2a" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="  Write to us at\nabhicl.vas@adityabirlacapital.com " android:lineSpacingExtra="12.5sp" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <androidx.cardview.widget.CardView android:layout_gravity="center_horizontal" android:id="@id/card_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:elevation="4.0dip">
+            <LinearLayout android:gravity="center" android:paddingLeft="12.0dip" android:paddingTop="7.0dip" android:paddingRight="12.0dip" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center" android:layout_width="24.0dip" android:layout_height="16.0dip" app:srcCompat="@drawable/ic_mail" />
+                <TextView android:textSize="17.299988sp" android:textColor="#ff494949" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="Email Us" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

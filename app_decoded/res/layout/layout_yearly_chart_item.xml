@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:padding="@dimen/dimen_15dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/filter_text" android:id="@id/txt_month_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="17.0sp" android:textColor="@color/filter_text" android:id="@id/txt_activdayz_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:drawablePadding="@dimen/dimen_10dp" android:drawableStart="@drawable/activ_dayz_ad_new_" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/txt_month_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>

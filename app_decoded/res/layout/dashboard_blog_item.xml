@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/rel_parent_blog" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:layout_width="@dimen/dimen_125dp" android:layout_height="@dimen/dimen_180dp" android:layout_margin="@dimen/dimen_5dp" android:maxHeight="@dimen/dimen_200dp" android:minHeight="@dimen/dimen_170dp" android:elevation="@dimen/dimen_2dp" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/dimen_4dp" app:cardElevation="@dimen/dimen_2dp">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_5dp" android:layout_alignParentTop="true">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_100dp">
+                <ImageView android:id="@id/img_blog" android:layout_width="@dimen/dimen_115dp" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/progress_bar_blog" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/black" android:ellipsize="end" android:gravity="left" android:id="@id/text_blog" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2dp" android:maxHeight="@dimen/dimen_60dp" android:maxLines="4" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

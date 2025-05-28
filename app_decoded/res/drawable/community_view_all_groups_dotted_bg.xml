@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <stroke android:width="@dimen/dimen_1dp" android:color="@color/onboarding_skip_activ_dayz" android:dashWidth="@dimen/dimen_20dp" android:dashGap="@dimen/dimen_6dp" />
+    <corners android:radius="@dimen/dimen_6dp" />
+</shape>

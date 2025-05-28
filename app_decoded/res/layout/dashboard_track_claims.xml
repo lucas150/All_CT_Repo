@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar_layout" />
+    <LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_26dp" android:layout_marginTop="@dimen/dimen_30dp" android:text="Policy Number" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <Spinner android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:textColorHint="@color/cashless_claim_hints" android:id="@id/spnr_policy_no" android:background="@drawable/spinner_down_arrow_white_bg" android:paddingLeft="@dimen/dimen_5dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp" android:layout_marginLeft="@dimen/dimen_26dp" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginRight="@dimen/dimen_26dp" android:spinnerMode="dropdown" android:fontFamily="@font/pf_handbook_pro_regular" android:overlapAnchor="false" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="Tap to filter" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+        <LinearLayout android:id="@id/ll_cashless" android:background="@drawable/track_claims_filter_deselected_bg" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp">
+            <TextView android:textSize="@dimen/text_13.4sp" android:id="@id/txt_cashless" android:paddingLeft="@dimen/dimen_20dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_20dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cashless" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_reimbursement" android:background="@drawable/track_claims_filter_deselected_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_13.4sp" android:id="@id/txt_reimbursement" android:paddingLeft="@dimen/dimen_20dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_20dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reimbursement" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ListView android:id="@id/lst_track_claims" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp" android:divider="@color/grey_bg5" android:dividerHeight="@dimen/dimen_1dp" />
+        <TextView android:textSize="@dimen/text_17.4sp" android:textColor="@color/black" android:id="@id/txt_no_data_to_show" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="No record found!" android:layout_centerInParent="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </RelativeLayout>
+</LinearLayout>

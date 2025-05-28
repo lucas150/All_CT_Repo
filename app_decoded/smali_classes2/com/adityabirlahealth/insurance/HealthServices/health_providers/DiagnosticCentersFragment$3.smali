@@ -1,0 +1,371 @@
+.class Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;
+.super Ljava/lang/Object;
+.source "DiagnosticCentersFragment.java"
+
+# interfaces
+.implements Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;->setMap(Ljava/util/List;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+.field final synthetic val$list:Ljava/util/List;
+
+
+# direct methods
+.method constructor <init>(Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x1010
+        }
+        names = {
+            "this$0",
+            "val$list"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    .line 421
+    iput-object p1, p0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+    iput-object p2, p0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onMarkerClick(Lcom/google/android/gms/maps/model/Marker;)Z
+    .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "marker"
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    .line 424
+    invoke-static {}, Lcom/adityabirlahealth/insurance/ActivHealthApplication;->getInstance()Lcom/adityabirlahealth/insurance/ActivHealthApplication;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/adityabirlahealth/insurance/ActivHealthApplication;->getAnalyticsClass()Lcom/adityabirlahealth/insurance/utils/AnalyticsCommon;
+
+    move-result-object v1
+
+    const-string v2, "ourNetwork_MapMarkerTap"
+
+    const/4 v3, 0x0
+
+    const-string v4, "healthProviders"
+
+    const-string v5, "click-icon"
+
+    invoke-virtual {v1, v4, v5, v2, v3}, Lcom/adityabirlahealth/insurance/utils/AnalyticsCommon;->setFirebaseLogEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 425
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
+
+    .line 426
+    new-instance v1, Landroid/app/Dialog;
+
+    iget-object v2, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+    invoke-virtual {v2}, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
+
+    const/4 v2, 0x0
+
+    .line 427
+    invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCancelable(Z)V
+
+    .line 428
+    invoke-virtual {v1, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+
+    const v3, 0x7f0d0316
+
+    .line 429
+    invoke-virtual {v1, v3}, Landroid/app/Dialog;->setContentView(I)V
+
+    const v3, 0x7f0a183b
+
+    .line 430
+    invoke-virtual {v1, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/TextView;
+
+    const v4, 0x7f0a113f
+
+    .line 431
+    invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/recyclerview/widget/RecyclerView;
+
+    const v5, 0x7f0a0896
+
+    .line 432
+    invoke-virtual {v1, v5}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/ImageView;
+
+    .line 433
+    new-instance v6, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3$1;
+
+    invoke-direct {v6, v0, v1}, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3$1;-><init>(Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;Landroid/app/Dialog;)V
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 439
+    new-instance v12, Ljava/util/ArrayList;
+
+    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
+
+    move v5, v2
+
+    move v6, v5
+
+    .line 441
+    :goto_0
+    iget-object v7, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v7}, Ljava/util/List;->size()I
+
+    move-result v7
+
+    const/4 v13, 0x1
+
+    if-ge v5, v7, :cond_1
+
+    .line 443
+    iget-object v7, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v7}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getLatitude()Ljava/lang/Double;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v7
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
+
+    move-result-object v9
+
+    iget-wide v9, v9, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+
+    cmpl-double v7, v7, v9
+
+    if-nez v7, :cond_0
+
+    iget-object v7, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    .line 444
+    invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v7}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getLongitude()Ljava/lang/Double;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v7
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
+
+    move-result-object v9
+
+    iget-wide v9, v9, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+
+    cmpl-double v7, v7, v9
+
+    if-nez v7, :cond_0
+
+    .line 446
+    iget-object v6, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v6}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getProviderAddress()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v7, "ProviderAddress"
+
+    invoke-static {v7, v6}, Lcom/adityabirlahealth/insurance/utils/Utilities;->showLog(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 447
+    iget-object v6, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v6}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getProviderAddress()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 448
+    iget-object v6, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v6}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getProviderName()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v7, "DoctorNames"
+
+    invoke-static {v7, v6}, Lcom/adityabirlahealth/insurance/utils/Utilities;->showLog(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 449
+    iget-object v6, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-interface {v6, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;
+
+    invoke-virtual {v6}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkItemNew;->getProviderName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    move v6, v13
+
+    :cond_0
+    add-int/lit8 v5, v5, 0x1
+
+    goto/16 :goto_0
+
+    .line 453
+    :cond_1
+    new-instance v3, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkProviderNameAdapterNew;
+
+    iget-object v5, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+    invoke-virtual {v5}, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v8
+
+    iget-object v9, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->val$list:Ljava/util/List;
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
+
+    move-result-object v5
+
+    iget-wide v10, v5, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
+
+    invoke-static {v10, v11}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
+
+    move-result-object v5
+
+    iget-wide v14, v5, Lcom/google/android/gms/maps/model/LatLng;->longitude:D
+
+    invoke-static {v14, v15}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object v7, v3
+
+    invoke-direct/range {v7 .. v12}, Lcom/adityabirlahealth/insurance/HealthServices/adapter/OurNetworkProviderNameAdapterNew;-><init>(Landroid/content/Context;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+
+    .line 454
+    new-instance v5, Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    iget-object v7, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+    invoke-virtual {v7}, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v7
+
+    invoke-direct {v5, v7, v13, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
+
+    .line 455
+    invoke-virtual {v4, v5}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+
+    .line 456
+    invoke-virtual {v4, v3}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+
+    if-eqz v6, :cond_2
+
+    .line 458
+    invoke-virtual {v1}, Landroid/app/Dialog;->show()V
+
+    goto :goto_1
+
+    .line 461
+    :cond_2
+    iget-object v1, v0, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment$3;->this$0:Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;
+
+    invoke-virtual {v1}, Lcom/adityabirlahealth/insurance/HealthServices/health_providers/DiagnosticCentersFragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object v1
+
+    const-string v3, "No Data Found For This Location"
+
+    invoke-static {v3, v1}, Lcom/adityabirlahealth/insurance/utils/Utilities;->showToastMessage(Ljava/lang/String;Landroid/content/Context;)V
+
+    :goto_1
+    return v2
+.end method

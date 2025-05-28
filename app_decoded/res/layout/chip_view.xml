@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip android:textSize="11.379974sp" android:textColor="@color/home_blue" android:id="@id/test" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkable="false" android:fontFamily="@font/pf_encoresanspro_regular" android:backgroundTint="@color/white" app:checkedIconVisible="false" app:chipCornerRadius="@dimen/dimen_5dp" app:chipMinHeight="@dimen/dimen_24dp" app:chipMinTouchTargetSize="@dimen/dimen_0dp" app:textEndPadding="@dimen/dimen_0dp" app:textStartPadding="@dimen/dimen_0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

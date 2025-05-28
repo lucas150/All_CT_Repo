@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rel_parent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="What happens in the case when the partner refuses to give a discount?" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginEnd="@dimen/dimen_5dp" android:layout_toStartOf="@id/img_arrow" android:layout_alignParentStart="true" />
+        <ImageView android:id="@id/img_arrow" android:layout_width="25.0dip" android:layout_height="12.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView android:textSize="13.399994sp" android:textColor="#ff999999" android:id="@id/text_desc" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="When such a think happens there’s no need to worry at all. We shall be at your beck and call whenever you need us to be. Just give us a call at 888-000-8889 and we’ll deal with the situation for you." android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>

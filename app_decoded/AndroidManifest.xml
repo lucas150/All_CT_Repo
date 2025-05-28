@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.adityabirlahealth.insurance" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <queries>
+        <package android:name="com.sec.android.app.shealth"/>
+        <package android:name="com.google.android.apps.fitness"/>
+        <package android:name="com.google.android.youtube"/>
+        <package android:name="com.google.android.apps.maps"/>
+        <package android:name="com.whatsapp"/>
+        <package android:name="com.noisefit"/>
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT"/>
+            <category android:name="android.intent.category.OPENABLE"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <package android:name="com.azure.authenticator"/>
+        <package android:name="com.microsoft.identity.testuserapp"/>
+        <package android:name="com.microsoft.windowsintune.companyportal"/>
+        <package android:name="com.microsoft.mockauthapp"/>
+        <package android:name="com.microsoft.mockcp"/>
+        <package android:name="com.microsoft.mockltw"/>
+        <package android:name="com.microsoft.appmanager"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <data android:host="pay" android:pathPattern=".*" android:scheme="upi"/>
+        </intent>
+        <intent>
+            <data android:host="mandate" android:pathPattern=".*" android:scheme="upi"/>
+        </intent>
+        <intent>
+            <data android:pathPattern=".*" android:scheme="upi"/>
+        </intent>
+        <intent>
+            <data android:host="pay" android:pathPattern=".*" android:scheme="juspay"/>
+        </intent>
+        <intent>
+            <data android:host="checkout" android:pathPattern=".*" android:scheme="credpay"/>
+        </intent>
+        <package android:name="com.tatadigital.tcp.dev"/>
+        <package android:name="com.tatadigital.tcp"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:mimeType="application/uri"/>
+        </intent>
+        <package android:name="com.facebook.katana"/>
+        <intent>
+            <action android:name="com.singular.preinstall.READ_PERMISSION_SINGULAR"/>
+        </intent>
+        <package android:name="com.instagram.android"/>
+    </queries>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:maxSdkVersion="25" android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <permission android:name="com.adityabirlahealth.insurance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.adityabirlahealth.insurance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.usb.host" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="false" android:hardwareAccelerated="true" android:icon="@drawable/launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.adityabirlahealth.insurance.ActivHealthApplication" android:requestLegacyExternalStorage="true" android:roundIcon="@drawable/launcher" android:screenOrientation="portrait" android:supportsRtl="true" android:theme="@style/AppTheme1" android:usesCleartextTraffic="true">
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.PrePostClaimDocument" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.PrePostHospitaliztionActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.onboarding.CameraAudioPermission" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.DiabetesRisk.DiabetesRiskQuestion"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.DiabetesRisk.MyChronicManagementProgramActivity"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.HomeRevamp.NoiseOrderTracking"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.Accelerometer.ShowYesterDayData" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.DocumentUploadedSuccessFully" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.ClaimHistory" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.ClaimsTrackerDetails" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsTrackerRevamp.ClaimsTracker" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.ChallengesInformation" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.Challenges" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.JumpInstructionActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.JumpPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.JumpTrackerActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.breath.BreathTrackingActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.breath.BreathingExerciseMonthlyChartActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.breath.BreathingDashboardActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.mood.MoodDashboardActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.mood.MoodTrackingActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.mood.MoodTrackingMonthlyChartActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.WaterIntakeDashboardActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.HydrationLevelActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.SetWaterIntakeGoalActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.SetWaterIntakeReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.WaterIntakeTrackingMonthlyChartActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.adityabirlahealth.insurance.waterintake.WaterIntakeReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.JumpDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.JumpLeaderboardActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.CertificateActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.PharmEasyActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.PharmEasyMedicineOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.TeleconsultationActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.DiagnosticsTestActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.CashlessAnyWhereActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.new_claims.UnderDeficiency" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.OCR.UploadOCRDocument" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.YourHealthRecordsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.new_claims.RaisePrePostClaimActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.AktivoYourLifestyleTrends"/>
+        <activity android:name="com.adityabirlahealth.insurance.MDWebViewActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.WellBeingScoreDetailNewAcitivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.SelectPrimaryAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.SwitchPolicyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.VerifyCorporateMobileNoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Accelerometer.FetchAccelerometerDataActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.VerifyOtpActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.VerifyAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.caloriemter.CalorimeterFAQActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activeage.SurveyActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.AppIntroductionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.dashboard_revamp.PersonaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.dashboard_revamp.PersonaPrioritiseActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.AppIntroductionNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.AppIntroductionRevampActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.activdayz.rewamp.ActivityChartActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Notification.AppInboxActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.activdayz.rewamp.ActivDayzActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.activdayz.rewamp.ActivDayzInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.activdayz.restructure.ActivDayzActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.OnboardingBookHAActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.OnboardingBookDigitalHAActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.profile_pic.ui.HealthGoalsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.profile_pic.ui.EditSocialProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.profile_pic.ui.ProfessionalAcademicActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.MyPolicyRevamp.PolicyDetailsActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.ConnectedSuccessfullyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.meditationaudio.MeditationAudioActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.meditationaudio.AudioPlayerActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_claims.ActivityNewClaimDetails" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.samsung.android.health.permission.read" android:value="com.samsung.health.step_count;com.samsung.shealth.step_daily_trend"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled" android:value="true"/>
+        <activity android:enabled="true" android:exported="true" android:name="com.adityabirlahealth.insurance.Login.SplashActivity" android:protectionLevel="signature" android:screenOrientation="unspecified" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:scheme="http"/>
+                <data android:host="www.adityabirlacapital.com" android:pathPrefix="/healthinsurance"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="true" android:exported="true" android:icon="@drawable/launcher" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Default" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.adityabirlacapital.com" android:pathPrefix="/healthinsurance" android:scheme="http"/>
+                <data android:host="www.adityabirlacapital.com" android:pathPrefix="/healthinsurance" android:scheme="https"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_holi" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Holi" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_diwali" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Diwali" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_christmas" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Christmas" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_republic_day" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Independence" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_new_year" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Newyear" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1"/>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/pride_icon" android:label="@string/app_name" android:name="com.adityabirlahealth.insurance.Pride" android:protectionLevel="signature" android:screenOrientation="unspecified" android:targetActivity="com.adityabirlahealth.insurance.Login.SplashActivity" android:theme="@style/AppTheme.Launcher1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="com.adityabirlahealth.insurance.MainActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:name="com.adityabirlahealth.insurance.new_dashboard.profile_pic.ProfileCompletionActivity" android:protectionLevel="signature" android:screenOrientation="unspecified"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.OnboardingDeviceConnectActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.OnboardingActivDayActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.postlogin.OnBoardingHSSActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.refer_friend.ReferFriendActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.DashboardActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Register" android:name="com.adityabirlahealth.insurance.Registration.RegisterMemberIDActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Register" android:name="com.adityabirlahealth.insurance.Registration.RegisterOTPActivity" android:protectionLevel="signature"/>
+        <activity android:label="Register" android:name="com.adityabirlahealth.insurance.Registration.RegisterSetupActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Login" android:name="com.adityabirlahealth.insurance.Login.LoginActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Forgot Username" android:name="com.adityabirlahealth.insurance.Login.ForgotUsernameMobileNoActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Forgot Username" android:name="com.adityabirlahealth.insurance.Login.ForgotUsernameOTPActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Forgot Username" android:name="com.adityabirlahealth.insurance.Login.ForgotUsernameViewUsernameActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Forgot Password" android:name="com.adityabirlahealth.insurance.Login.ForgotPasswordMobileNoActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:label="Forgot Password" android:name="com.adityabirlahealth.insurance.Login.ForgotPasswordOTPActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Login.ForgotPasswordResetActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.SyncrURLWebViewActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.GoogleFitConnectActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.Registration.SmartWatchConnectActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.noise.NoiseVerifyOtpActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.noise.NoiseRegisterActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.noise.NoiseConnectionIssueActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.noise.NoiseConnectedActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:name="com.adityabirlahealth.insurance.noise.NoiseConnectionResultActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.PolicyDetailsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.ProfileLanding" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.ProfileSettingsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.BlogWebviewActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.PrivacyPolicyProfile" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.TermsConditionProfile" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Database.StatusMaps" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.our_network.OurNetworkActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.health_providers.HealthProvidersActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.LocationActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.CashlessActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.ReimbursementActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.SpecializationListActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.TrackRequestActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.SupportRaiseNewRequestActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.FAQActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.ClaimDetailActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.SupportAndClaims.FAQSearchActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.TrackClaimsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.CashlessProcessActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.HealthServicesActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.ReimbursementProcessActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness.WellnessActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.WellnessFitnessTypeFilterActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.FAQSearchDisplayWebViewActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.health_providers.DoctorDetailsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness.WellnessCentersDetailsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Notification.NotificationActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activeage.ActiveAgeActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activeage.questionnaire_lib.SurveyActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activeage.ActiveAgeReportActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activedayz.ActiveDayzActivity_Demo" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.DoctorOnCallActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.CounsellorOnCallActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.SmokeCessationProgramActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.HCMResultActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.ViewAllActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.AskADoctorActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.AskASpecialistActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.wellness_coaching.AskADieticianActivity" android:protectionLevel="signature" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.conversations_reports.ConversationReportsActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.conversations_reports.MyQuestionDetailActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.HealthReturnMonthWiseActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.walkthrough.activity.WalkThroughActivity" android:protectionLevel="signature" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.DemoNumberDetectActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.HowIsActiveDayzCalculatedActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.adityabirlahealth.insurance.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.adityabirlahealth.insurance.HealthPrimeRiderWebActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.AssistAmerica.TravelEmergencyServicesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.AssistAmerica.SecondOpinionAssistAmericaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.VASLandingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.VASBrandActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.VASGuideSelectActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.VASGuideScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.VASOfferingDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.VAS.WellnessCardActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.OptInNotificationsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Login.FingerPrintSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.googlefit.GoogleFitHelpAtivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.InnerHourResultsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.walkthrough.HealthReturnsTutorial" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activedayz.ActivDayzTutorials" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.walkthrough.GoogleFitTutorial" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.PolicyMembersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.RegisterSetupMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.HealthyHeartScoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.HealthReturnActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.RegisterManualMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.adityabirlahealth.insurance.Registration.DetectMobileSendSmsActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.RegisterDialog"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.OTPActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyNameActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyPhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyAlternatePhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyPanCardDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyAadharNumberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyGenderDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyDOBActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyRelationshipActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.EditPolicyNomineeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.VerifyMobileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.MonthlyLedgerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellnessDayzAndAge.activedayz.CalorieDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.adityabirlahealth.insurance.Registration.RegisterMobileMemberIdActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.RegisterDialog"/>
+        <activity android:name="com.adityabirlahealth.insurance.Wellness.FitnessAssessmentHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.LeaderBoardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.leaderboard.LeaderboardStepsCalorieActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.MedicalReportsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityLandingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.FeedComposePostActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.detail.GroupDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.FeedLikesMemberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.ImagePickerActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.ImagePicker"/>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:screenOrientation="portrait" android:theme="@style/Base.Theme.AppCompat"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityIntroActivity" android:screenOrientation="unspecified" android:theme="@style/Theme.ImagePicker"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.detail.GroupMembersListingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Profile.MedicalReportsDocumentsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.HealthServices.HealthToolsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.ClaimDetailRevampActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityEventsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Registration.RegisterFingerprintActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.tutorial.TutorialActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.tutorial.VoiceCommandTutorialActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.utils.YoutubePlayerActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.HostingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityCommentsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityEditCommentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityGuidelines" android:theme="@style/Theme.ImagePicker"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellbeing_home.WellbeingHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_claims.ClaimsRaiseNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.WellbeingRecommendationDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.WellbeingScoreDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.OnboardingTutorialActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.OnboardingGetStartedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellbeing_home.WellbeingReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.onboarding.PermissionsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellbeing_home.WellbeingReviewNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.wellbeing_home.WellbeingCategoryVideoListingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.ConnectAppsTutorialActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_claims.ClaimsViewAllActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_claims.ClaimsProcessesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.ForgotUsernamePasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.RetrieveUserNameActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.ResetPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.RegisterSelectMemberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Login.LoginRegisterOTPActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.RegisterSetupCredentialsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.FAQLoginRegistrationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.GymKotlin.GymActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.adityabirlahealth.insurance.GymKotlin.GymDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.GymKotlin.GymPastCheckInDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Barcode.BarcodeCaptureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.GymKotlin.GymFilterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.BookAppointmentMDPWelcomCureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.MyDentalPlanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.WelcomeCureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.MedicalConsultationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.BookAppointmentMedicalConsultationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.HealthReturnsV2Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Dashboard.Community.CommunityGroupActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.OpenPDFViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adityabirlahealth.insurance.new_claims.RaisePrePostClaimsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_claims.PrePostClaimSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.ActivDayzLearnMoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.GoogleWrapperActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.LifeStyleScoreFitnessWebviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.LifeStyleDeviceConnectSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.ClaimsAndSupport.TrackServiceDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.CashlessHospitalDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.CashlessHospitalDetailsNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.SelectMultipleOTPMemberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.my_health.LifeStyleScoreDetailActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.Login.IntroQuestionaryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.Login.IntroQuestionaryNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.LoginRegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.new_dashboard.profile_pic.YourHealthIdActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.adityabirlahealth.insurance.FitterflyWebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.multiplyAH.RegistrationMulFormActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.adityabirlahealth.insurance.multiplyAH.MulAHSelectCorporateUsersActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:name="com.microsoft.identity.client.BrowserTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.adityabirlahealth.insurance" android:path="/XdZ+0LzkcJdgpfeMt3ZLteuNlt8=" android:scheme="msauth"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.adityabirlahealth.insurance.pharmavocuher.PharmaVoucherActivity"/>
+        <activity android:name="com.adityabirlahealth.insurance.login_Registration.CorporateMultipleSelectActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.Accelerometer.SleepTrackingService" android:permission="android.permission.FOREGROUND_SERVICE"/>
+        <receiver android:exported="true" android:name="com.adityabirlahealth.insurance.Accelerometer.AlarmReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.adityabirlahealth.insurance.Accelerometer.BootReceiver" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.adityabirlahealth.insurance.Accelerometer.AppUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/colorPrimary"/>
+        <meta-data android:name="CLEVERTAP_ACCOUNT_ID" android:value="6KK-WK4-695Z"/>
+        <meta-data android:name="CLEVERTAP_TOKEN" android:value="430-336"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA7OZx6wlgCTkbnQ1pFJgKBAQG3BLBKskg"/>
+        <meta-data android:name="@string/sdkVersionKey" android:value="@string/user_experior_version_key"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <receiver android:exported="true" android:name="com.adityabirlahealth.insurance.MySMSBroadCastReceiver" android:protectionLevel="signature">
+            <intent-filter android:priority="1000">
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.adityabirlahealth.insurance.Firebase.UninstallReciever" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.adityabirlahealth.insurance.Firebase.CancelNotification" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="notification_markasread"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.adityabirlahealth.insurance.googlefit.StartServerSyncServiceReceiver" android:protectionLevel="signature">
+            <intent-filter android:priority="1000">
+                <action android:name="com.adityabirlacapital.START_SERVER_SYNC"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.adityabirlahealth.insurance.waterintake.NotificationReceiver"/>
+        <service android:exported="true" android:name="com.adityabirlahealth.insurance.Firebase.MyFirebaseMessagingService" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.googlefit.GoogleFitIntentService" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.googlefit.GoogleFitLocalSyncService" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.activdayz.background.FetchingGFitDataServiceI" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.activdayz.background.PushFetchedDataServiceII" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.googlefit.GoogleFitSyncServerService" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="dataSync" android:name="com.adityabirlahealth.insurance.shealth.SHealthSyncDataService" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:name="com.adityabirlahealth.insurance.new_dashboard.meditationaudio.MeditationAudioService" android:protectionLevel="signature"/>
+        <service android:enabled="true" android:name="com.adityabirlahealth.insurance.new_dashboard.jump_for_health_challenges.AccelerometerService" android:protectionLevel="signature"/>
+        <meta-data android:name="CLEVERTAP_INAPP_EXCLUDE" android:value=".Login.SplashActivity"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.clevertap.android.sdk.pushnotification.CTPushNotificationReceiver"/>
+        <meta-data android:name="CLEVERTAP_REGION" android:value="in1"/>
+        <service android:exported="true" android:name="com.clevertap.android.sdk.pushnotification.CTNotificationIntentService">
+            <intent-filter>
+                <action android:name="com.clevertap.PUSH_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="CLEVERTAP_NOTIFICATION_ICON" android:value="launcher"/>
+        <activity android:exported="true" android:name="com.getvisitapp.google_fit.activity.FeedBackActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.getvisitapp.google_fit.activity.TwillioVideoCallActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.getvisitapp.google_fit.activity.SdkWebviewActivity" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="visitsdkactivity" android:scheme="tataaig"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.adityabirlahealth.insurance.googlefitsdk.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.getvisitapp.google_fit.util.GoogleFitSdkFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/library_file_path"/>
+        </provider>
+        <provider android:authorities="com.adityabirlahealth.insurance.cropper.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.canhub.cropper.CropFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/library_file_paths"/>
+        </provider>
+        <activity android:exported="true" android:name="com.canhub.cropper.CropImageActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:fitsSystemWindows="true" android:launchMode="singleTask" android:name="com.yellowmessenger.ymchat.YellowBotWebViewActivity" android:theme="@style/YmAppTheme.NoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.yellow.chatbot.provider" android:exported="false" android:grantUriPermissions="true" android:name="com.yellowmessenger.ymchat.YellowChatBotFileProvide">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/yellow_chatbot_file_paths"/>
+        </provider>
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="true"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:autoRemoveFromRecents="true" android:exported="false" android:launchMode="singleTask" android:name="com.cyberark.identity.activity.CyberArkAuthActivity"/>
+        <activity android:name="com.cyberark.identity.activity.CyberArkQRCodeLoginActivity"/>
+        <activity android:autoRemoveFromRecents="true" android:exported="true" android:name="com.cyberark.identity.activity.CyberArkRedirectActivity">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/cyberark_auth_host" android:pathPrefix="/android/com.adityabirlahealth.insurance/redirectURICallback" android:scheme="@string/cyberark_auth_scheme"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/cyberark_auth_host" android:pathPrefix="/android/com.adityabirlahealth.insurance/resourceURLCallback" android:scheme="@string/cyberark_auth_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="singleTask" android:name="com.microsoft.identity.common.internal.providers.oauth2.AuthorizationActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:launchMode="standard" android:name="com.microsoft.identity.common.internal.providers.oauth2.CurrentTaskAuthorizationActivity"/>
+        <activity android:exported="false" android:launchMode="standard" android:name="com.microsoft.identity.client.helper.BrokerHelperActivity"/>
+        <activity android:exported="true" android:name="com.microsoft.identity.client.CurrentTaskBrowserTabActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.microsoft.identity.common.internal.broker.BrokerActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.microsoft.identity.common.internal.broker.InstallCertActivityLauncher" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.clevertap.android.sdk.InAppNotificationActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.clevertap.android.sdk.inbox.CTInboxActivity" android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
+        <receiver android:exported="true" android:name="com.clevertap.android.sdk.pushnotification.fcm.CTFirebaseMessagingReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.clevertap.android.pushtemplates.PTPushNotificationReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.clevertap.android.pushtemplates.PushTemplateReceiver"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.ktx.FirebaseDynamicLinksKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.ktx.FirebaseRemoteConfigKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:label="@string/places_autocomplete_label" android:name="com.google.android.libraries.places.widget.AutocompleteActivity" android:theme="@style/PlacesAutocompleteThemeOverlay" android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cct.com.adityabirlahealth.insurance" android:scheme="fbconnect"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="" android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity" android:theme="@style/EasyPermissions.Transparent"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+            <meta-data android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED" android:value="true"/>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.clevertap.android.pushsdk.registerForContextMenu" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.gms.fitness.sdk.version" android:value="20.0.0"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.adityabirlahealth.insurance.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService">
+            <meta-data android:name="com.google.android.play.core.assetpacks.versionCode" android:value="20202"/>
+        </service>
+        <service android:enabled="false" android:exported="false" android:foregroundServiceType="dataSync" android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="org.acra.sender.SenderService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":acra"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.acra" android:exported="false" android:grantUriPermissions="true" android:name="org.acra.attachment.AcraContentProvider" android:process=":acra"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.userexperior.ui.UeConsentActivity" android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+        <service android:enabled="true" android:exported="false" android:name="com.userexperior.services.JIUploadService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="false" android:name="com.userexperior.services.recording.EventSession"/>
+        <service android:enabled="true" android:exported="false" android:name="com.userexperior.services.recording.ScreenShotService"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.UeContentProvider" android:exported="false" android:initOrder="999999" android:name="com.userexperior.provider.UeContentProvider"/>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <provider android:authorities="com.adityabirlahealth.insurance.com.squareup.picasso" android:exported="false" android:name="com.squareup.picasso.PicassoProvider"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <activity android:excludeFromRecents="true" android:label="@string/yubikit_otp_activity_title" android:name="com.yubico.yubikit.android.ui.OtpActivity" android:theme="@style/YubiKitPromptDialogTheme"/>
+        <activity android:excludeFromRecents="true" android:label="@string/yubikit_prompt_activity_title" android:name="com.yubico.yubikit.android.ui.YubiKeyPromptActivity" android:theme="@style/YubiKitPromptDialogTheme"/>
+    </application>
+</manifest>

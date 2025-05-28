@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_21sp" android:textColor="@color/black" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="30.0dip" android:text="@string/verify_your_account" android:fontFamily="@font/pf_handbook_pro_bold" />
+        <TextView android:textSize="@dimen/dimen_16dp" android:gravity="center" android:id="@id/txt_otp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="@string/enter_otp_sent_to_you" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:gravity="center" android:id="@id/dob" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="setdb" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:weightSum="4.0">
+            <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                <EditText android:gravity="center" android:id="@id/edt_otp_1_" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                <View android:id="@id/view_underline_1" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                <EditText android:gravity="center" android:id="@id/edt_otp_2_" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                <View android:id="@id/view_underline_2" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                <EditText android:gravity="center" android:id="@id/edt_otp_3_" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" />
+                <View android:id="@id/view_underline_3" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="0.0dip" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_weight="1.0">
+                <EditText android:gravity="center" android:id="@id/edt_otp_4_" android:background="@drawable/login_edittext_bg" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="" android:maxLength="1" android:inputType="number" android:imeOptions="actionDone" />
+                <View android:id="@id/view_underline_4" android:background="@color/colorPrimary" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/ll_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_below="@id/layout">
+        <TextView android:enabled="false" android:textColor="@color/white" android:gravity="center" android:id="@id/text_next" android:background="@drawable/box_stroke" android:padding="@dimen/dimen_16dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_24dp" android:text="@string/verify" android:fontFamily="@font/pf_encoresanspro_regular" android:layout_marginStart="@dimen/dimen_24dp" android:layout_marginEnd="@dimen/dimen_24dp" android:backgroundTint="@color/onboarding_skip_activ_dayz" app:layout_constraintTop_toBottomOf="@id/fileUploadLayout" />
+        <TextView android:gravity="center" android:id="@id/txt_resend_otp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_30dp" android:text="@string/didnt_recieve_otp" />
+    </LinearLayout>
+</RelativeLayout>

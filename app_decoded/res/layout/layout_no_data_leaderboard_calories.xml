@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_no_data_calories" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="@dimen/dimen_70dp" android:layout_height="@dimen/dimen_70dp" app:srcCompat="@drawable/ic_not_tracking" />
+    <TextView android:textSize="@dimen/text_21sp" android:textColor="@color/black" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:text="You are not tracking calories on\nyour health device at present" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/leaderboard_no_calorie_note" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:text="Note: Calories are tracked based on activity done on your health devices (apple watch, Fit bit, Garmin and Strava only). To start tracking the calories burnt, please Start/Stop activity on your health device." android:fontFamily="@font/pf_encoresanspro_book" android:layout_marginStart="@dimen/dimen_25dp" android:layout_marginEnd="@dimen/dimen_25dp" />
+</LinearLayout>

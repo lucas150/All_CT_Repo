@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/onboardingRootView" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/onboardingBackgroundContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="65.0dip" android:animateLayoutChanges="true">
+        <LinearLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:layout_centerHorizontal="true">
+            <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/onboardingContentIconContainer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/onboardingContentTextContainer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/onboarding_skip" android:id="@id/txt_skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Skip" android:fontFamily="@font/pf_encoresanspro_regular" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom|center" android:orientation="horizontal" android:id="@id/onboardingPagerIconsContainer" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginBottom="25.0dip" android:baselineAligned="false" android:layout_alignParentBottom="true" />
+    <TextView android:id="@id/btn_getStarted" android:background="@drawable/row_health_category_selected" android:visibility="gone" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/dimen_25dp" android:layout_marginTop="@dimen/dimen_40dp" android:layout_marginRight="@dimen/dimen_25dp" android:layout_marginBottom="@dimen/dimen_30dp" android:text="@string/get_started" android:layout_alignParentBottom="true" style="@style/YellowBgTextView" />
+</RelativeLayout>

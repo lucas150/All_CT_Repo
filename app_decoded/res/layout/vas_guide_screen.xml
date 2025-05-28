@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginBottom="@dimen/dimen_20dp"
+      xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <androidx.viewpager.widget.ViewPager android:id="@id/introRecyclerView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="20.0dip" android:layout_above="@id/indicator" />
+        <me.relex.circleindicator.CircleIndicator android:id="@id/indicator" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:layout_above="@id/ll_footer" app:ci_drawable="@drawable/button_bg_orange" app:ci_drawable_unselected="@drawable/button_bg_grey" app:ci_height="2.0dip" app:ci_margin="6.0dip" app:ci_width="18.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <TextView android:textSize="23.0sp" android:textColor="#ffb4b4b4" android:id="@id/text_swipe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Swipe " android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="19.199982sp" android:textColor="#ff6e4c47" android:id="@id/text_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="Close" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

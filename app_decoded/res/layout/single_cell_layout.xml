@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/ll_weely" android:background="@color/white" android:padding="@dimen/dimen_2dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_55dp" android:layout_margin="3.0dip" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/rl_weekday" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/image_activeday" android:padding="@dimen/dimen_3dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bitmap" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingBottom="@dimen/dimen_6dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+            <TextView android:textSize="@dimen/text_9.6sp" android:textColor="@color/black" android:gravity="center" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:fontFamily="@font/pf_handbook_pro_bold" />
+            <TextView android:textSize="@dimen/text_11.5sp" android:textStyle="bold" android:textColor="@color/active_days_brown" android:gravity="center" android:id="@id/steps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="" android:fontFamily="@font/pf_handbook_pro_bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

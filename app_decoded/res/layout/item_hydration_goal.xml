@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:tag="layout/item_hydration_goal_0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_16dp" android:layout_marginEnd="@dimen/dimen_16dp" app:cardCornerRadius="@dimen/dimen_10dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/dimen_32dp" android:layout_height="@dimen/dimen_32dp" android:src="@drawable/running_lady" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_12dp">
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/red2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2045ml Hydration | 87.7% of your Goal" android:fontFamily="@font/aneklatin_bold" />
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/home_empty_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:text="2160ml total intake (130mg caffeine)" android:fontFamily="@font/aneklatin_medium" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

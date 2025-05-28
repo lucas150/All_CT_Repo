@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layout_submit" android:paddingTop="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_15dp" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:gravity="center" android:id="@id/btnPerformAction" android:visibility="gone" android:layout_width="fill_parent" android:text="@string/send_otp" android:textAllCaps="false" android:backgroundTint="@color/colorPrimary" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/BgLoginTextView" />
+    <ProgressBar android:id="@id/progressBarLoading" android:visibility="gone" android:layout_width="@dimen/dimen_30dp" android:layout_height="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_10dp" android:indeterminateTint="@color/white" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

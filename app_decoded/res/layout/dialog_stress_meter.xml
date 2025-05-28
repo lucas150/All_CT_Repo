@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <View android:id="@id/viewTopDragLine" android:background="@color/adz_ending_light_grey" android:layout_width="64.0dip" android:layout_height="2.0dip" android:layout_marginTop="@dimen/dimen_8dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/neutral_grey" android:id="@id/txtTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_22dp" android:text="Stress Meter" android:fontFamily="@font/aneklatin_bold" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/viewTopDragLine" />
+        <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/neutral_grey" android:id="@id/txtDesc" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp" android:fontFamily="@font/aneklatin_regular" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+        <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/rvIndicatorInfo" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_16dp" android:layout_marginEnd="@dimen/dimen_16dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/txtDesc" />
+        <LinearLayout android:orientation="vertical" android:id="@id/layoutStressIndicators" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_16dp" android:layout_marginEnd="@dimen/dimen_16dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/txtTitle">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:background="@color/member_id_red" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="80-100" android:fontFamily="@font/aneklatin_bold" />
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Very High" android:fontFamily="@font/aneklatin_bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:background="#fffd8a72" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="60-80" android:fontFamily="@font/aneklatin_bold" />
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_gravity="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium High" android:fontFamily="@font/aneklatin_bold" />
+                            <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" app:cardCornerRadius="@dimen/dimen_16dp" app:cardElevation="@dimen/dimen_0dp">
+                                <LinearLayout android:orientation="horizontal" android:background="@color/wellbeing_bg" android:paddingTop="@dimen/dimen_2dp" android:paddingBottom="@dimen/dimen_2dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_8dp" android:paddingEnd="@dimen/dimen_8dp">
+                                    <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/member_id_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Your stress score - " android:fontFamily="@font/aneklatin_medium" />
+                                    <TextView android:textSize="@dimen/text_10sp" android:textColor="@color/member_id_red" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="72 " android:fontFamily="@font/aneklatin_bold" />
+                                </LinearLayout>
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:background="#fffcca67" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="40-60" android:fontFamily="@font/aneklatin_bold" />
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium" android:fontFamily="@font/aneklatin_bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:background="@color/already_register_color" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20-40" android:fontFamily="@font/aneklatin_bold" />
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium Low" android:fontFamily="@font/aneklatin_bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_12dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardCornerRadius="8.0dip" app:cardElevation="@dimen/dimen_0dp">
+                    <LinearLayout android:orientation="horizontal" android:background="#ff034c22" android:paddingTop="@dimen/dimen_12dp" android:paddingBottom="@dimen/dimen_12dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_24dp" android:paddingEnd="@dimen/dimen_24dp">
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0-20" android:fontFamily="@font/aneklatin_bold" />
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Low" android:fontFamily="@font/aneklatin_bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_12sp" android:textColor="#ff767d93" android:gravity="center" android:id="@id/txtDesc1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_19dp" android:layout_marginBottom="@dimen/dimen_16dp" android:layout_marginStart="@dimen/dimen_16dp" android:layout_marginEnd="@dimen/dimen_16dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/rvIndicatorInfo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

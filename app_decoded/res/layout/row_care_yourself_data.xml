@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/rvCareYourself" android:tag="layout/row_care_yourself_data_0" android:paddingLeft="@dimen/dimen_15dp" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

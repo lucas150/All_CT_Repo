@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_item_main_row" android:tag="layout/item_notification_0" android:background="@drawable/round_bg_rect_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_2dp" android:weightSum="5.3"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView android:layout_gravity="top" android:id="@id/image_pic" android:paddingLeft="@dimen/dimen_15dp" android:paddingRight="@dimen/dimen_15dp" android:layout_width="@dimen/dimen_70dp" android:layout_height="@dimen/dimen_70dp" android:layout_marginTop="@dimen/dimen_10dp" app:srcCompat="@drawable/icon" />
+        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginEnd="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:id="@id/Notification_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_10dp" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/media" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_10dp" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black_opacity60" android:id="@id/Notification_text_body" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2.6dp" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:id="@id/date_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_2.6dp" android:text="" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="top" android:id="@id/img_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_10dp" app:srcCompat="@drawable/ic_if_ic_delete_48px_352303" />
+    </LinearLayout>
+    <View android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" />
+</LinearLayout>

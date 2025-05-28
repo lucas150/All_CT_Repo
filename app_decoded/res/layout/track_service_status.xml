@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/main_bg_grey" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include" layout="@layout/toolbar_layout" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_track_status" android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/include" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_no_data" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="No Service Request Found" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/include" shimmer:shimmer_duration="500">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/shimmer_track_service_placeholder_item" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</RelativeLayout>

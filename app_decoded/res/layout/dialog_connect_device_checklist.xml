@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/dialog_connect_device_checklist_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@drawable/bg_home_dialog_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/containerChecklist" android:background="@drawable/bg_home_dialog_header" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                <ImageView android:id="@id/img_abhi_circular_logo" android:layout_width="74.0dip" android:layout_height="74.0dip" android:layout_marginStart="@dimen/dimen_7dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_abhi_circular_logo" />
+                <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/home_green" android:id="@id/lblTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/how_to_earn_healthreturns" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="74.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/recyclerView" android:layoutAnimation="@anim/layout_animation_from_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintTop_toBottomOf="@id/containerChecklist" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <ImageView android:id="@id/cancel_coonect_device_dialog" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" android:layout_marginEnd="@dimen/dimen_16dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_cancel_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

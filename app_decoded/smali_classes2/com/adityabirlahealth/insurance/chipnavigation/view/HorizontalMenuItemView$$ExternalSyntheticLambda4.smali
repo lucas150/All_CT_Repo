@@ -1,0 +1,30 @@
+.class public final synthetic Lcom/adityabirlahealth/insurance/chipnavigation/view/HorizontalMenuItemView$$ExternalSyntheticLambda4;
+.super Ljava/lang/Object;
+.source "D8$$SyntheticClass"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function1;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-static {p1}, Lcom/adityabirlahealth/insurance/chipnavigation/view/HorizontalMenuItemView;->$r8$lambda$rgG9WShUz591-2fr78hvtcI4RDI(Landroid/widget/LinearLayout$LayoutParams;)Lkotlin/Unit;
+
+    move-result-object p1
+
+    return-object p1
+.end method

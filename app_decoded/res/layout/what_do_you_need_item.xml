@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/main_container" android:tag="layout/what_do_you_need_item_0" android:background="@drawable/grey_bordered_bg" android:padding="@dimen/dimen_8dp" android:layout_width="@dimen/dimen_110dp" android:layout_height="@dimen/dimen_75dp" android:layout_marginStart="@dimen/dimen_16dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/im_location_pin" android:layout_width="@dimen/dimen_16dp" android:layout_height="@dimen/dimen_16dp" android:src="@drawable/location_pin" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/leaderboard_no_calorie_note" android:id="@id/lbl_locate_hosp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:fontFamily="@font/pf_handbook_pro_regular" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/im_location_pin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

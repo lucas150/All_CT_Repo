@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/transparentcolor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/toolbar_layout" />
+        <include layout="@layout/faq_categories_fragment_content" />
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@id/fab_faq_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_15dp" android:layout_marginBottom="@dimen/dimen_15dp" android:src="@drawable/ic_assistant_fab" android:scaleType="center" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:backgroundTint="@color/colorPrimary" app:elevation="@dimen/dimen_10dp" app:pressedTranslationZ="@dimen/dimen_20dp" />
+    <TextView android:textSize="@dimen/txt_size_16sp" android:textColor="@color/white" android:id="@id/lblChatWithUs" android:background="@drawable/button_bg_red" android:paddingLeft="@dimen/dimen_8dp" android:paddingTop="@dimen/dimen_5dp" android:paddingRight="@dimen/dimen_8dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_25dp" android:text="@string/chat_with_us" android:layout_toLeftOf="@id/fab_faq_search" android:layout_alignParentBottom="true" android:fontFamily="@font/pf_handbook_pro_regular" app:elevation="@dimen/dimen_10dp" />
+</RelativeLayout>

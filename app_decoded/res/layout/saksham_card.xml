@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:tag="layout/saksham_card_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/cardBranchLocator" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:foreground="?android:selectableItemBackground" android:layout_weight="1.0" app:cardCornerRadius="@dimen/dimen_15dp" app:cardUseCompatPadding="true" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:paddingTop="@dimen/dimen_8dp" android:paddingBottom="@dimen/_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dimen_12dp" android:paddingEnd="@dimen/dimen_12dp">
+            <ImageView android:layout_gravity="end" android:id="@id/imgBranchLocator" android:layout_width="40.0dip" android:layout_height="40.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_branch_locator" />
+            <TextView android:textSize="@dimen/text_12sp" android:textColor="@color/neutral_grey" android:layout_gravity="center" android:id="@id/txtBranchLocator" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_30dp" android:layout_marginTop="@dimen/dimen_8dp" android:text="@string/branch_locator" android:fontFamily="@font/pf_encoresans_pro_medium" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/imgBranchLocator" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

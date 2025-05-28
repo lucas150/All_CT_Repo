@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_20dp" android:elevation="@dimen/dimen_2dp" app:cardCornerRadius="@dimen/dimen_5dp" app:cardUseCompatPadding="true">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.adityabirlahealth.insurance.utils.SquareImageView android:id="@id/img_community" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/banner_three" android:scaleType="fitXY" />
+            <TextView android:textSize="@dimen/text_22sp" android:textColor="@color/black" android:id="@id/txt_event_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:text="Nighttime Bike Ride in Bandra" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_20dp" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_20dp">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="@dimen/dimen_18dp" app:srcCompat="@drawable/ic_event_time" />
+                <TextView android:textSize="@dimen/text_18.2sp" android:textColor="@color/black" android:id="@id/txt_event_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="9 Jul, 8:00 PM Onwards" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_8dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_20dp">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/dimen_18dp" android:layout_height="@dimen/dimen_18dp" app:srcCompat="@drawable/ic_event_location" />
+                <TextView android:textSize="@dimen/text_18.2sp" android:textColor="@color/black_opacity60" android:id="@id/txt_event_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No. 100, Hill Rd, St Sebastian Colony, Ranwar, Bandra West, Mumbai, Maharashtra 400050" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_8dp" />
+            </LinearLayout>
+            <Button android:textSize="@dimen/txt_size_20sp" android:textColor="@color/white" android:gravity="start" android:id="@id/btn_interested" android:background="@drawable/button_bg_red" android:paddingLeft="@dimen/dimen_15dp" android:paddingTop="@dimen/dimen_10dp" android:paddingRight="@dimen/dimen_15dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_15dp" android:text="@string/event_interested_lbl" android:drawableRight="@drawable/ic_external_link" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_20dp" android:layout_marginEnd="@dimen/dimen_20dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

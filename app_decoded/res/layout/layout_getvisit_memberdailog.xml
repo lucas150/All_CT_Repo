@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/bottomsheet" android:background="@drawable/rounded_corner_bg" android:paddingTop="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/member_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/please_select_a_member" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/my_list" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_20dp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" app:layout_constraintTop_toBottomOf="@id/member_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>

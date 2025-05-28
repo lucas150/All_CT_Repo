@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@color/grey_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include" layout="@layout/toolbar_layout" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/include">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_notification" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/img_noresult" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/info" android:layout_centerInParent="true" />
+        <TextView android:gravity="center" android:id="@id/txtNoResult" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="No Notifications for you so far!" android:layout_below="@id/img_noresult" />
+    </RelativeLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:shimmer_duration="500">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+            <include layout="@layout/shimmer_placeholder_item" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</RelativeLayout>

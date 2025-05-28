@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@id/cardErrorState" android:background="@color/bg_internet_err" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_15dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginBottom="@dimen/dimen_15dp" app:cardBackgroundColor="@color/bg_internet_err" app:cardCornerRadius="@dimen/dimen_10dp" app:cardElevation="@dimen/dimen_2dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/dimen_15dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/internet_img_offline" android:layout_width="@dimen/dimen_0dp" android:layout_height="fill_parent" android:layout_marginRight="@dimen/dimen_5dp" android:layout_weight="1.0" app:srcCompat="@drawable/ic_error_internet" />
+            <LinearLayout android:gravity="start|center" android:orientation="vertical" android:layout_width="@dimen/dimen_0dp" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_weight="3.0">
+                <TextView android:textSize="24.0sp" android:textColor="@color/white" android:id="@id/lbl_internet_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Network issues spotted!" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/white" android:id="@id/lbl_internet_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="@string/no_internet_desc" android:alpha="0.6" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_17sp" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/txtRetry" android:background="@drawable/wellness_spinner_bg" android:paddingTop="@dimen/dimen_7dp" android:paddingBottom="@dimen/dimen_7dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_30dp" android:text="@string/retry" android:fontFamily="@font/pf_handbook_pro_bold" android:paddingStart="@dimen/dimen_26dp" android:paddingEnd="@dimen/dimen_26dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

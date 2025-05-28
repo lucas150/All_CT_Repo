@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:id="@id/scroll_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/parent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="21.099976sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:text="Search questions by categories" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="13.399994sp" android:textColor="@color/profile_text_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="Smartly categorised lists to help you find the solution faster" android:fontFamily="@font/pf_handbook_pro_regular" android:letterSpacing="-0.01" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_support_faq" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_weight="1.0">
+                    <ImageView android:id="@id/img_support_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/faq" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center_horizontal" android:id="@id/txt_support_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="FAQs" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_support_newRequest" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_weight="1.0">
+                    <ImageView android:id="@id/img_support_request" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/raise_a_new_request" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center_horizontal" android:id="@id/txt_support_request" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="Raise A \nNew Request" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_support_trackRequest" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_weight="1.0"
+                  xmlns:android="http://schemas.android.com/apk/res/android">
+                    <ImageView android:id="@id/img_support_trackReq" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/track_a_request" />
+                    <TextView android:textSize="13.399994sp" android:textColor="@color/black_opacity60" android:gravity="center_horizontal" android:id="@id/txt_support_trackReq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="Track Request \nStatus" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="21.099976sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:text="@string/wellness_coaching_page_section_2_header" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="13.399994sp" android:textColor="@color/profile_text_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:text="@string/chatbot_section_desc" android:fontFamily="@font/pf_handbook_pro_regular" android:letterSpacing="-0.01" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/llChatbot" android:background="@drawable/bg_chat_bot_support" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_65dp" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp">
+            <ImageView android:background="@drawable/bg_circle_chatbot_support" android:padding="@dimen/dimen_10dp" android:layout_width="@dimen/dimen_45dp" android:layout_height="@dimen/dimen_45dp" app:srcCompat="@drawable/ic_abc_assistant" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp">
+                <TextView android:textSize="@dimen/text_18sp" android:textColor="@color/chatbot_title" android:paddingTop="@dimen/dimen_4dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/abc_assitant" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <TextView android:textSize="@dimen/txt_size_12sp" android:textColor="@color/chatbot_desc" android:paddingTop="@dimen/dimen_4dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/chat_with_us" android:fontFamily="@font/pf_handbook_pro_regular" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/dimen_30dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_21.1sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="Get in touch with us" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <LinearLayout android:id="@id/ll_email" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_10dp">
+                <ImageView android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:src="@drawable/email" />
+                <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/txt_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="care.healthinsurance@adityabirlacapital.com" android:layout_marginStart="5.0dip" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/ll_call_whatsapp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginStart="@dimen/dimen_10dp" android:layout_marginEnd="@dimen/dimen_10dp">
+                <LinearLayout android:id="@id/ll_call" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" app:srcCompat="@drawable/call" />
+                    <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/txt_call" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1800-270-7000" android:layout_marginStart="5.0dip" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/ll_whatsapp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" app:srcCompat="@drawable/ic_whatsapp" />
+                    <TextView android:textSize="@dimen/text_15.4sp" android:id="@id/txt_whatsapp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+91 8828800035" android:layout_marginStart="5.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="@dimen/text_18.2sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" android:text="Corporate Address" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" />
+            <TextView android:textSize="@dimen/text_15.4sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Aditya Birla Health Insurance Co Limited 9th Floor,Tower 1, One Indiabulls Center, Jupiter Mills Compund, 841 , Senapati Bapat Marg, Elphistone Road, Mumbai 400013." android:fontFamily="@font/pf_handbook_pro_regular" android:layout_marginStart="@dimen/dimen_10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/transparent" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/img_walkthrough" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <View android:background="@color/white_opacity80" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rlNext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_30dp" android:layout_alignParentBottom="true">
+        <TextView android:textSize="@dimen/txt_size_16sp" android:textStyle="bold" android:textColor="@color/red_walkthrough" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Next" android:layout_toLeftOf="@id/im_down_arrow" android:layout_centerInParent="true" android:fontFamily="@font/pf_handbook_pro_bold" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/im_down_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_5dp" android:scaleType="fitCenter" android:tint="@color/red_walkthrough" android:layout_alignParentRight="true" app:srcCompat="@drawable/ic_arrow_forward" />
+    </RelativeLayout>
+</RelativeLayout>

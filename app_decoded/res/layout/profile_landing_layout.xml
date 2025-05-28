@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/edittext_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:shimmer="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <RelativeLayout android:background="@color/colorPrimary" android:paddingBottom="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/rl_profile_icon" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView android:id="@id/img_profile" android:layout_width="@dimen/dimen_48dp" android:layout_height="@dimen/dimen_48dp" android:layout_marginLeft="@dimen/dimen_20dp" android:src="@drawable/ic_profile_picture_default" shimmer:civ_border_color="@color/white" shimmer:civ_border_width="@dimen/dimen_1.9dp" />
+            <ImageView android:id="@id/imageView2" android:visibility="visible" android:layout_width="@dimen/dimen_13.4dp" android:layout_height="@dimen/dimen_13.4dp" android:layout_marginTop="@dimen/dimen_35dp" android:src="@drawable/ic_edit_profile_pic" android:layout_alignRight="@id/img_profile" android:layout_alignParentTop="true" android:layout_alignEnd="@id/img_profile" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/white" android:id="@id/txt_profile_name" android:tag="com.userexperior.ueSecureView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_6dp" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" android:layout_toStartOf="@id/img_profile_settings" android:layout_toEndOf="@id/rl_profile_icon" />
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/white" android:id="@id/txt_joined" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_12dp" android:text="Last active on-" android:layout_toRightOf="@id/rl_profile_icon" android:layout_below="@id/txt_profile_name" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/white" android:id="@id/txt_last_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/img_profile_settings" android:layout_toRightOf="@id/txt_joined" android:layout_below="@id/txt_profile_name" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <ImageView android:id="@id/img_profile_settings" android:layout_width="@dimen/dimen_33dp" android:layout_height="@dimen/dimen_33dp" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_30dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" shimmer:srcCompat="@drawable/ic_settings" />
+    </RelativeLayout>
+    <include android:visibility="gone" layout="@layout/ll_no_internet" />
+    <include android:visibility="gone" layout="@layout/layout_no_data_view" />
+    <androidx.core.widget.NestedScrollView android:id="@id/scroll_view" android:visibility="visible" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:background="@color/white" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+                <RelativeLayout android:paddingLeft="@dimen/dimen_10dp" android:paddingRight="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+                    <TextView android:textSize="@dimen/text_21.1sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_11dp" android:text="@string/your_policies" android:fontFamily="@font/pf_handbook_pro_regular" />
+                    <TextView android:textColor="@color/brown" android:gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginRight="@dimen/dimen_10dp" android:text="See All" android:layout_alignParentRight="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </RelativeLayout>
+                <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:paddingLeft="@dimen/dimen_10dp" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_5dp" android:text="@string/find_all_your_health_policies_here" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_policy_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:nestedScrollingEnabled="false" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_cmp_profile" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/text_21.1sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_11dp" android:text="Chronic Management Program" android:fontFamily="@font/pf_handbook_pro_regular" />
+                    <TextView android:textColor="@color/brown" android:gravity="center" android:id="@id/txt_view_cmp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginRight="@dimen/dimen_10dp" android:text="View" android:layout_alignParentRight="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </RelativeLayout>
+                <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/profile_text_grey" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_5dp" android:text="See your medical history for all the enrolled conditions." android:fontFamily="@font/pf_handbook_pro_regular" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_policy_chronic_mgmt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" />
+            </LinearLayout>
+            <com.facebook.shimmer.ShimmerFrameLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/shimmer_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" shimmer:shimmer_duration="500">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <include layout="@layout/shimmer_profile_placeholder_item" />
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

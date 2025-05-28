@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/thumbnail" android:background="#ffdddddd" android:layout_width="@dimen/dimen_50dp" android:layout_height="@dimen/dimen_50dp" android:layout_marginRight="@dimen/dimen_16dp" />
+    <View android:id="@id/name" android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_18dp" android:layout_marginRight="@dimen/dimen_16dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_toRightOf="@id/thumbnail" />
+    <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_14dp" android:layout_marginRight="@dimen/dimen_46dp" android:layout_toRightOf="@id/thumbnail" android:layout_below="@id/name" />
+    <LinearLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="40.0dip" android:layout_below="@id/thumbnail">
+        <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_8dp" android:layout_marginRight="100.0dip" />
+        <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_8dp" android:layout_marginTop="10.0dip" android:layout_marginRight="50.0dip" />
+        <View android:background="#ffdddddd" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_8dp" android:layout_marginTop="10.0dip" android:layout_marginRight="160.0dip" />
+    </LinearLayout>
+</RelativeLayout>

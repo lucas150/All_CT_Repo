@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:background="@color/colorPrimary" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_constraintTop_toTopOf="parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:gravity="right" android:id="@id/img_toolbar_back" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="visible" android:layout_width="35.0dip" android:layout_height="@dimen/dimen_35dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24px" app:tint="@color/white" />
+            <TextView android:textSize="@dimen/text_20sp" android:textColor="@color/white" android:ellipsize="end" android:id="@id/toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Share Your Accomplishment" android:maxLines="1" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingEnd="@dimen/dimen_80dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/img_toolbar_back" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView android:id="@id/svTop" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_0dp" android:fillViewport="true" app:layout_constraintBottom_toTopOf="@id/txtShare" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/sectionContainer" android:paddingBottom="82.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_8dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <TextView android:textSize="@dimen/text_18sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/txtShare" android:background="@drawable/bg_red_12dp_curve_a" android:padding="@dimen/dimen_14dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dimen_20dp" android:text="Share Accomplishment" android:fontFamily="@font/pf_encoresanspro_regular" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/svTop" />
+</androidx.constraintlayout.widget.ConstraintLayout>

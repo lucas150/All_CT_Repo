@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Frequency">
+        <item>फ्रीक्वेंसी चुनें</item>
+        <item>दैनिक</item>
+        <item>साप्ताहिक</item>
+        <item>मासिक</item>
+    </string-array>
+    <string-array name="Timings">
+        <item>समय चुनें</item>
+        <item>9AM से 10 AM</item>
+        <item>10AM से 11AM</item>
+        <item>11AM से 12PM</item>
+        <item>12PM से 1PM</item>
+        <item>1PM से 2PM</item>
+        <item>2PM से 3PM</item>
+        <item>3PM से 4PM</item>
+        <item>4PM से 5PM</item>
+        <item>5PM से 6PM</item>
+    </string-array>
+    <string-array name="default_array">
+        <item></item>
+    </string-array>
+    <string-array name="feedback_array">
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+        <item>ऐप में समस्या है</item>
+    </string-array>
+    <string-array name="feedback_dropdown_array">
+        <item>विषय चुनें</item>
+        <item>ऐप में समस्या हो रही है</item>
+        <item>पॉलिसी से संबंधित</item>
+        <item>प्रोफाइल से संबंधित</item>
+        <item>क्लेम से संबंधित</item>
+        <item>लाभ से संबंधित</item>
+        <item>अन्य</item>
+    </string-array>
+    <string-array name="food_habit_wellness_dietician">
+        <item>चुनें</item>
+        <item>शाकाहारी</item>
+        <item>मांसाहारी</item>
+        <item>ओवो-लैक्टो-वेजिटेरियन (केवल अंडे और डेयरी)</item>
+    </string-array>
+    <string-array name="ft_wellness_dietician">
+        <item>फीट</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="inches_wellness_dietician">
+        <item>इंच</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+    <string-array name="lifestyle_wellness_dietician">
+        <item>चुनें</item>
+        <item>ज़्यादातर बैठे हुए</item>
+        <item>मध्यम ऐक्टिविटी</item>
+        <item>भारी ऐक्टिविटी</item>
+    </string-array>
+    <string-array name="obj_of_diet_req_wellness_dietician">
+        <item>चुनें</item>
+        <item>वज़न बढ़ाना</item>
+        <item>वज़न घटाना</item>
+        <item>बैलेंस्ड/वेट मैनेजमेंट डायट</item>
+        <item>विशेष मेडिकल कंडीशन</item>
+        <item>मांसपेशियों के विकास के लिए हाई प्रोटीन डायट</item>
+    </string-array>
+</resources>

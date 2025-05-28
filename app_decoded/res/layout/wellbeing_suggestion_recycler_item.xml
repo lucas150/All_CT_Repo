@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black" android:id="@id/txt_suggestion" android:background="@drawable/mypolicy_pdf_text_bg" android:paddingTop="@dimen/dimen_5dp" android:paddingBottom="@dimen/dimen_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="@string/difficulty_level" android:fontFamily="@font/pf_handbook_pro_regular" android:paddingStart="@dimen/dimen_20dp" android:paddingEnd="@dimen/dimen_20dp" android:layout_marginStart="@dimen/dimen_10dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

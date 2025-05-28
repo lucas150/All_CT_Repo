@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:background="@color/main_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/toolbar_layout" />
+        <LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/white" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="Personal Details" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/txt_size_20sp" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@id/text_name" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Mr. Srinivas Subramaniam" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/white_opacity80" android:gravity="center_horizontal" android:id="@id/text_age" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:text="50 Years old" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_ehr_records" android:background="@color/main_bg_color" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_20dp" />
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/dimen_10dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_22sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="Recent Medications" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black_opacity60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_5dp" android:text="See all your recent medications" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_ehr_medications" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_15dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_20dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/dimen_30dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dimen_10dp">
+            <TextView android:textSize="@dimen/text_22sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_15dp" android:text="Medical Timeline" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <TextView android:textSize="@dimen/text_14sp" android:textColor="@color/black_opacity60" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginTop="@dimen/dimen_5dp" android:text="View your medical timeline here" android:fontFamily="@font/pf_handbook_pro_regular" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_medical_timeline" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

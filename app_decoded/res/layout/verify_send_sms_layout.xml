@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dimen_20dp">
+        <TextView android:textSize="@dimen/text_21sp" android:textColor="@color/black" android:gravity="center" android:id="@id/text_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Verify Your Mobile Number" android:fontFamily="@font/pf_handbook_pro_bold" />
+        <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/text_black_1" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:text="To confirm your mobile number we need to send an SMS from your number" android:layout_below="@id/text_title" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <ImageView android:id="@id/imgSimProceed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" app:srcCompat="@drawable/ic_simcard" />
+        <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/address_color" android:id="@id/text_carrier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*Carrier SMS charges may apply" android:layout_alignParentBottom="true" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:id="@id/text_proceed" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/dimen_0dp" android:layout_marginRight="@dimen/dimen_0dp" android:text="verify your number" android:layout_above="@id/text_carrier" style="@style/YellowBgTextView" />
+    </RelativeLayout>
+</LinearLayout>

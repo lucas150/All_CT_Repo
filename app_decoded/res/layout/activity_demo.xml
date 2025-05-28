@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_200dp" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_30dp" android:layout_marginRight="@dimen/dimen_20dp">
+        <ProgressBar android:id="@id/ptotal" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_200dp" style="@android:style/Widget.ProgressBar.Horizontal" />
+        <androidx.appcompat.widget.AppCompatSeekBar android:id="@id/seekBar" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_100dp" android:secondaryProgress="@color/transparentcolor" android:progressDrawable="@color/transparentcolor" android:layout_alignParentTop="true" />
+        <View android:background="@color/white" android:layout_width="@dimen/dimen_400dp" android:layout_height="@dimen/dimen_10dp" android:layout_below="@id/seekBar" />
+    </RelativeLayout>
+</LinearLayout>

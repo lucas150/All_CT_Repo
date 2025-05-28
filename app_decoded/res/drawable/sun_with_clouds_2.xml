@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="56.0dip" android:width="70.0dip" android:viewportWidth="70.0" android:viewportHeight="56.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$sun_with_clouds_2__0" android:pathData="M69.929,25.515C69.929,39.606 58.782,51.03 45.032,51.03C31.281,51.03 20.134,39.606 20.134,25.515C20.134,11.423 31.281,0 45.032,0C58.782,0 69.929,11.423 69.929,25.515Z" />
+    <path android:fillColor="#00000000" android:pathData="M69.429,25.515C69.429,39.342 58.494,50.53 45.032,50.53C31.569,50.53 20.634,39.342 20.634,25.515C20.634,11.688 31.569,0.5 45.032,0.5C58.494,0.5 69.429,11.688 69.429,25.515Z" android:strokeColor="@drawable/$sun_with_clouds_2__1" android:strokeWidth="1.0" />
+    <path android:fillColor="@drawable/$sun_with_clouds_2__2" android:pathData="M62.033,38.349C62.209,37.47 62.301,36.565 62.301,35.641C62.301,27.003 54.258,20 44.336,20C36.96,20 30.622,23.87 27.856,29.406C25.614,27.721 22.706,26.703 19.528,26.703C12.441,26.703 6.695,31.761 6.695,38C6.695,38.347 6.713,38.691 6.748,39.031C3.339,40.484 0.992,43.535 0.992,47.062C0.992,51.998 5.588,56 11.258,56H59.734C65.404,56 70,51.998 70,47.062C70,42.814 66.596,39.258 62.033,38.349Z" />
+</vector>

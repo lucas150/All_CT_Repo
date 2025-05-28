@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar_layout" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_community_events" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ProgressBar android:layout_gravity="center_vertical" android:id="@id/progress_bar_events" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="center" android:id="@id/img_nodata" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_100dp" android:src="@drawable/info" />
+    <TextView android:gravity="center" android:id="@id/txtNoResult" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="No events found!" />
+</LinearLayout>

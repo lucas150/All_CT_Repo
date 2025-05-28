@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/wellness_bottom_corner" android:layout_width="@dimen/dimen_160dp" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_5dp" android:elevation="@dimen/dimen_10dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:orientation="vertical" android:id="@id/ll_wellness_main" android:background="@drawable/combined_shape_1" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_50dp">
+            <ImageView android:layout_gravity="end" android:id="@id/img_done" android:visibility="gone" android:layout_width="@dimen/dimen_20dp" android:layout_height="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_5dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" />
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/img_wellness_icon" android:layout_width="@dimen/dimen_25dp" android:layout_height="@dimen/dimen_25dp" android:layout_marginBottom="@dimen/dimen_10dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_wellness_names" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_4dp" android:text="Chronic Management Program Compliance" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <TextView android:textSize="@dimen/text_11sp" android:textColor="@color/profile_text_grey" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_wellness_desc" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_4dp" android:layout_marginTop="@dimen/dimen_4dp" android:layout_marginRight="@dimen/dimen_4dp" android:layout_marginBottom="@dimen/dimen_4dp" android:text="CMPCMPCMCPMCPCM" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+    <View android:id="@id/view" android:background="@color/profile_text_grey" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_1dp" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_20dp">
+        <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/black" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/txt_wellness_values" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="12 this month" android:fontFamily="@font/pf_handbook_pro_regular" />
+    </LinearLayout>
+</LinearLayout>

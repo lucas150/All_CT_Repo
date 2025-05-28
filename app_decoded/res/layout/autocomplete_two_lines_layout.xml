@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_15.3sp" android:textColor="@color/black" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/txt_spinner_item" android:background="@null" android:paddingLeft="@dimen/dimen_20dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_20dp" android:paddingBottom="@dimen/dimen_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/pf_handbook_pro_regular" style="?android:spinnerItemStyle" />
+</LinearLayout>

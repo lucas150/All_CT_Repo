@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="@dimen/dimen_320dp" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/text_16.3sp" android:textColor="@color/white" android:id="@id/txt_header" android:background="@drawable/red_bg_top_corners" android:padding="@dimen/dimen_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Authenticating registered mobile Number" android:textAllCaps="true" android:fontFamily="@font/pf_handbook_pro_bold" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/ll_detect_no" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp">
+            <RelativeLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/mobile_progress" android:layout_width="@dimen/dimen_16dp" android:layout_height="@dimen/dimen_16dp" />
+                <ImageView android:id="@id/mobile_success_img" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/mobile_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_7dp" android:text="Detecting number" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_send_sms" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_20dp" android:layout_marginBottom="@dimen/dimen_20dp">
+            <RelativeLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ProgressBar android:id="@id/sms_progress" android:layout_width="@dimen/dimen_16dp" android:layout_height="@dimen/dimen_16dp" />
+                <ImageView android:id="@id/sms_success_img" android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/sms_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_7dp" android:text="Sending sms to verify with our systems" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_failure" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_7dp">
+            <TextView android:textSize="@dimen/text_14sp" android:gravity="center" android:id="@id/text_manually" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" android:text="Manually enter registered mobile number" android:drawableRight="@null" style="@style/YellowBgTextView" />
+            <TextView android:textSize="@dimen/text_14sp" android:gravity="center" android:id="@id/text_member_id" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_20dp" android:text="i want to register with my Member ID" style="@style/YellowBorderTextView" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_19.2sp" android:textColor="@color/vas_guide_bottom_text" android:gravity="center" android:id="@id/text_close" android:layout_width="fill_parent" android:layout_height="@dimen/dimen_38dp" android:text="Close" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/ll_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_20dp" android:foreground="?android:selectableItemBackground">
+            <TextView android:textSize="@dimen/text_13sp" android:textColor="@color/colorPrimary" android:gravity="center" android:id="@id/txt_email_us" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/contact_us_registration" android:fontFamily="@font/pf_handbook_pro_regular" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

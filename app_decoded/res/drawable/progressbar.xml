@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate android:fromDegrees="320.0" android:toDegrees="320.0" android:pivotX="50.0%" android:pivotY="50.0%">
+            <shape android:shape="oval" android:innerRadiusRatio="3.0" android:thicknessRatio="7.0" android:thickness="@dimen/dimen_5dp">
+                <stroke android:width="1.0dip" android:color="@color/black" android:dashWidth="@dimen/dimen_5dp" android:dashGap="@dimen/dimen_2dp" />
+                <size android:height="@dimen/dimen_65dp" android:width="@dimen/dimen_65dp" />
+            </shape>
+        </rotate>
+    </item>
+    <item android:id="@android:id/progress">
+        <rotate android:fromDegrees="320.0" android:toDegrees="320.0" android:pivotX="50.0%" android:pivotY="50.0%">
+            <shape android:shape="ring" android:innerRadiusRatio="3.0" android:thicknessRatio="6.0">
+                <gradient android:startColor="#ffff0000" android:endColor="#fff0b0b0" android:angle="0.0" />
+                <corners android:radius="@dimen/dimen_10dp" />
+                <size android:height="@dimen/dimen_5dp" android:width="@dimen/dimen_5dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

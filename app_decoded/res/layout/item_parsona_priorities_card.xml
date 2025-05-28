@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:tag="layout/item_parsona_priorities_card_0" android:background="@drawable/bg_parsona_list_unselected" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginStart="@dimen/dimen_16dp" android:layout_marginEnd="@dimen/dimen_16dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/imgIcon" android:layout_width="@dimen/dimen_40dp" android:layout_height="@dimen/dimen_40dp" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginBottom="@dimen/dimen_8dp" android:layout_marginStart="@dimen/dimen_8dp" />
+    <TextView android:textSize="@dimen/text_16sp" android:textColor="@color/neutral_grey" android:id="@id/txtTitle" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:fontFamily="@font/aneklatin_bold" android:layout_marginStart="@dimen/dimen_12dp" android:layout_marginEnd="@dimen/dimen_12dp" />
+    <ImageView android:id="@id/imgDots" android:layout_width="@dimen/dimen_24dp" android:layout_height="@dimen/dimen_24dp" android:layout_marginEnd="@dimen/dimen_16dp" app:srcCompat="@drawable/drag_vertical_dots" />
+</LinearLayout>

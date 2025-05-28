@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:id="@id/parent" android:background="@drawable/gradient_video_call" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:blurkit="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@id/image" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:src="@drawable/doctorplaceholder" android:layout_marginStart="20.0dip" />
+    <TextView android:textSize="16.0dip" android:textColor="@android:color/white" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="20.0dip" android:layout_toRightOf="@id/image" android:fontFamily="@font/inter_bold" android:layout_toEndOf="@id/image" android:lineHeight="19.0sp" />
+    <TextView android:textSize="14.0dip" android:textColor="@android:color/white" android:id="@id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="1.0dip" android:text="Connecting.." android:layout_toRightOf="@id/image" android:layout_below="@id/title" android:fontFamily="@font/inter_regular" android:lineHeight="17.0sp" />
+    <ImageView android:id="@id/end_call" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" blurkit:srcCompat="@drawable/ic_call_cut" />
+    <View android:id="@id/line" android:background="#08ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="50.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="50.0dip" android:layout_below="@id/end_call" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="42.0dip" android:layout_marginTop="19.0dip" android:layout_marginRight="42.0dip" android:layout_marginBottom="18.0dip" android:layout_below="@id/line">
+        <ImageView android:id="@id/local_video_action_fab" android:layout_width="20.0dip" android:layout_height="20.0dip" blurkit:srcCompat="@drawable/ic_video_on" />
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <ImageView android:id="@id/mute_action_fab" android:layout_width="20.0dip" android:layout_height="20.0dip" blurkit:srcCompat="@drawable/ic_mic_on" />
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.1" />
+        <ImageView android:id="@id/switch_camera_action_fab" android:layout_width="20.0dip" android:layout_height="20.0dip" blurkit:srcCompat="@drawable/ic_call_mute" />
+    </LinearLayout>
+</RelativeLayout>

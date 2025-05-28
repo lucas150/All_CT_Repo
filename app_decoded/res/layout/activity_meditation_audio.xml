@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/relativeLayout2" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/include2" layout="@layout/toolbar_layout" />
+        <TextView android:textSize="@dimen/text_15sp" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@id/description" android:background="@color/colorPrimary" android:paddingTop="@dimen/dimen_10dp" android:paddingBottom="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Make meditation simpler and teach yourself skills to significantly improve your quality of life." android:layout_below="@id/include2" android:paddingStart="@dimen/dimen_20dp" android:paddingEnd="@dimen/dimen_20dp" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/description">
+            <include android:id="@id/include_no_data" layout="@layout/layout_no_data_view" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/meditationView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0" />
+            <include android:id="@id/include_audio" layout="@layout/layout_audio" />
+            <include android:id="@id/include_no_internet" android:visibility="gone" layout="@layout/ll_no_internet" />
+        </RelativeLayout>
+        <ProgressBar android:id="@id/meditationProgressView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

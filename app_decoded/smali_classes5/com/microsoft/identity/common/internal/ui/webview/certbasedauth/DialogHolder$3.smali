@@ -1,0 +1,60 @@
+.class Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder$3;
+.super Ljava/lang/Object;
+.source "DialogHolder.java"
+
+# interfaces
+.implements Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;->showSmartcardRemovalPromptDialog(Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;
+
+.field final synthetic val$dismissCallback:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;
+
+
+# direct methods
+.method constructor <init>(Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;)V
+    .locals 0
+
+    .line 194
+    iput-object p1, p0, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder$3;->this$0:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;
+
+    iput-object p2, p0, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder$3;->val$dismissCallback:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onDismiss()V
+    .locals 1
+
+    .line 197
+    iget-object v0, p0, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder$3;->this$0:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;
+
+    invoke-virtual {v0}, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder;->dismissDialog()V
+
+    .line 198
+    iget-object v0, p0, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/DialogHolder$3;->val$dismissCallback:Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;
+
+    if-eqz v0, :cond_0
+
+    .line 199
+    invoke-interface {v0}, Lcom/microsoft/identity/common/internal/ui/webview/certbasedauth/IDismissCallback;->onDismiss()V
+
+    :cond_0
+    return-void
+.end method

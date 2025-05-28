@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_register_member_id" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar_layout" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ll_footer"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_main" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_32dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_32dp" android:text="Please enter your mobile number, and we’ll verify if we have that with us!" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_23dp" android:layout_marginTop="@dimen/dimen_20dp" android:layout_marginRight="@dimen/dimen_23dp">
+                    <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/black_opacity60" android:id="@id/txt_membership_id" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Enter Mobile Number" android:layout_weight="1.0" android:inputType="phone" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+                <EditText android:textColor="@color/black" android:id="@id/edt_mobile" android:background="@color/edt_grey" android:padding="@dimen/dimen_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_23dp" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginRight="@dimen/dimen_23dp" android:maxLength="10" android:inputType="phone" />
+                <View android:id="@id/view_edt_highlight" android:background="@color/edt_red" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/dimen_23dp" android:layout_marginRight="@dimen/dimen_23dp" />
+                <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/colorPrimary" android:id="@id/text_msg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_23dp" android:layout_marginTop="@dimen/dimen_12dp" android:layout_marginRight="@dimen/dimen_23dp" android:text="Uh oh! It doesn’t look like this number is registered with us. Try registering with your Member ID." android:fontFamily="@font/pf_handbook_pro_regular" />
+                <LinearLayout android:layout_gravity="center" android:id="@id/ll_call_us" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                    <ImageView android:layout_width="@dimen/dimen_24dp" android:layout_height="@dimen/dimen_24dp" android:layout_marginLeft="@dimen/dimen_23dp" android:layout_marginTop="@dimen/dimen_5dp" android:scaleType="fitXY" app:srcCompat="@drawable/ic_phone_red" />
+                    <TextView android:textSize="@dimen/txt_size_18sp" android:textColor="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dimen_5dp" android:layout_marginTop="@dimen/dimen_8dp" android:layout_marginRight="@dimen/dimen_23dp" android:text="Having problems? Call Us" android:fontFamily="@font/pf_handbook_pro_regular" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:orientation="vertical" android:id="@id/ll_footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_alignParentBottom="true">
+            <TextView android:id="@id/btn_verify_mobile" android:layout_width="fill_parent" android:text="Authentic Mobile Number" style="@style/YellowBgTextView" />
+            <TextView android:id="@id/btn_register_w_member_id" android:layout_width="fill_parent" android:text="Signup with member id" style="@style/YellowBorderTextView" />
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/ll_login_from_registration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:layout_marginBottom="@dimen/dimen_20dp">
+                <TextView android:textSize="@dimen/text_17.3sp" android:textColor="@color/black" android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Already Setup? Log in" android:fontFamily="@font/pf_handbook_pro_regular" />
+                <ImageView android:layout_gravity="center" android:paddingLeft="@dimen/dimen_8dp" android:paddingTop="@dimen/dimen_3dp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/button_black_arrow_onboarding" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

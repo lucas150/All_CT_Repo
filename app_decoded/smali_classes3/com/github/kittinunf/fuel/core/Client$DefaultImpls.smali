@@ -1,0 +1,53 @@
+.class public final Lcom/github/kittinunf/fuel/core/Client$DefaultImpls;
+.super Ljava/lang/Object;
+.source "Client.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/github/kittinunf/fuel/core/Client;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "DefaultImpls"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x4,
+        0x0
+    }
+.end annotation
+
+
+# direct methods
+.method public static awaitRequest(Lcom/github/kittinunf/fuel/core/Client;Lcom/github/kittinunf/fuel/core/Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/github/kittinunf/fuel/core/Client;",
+            "Lcom/github/kittinunf/fuel/core/Request;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lcom/github/kittinunf/fuel/core/Response;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .line 9
+    invoke-interface {p0, p1}, Lcom/github/kittinunf/fuel/core/Client;->executeRequest(Lcom/github/kittinunf/fuel/core/Request;)Lcom/github/kittinunf/fuel/core/Response;
+
+    move-result-object p0
+
+    return-object p0
+.end method

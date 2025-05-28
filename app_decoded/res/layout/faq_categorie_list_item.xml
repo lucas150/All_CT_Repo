@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dimen_20dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/ll_main" android:background="@color/white" android:padding="@dimen/dimen_10dp" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/text_15.4sp" android:textColor="@color/black_opacity40" android:id="@id/txt_questions" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dimen_20dp" android:layout_weight="1.0" android:fontFamily="@font/pf_handbook_pro_regular" />
+        <ImageView android:id="@id/img_upArrow" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_5dp" android:src="@drawable/path_3_copy" android:layout_weight="0.1" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/text_13.4sp" android:textColor="@color/faq_ans_grey" android:linksClickable="true" android:id="@id/txt_answers" android:background="@color/white" android:paddingLeft="@dimen/dimen_5dp" android:paddingTop="@dimen/dimen_8dp" android:paddingRight="@dimen/dimen_5dp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="-" android:fontFamily="@font/pf_handbook_pro_regular" />
+    <TextView android:textSize="@dimen/text_15.3sp" android:textColor="@color/black_opacity40" android:textColorLink="@color/black" android:id="@id/txt_facing_issue" android:background="@color/white" android:padding="@dimen/dimen_8dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dimen_10dp" android:text="Still facing an issue ? Click Here" android:fontFamily="@font/pf_handbook_pro_regular" />
+</LinearLayout>
