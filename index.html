@@ -30,9 +30,10 @@
 
         // Replace with your CleverTap account ID and region
         clevertap.account.push({ "id": "TEST-4R8-7ZK-6K7Z", "region": "eu1" });
+        // clevertap.setLogLevel(3);
         clevertap.privacy.push({ optOut: false }); // User has not opted out of data sharing
         clevertap.privacy.push({ useIP: false }); // Do not use IP for data
-
+        
         // Load CleverTap SDK
         (function () {
             var wzrk = document.createElement('script');
@@ -42,6 +43,8 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(wzrk, s);
         })();
+        clevertap.setLogLevel(3);
+
     </script>
 </head>
 <body>
@@ -53,8 +56,8 @@
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
 
-        <label for="membership">Membership Type:</label><br>
-        <input type="text" id="membership" name="membership" required><br><br>
+        <label for="identity">Identity :</label><br>
+        <input type="text" id="identity" name="identity" required><br><br>
 
         <button type="button" onclick="submitForm()">Submit</button>
         <button type="button" onclick="enableNotifications()">Enable Notifications</button>
@@ -91,9 +94,9 @@
         function submitForm() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
-            const membership = document.getElementById("membership").value;
+            const identity = document.getElementById("identity").value;
 
-            if (!name || !email || !membership) {
+            if (!name || !email || !identity) {
                 alert("Please fill in all fields!");
                 return;
             }
@@ -101,19 +104,11 @@
             clevertap.onUserLogin.push({
                 "Site": {
                     "name": name,
-                     "email": email,
-                    "identity": Math.floor(Math.random() * 1000000) // Generates a random integer
-
+                    "Email": email,
+                    "Identity": identity, 
                 }
             });
 
-            // clevertap.profile.push({
-            //     "Site": {
-            //         "Customer Type": membership,
-            //         "Name": name,
-            //         "Identity": Math.floor(Math.random() * 1000000) // Generates a random integer
-            //     }
-            // });
 
             document.getElementById("output").innerText = "User details submitted to CleverTap!";
             alert("User details successfully submitted to CleverTap!");
@@ -145,7 +140,7 @@
             // console.log("All local storage data has been cleared.");
             // localStorage.r   emoveItem("WZRK_PR"); // Removes only the "wzrk_pr" key
             // console.log("wzrk_pr has been removed from local storage.");  
-             // List of keys to keep
+            // List of keys to keep
         const allowedKeys = [
             "WZRK_L", 
             "WZRK_G", 
