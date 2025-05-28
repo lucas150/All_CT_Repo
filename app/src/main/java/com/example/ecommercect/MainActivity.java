@@ -20,14 +20,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.clevertap.android.pushtemplates.PushTemplateNotificationHandler;
+import com.clevertap.android.sdk.ActivityLifecycleCallback;
 import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.clevertap.android.sdk.CleverTapInstanceConfig;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
 import com.clevertap.android.sdk.inbox.CTInboxMessage;
+import com.clevertap.android.sdk.interfaces.NotificationHandler;
 import com.example.ecommercect.ui.login.LoginActivity;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,7 +69,10 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        CleverTapAPI.setNotificationHandler((NotificationHandler)new PushTemplateNotificationHandler());
+
         setContentView(R.layout.activity_main);
         welcomeText = findViewById(R.id.textView2);
         // ✅ Check if user is logged in
@@ -80,13 +89,25 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             redirectToLogin();
             return;
         }
-
+//        clevertapDefaultInstance.enablePersonalization();
+//
+//        CleverTapInstanceConfig clevertapAdditionalInstanceConfig = CleverTapInstanceConfig.createInstance(
+//                this,
+//                "TEST-4R8-7ZK-6K7Z",
+//                "TEST-31a-b24"
+//        );
+//
+//        clevertapDefaultInstance = CleverTapAPI.instanceWithConfig(this ,clevertapAdditionalInstanceConfig);
         clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
         clevertapDefaultInstance.setCTNotificationInboxListener(this);
 
         clevertapDefaultInstance.initializeInbox();
         clevertapDefaultInstance.setDisplayUnitListener(this);
         clevertapDefaultInstance.pushEvent("Native Display");
+        clevertapDefaultInstance.dismissAppInbox();
+
+        clevertapDefaultInstance.getUnreadInboxMessages();
+
         // Notification Permission (Android 13+)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
@@ -118,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
         Button profile = findViewById(R.id.Profile);
         profile.setOnClickListener(v->{
-            clevertapDefaultInstance.pushEvent("In-app_2 Notification Triggered");
+            clevertapDefaultInstance.pushEvent("Internal Deep Link");
         });
 
         ImageButton more = findViewById(R.id.btnmore);
@@ -194,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     }
 
     private void markNotificationsAsRead() {
-        unreadNotifications = 0;
+        unreadNotifications = clevertapDefaultInstance.getInboxMessageUnreadCount();
         updateNotificationBadge();
     }
 
@@ -237,10 +258,14 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     @Override
     public void inboxMessagesDidUpdate() {
         ArrayList<CTInboxMessage> messages = clevertapDefaultInstance.getAllInboxMessages();
-
+//        Log.d("CleverTap", messages);
         for (CTInboxMessage message : messages) {
             messageId = message.getMessageId(); // ✅ Correct way to get Message ID
+            JSONObject payload = message.getData(); // ✅ Get Payload as JSON
+
             Log.d("CleverTap", "Inbox Message ID: " + messageId);
+            Log.d("CT", "Inbox Message Payload: " + payload.toString());
+
         }
 
         unreadNotifications = getUnreadNotifications();

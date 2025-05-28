@@ -18,6 +18,7 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.clevertap.android.sdk.ActivityLifecycleCallback;
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.example.ecommercect.MainActivity;
 import com.example.ecommercect.R;
@@ -61,7 +62,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory()).get(LoginViewModel.class);
-
         usernameEditText = binding.username;
         passwordEditText = binding.password;
         emailEditText = binding.email; // Ensure email field exists in XML
@@ -102,11 +102,14 @@ public class LoginActivity extends AppCompatActivity {
             if (loginResult.getSuccess() != null) {
                 String username = loginResult.getSuccess().getDisplayName();
                 String email = emailEditText.getText().toString();
+//                Number identity = ; // ✅ Ensure string type consistency
 
                 // ✅ Save login state using SharedPreferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("username", username);
                 editor.putString("email", email);
+//                editor.putString("Identity", identity);
+
                 editor.putBoolean("isLoggedIn", true);
                 editor.putLong("loginTimestamp", Calendar.getInstance().getTimeInMillis());
                 editor.apply();
@@ -116,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                     HashMap<String, Object> profileUpdate = new HashMap<>();
                     profileUpdate.put("Name", username);
                     profileUpdate.put("Email", email);
+//                    profileUpdate.put("Identity", identity);
                     clevertapDefaultInstance.onUserLogin(profileUpdate);
                 }
 

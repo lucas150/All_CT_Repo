@@ -13,11 +13,13 @@ import android.widget.Button;
 import com.clevertap.android.pushtemplates.PushTemplateNotificationHandler;
 import com.clevertap.android.sdk.ActivityLifecycleCallback;
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.clevertap.android.sdk.CleverTapInstanceConfig;
 import com.clevertap.android.sdk.interfaces.NotificationHandler;
 import com.clevertap.android.sdk.pushnotification.CTPushNotificationListener;
 import com.clevertap.android.sdk.pushnotification.amp.CTPushAmpListener;
 import com.google.gson.Gson;
 import android.net.Uri;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -26,27 +28,31 @@ import androidx.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class CTapp extends Application implements CTPushAmpListener, CTPushNotificationListener, Application.ActivityLifecycleCallbacks {
-    private CleverTapAPI clevertapDefaultInstance;
+public class CTapp extends Application implements  CTPushNotificationListener, Application.ActivityLifecycleCallbacks {
 
+    private CleverTapAPI clevertapDefaultInstance;
     @Override
     public void onCreate() {
-        ActivityLifecycleCallback.register(this);
-        CleverTapAPI.setNotificationHandler((NotificationHandler) new PushTemplateNotificationHandler());
-
         super.onCreate();
+        ActivityLifecycleCallback.register(this);
         registerActivityLifecycleCallbacks(this);
-        clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
-        clevertapDefaultInstance.setCTPushAmpListener(this);
-        clevertapDefaultInstance.setCTPushNotificationListener(this);
+        startService(new Intent(getBaseContext(), OnClearFromRecentService.class));
+        CleverTapInstanceConfig clevertapAdditionalInstanceConfig = CleverTapInstanceConfig.createInstance(
+                getApplicationContext(),
+                "TEST-4R8-7ZK-6K7Z",
+                "TEST-31a-b24"
+        );
 
-        CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
+        clevertapDefaultInstance = CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
+
         if (clevertapDefaultInstance == null) {
-            Log.e("CTapp", "CleverTap instance is NULL!");
+            Log.e("CTapp", "CleverTap instance is NULL! App might crash.");
         } else {
             Log.d("CTapp", "CleverTap initialized successfully!");
+            CleverTapAPI.setNotificationHandler(new PushTemplateNotificationHandler());
+            clevertapDefaultInstance.setCTPushNotificationListener(this);
+            CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
         }
-        // Create a notification channel
         CleverTapAPI.createNotificationChannel(
                 getApplicationContext(),
                 "henil123", "henil123", "henil123",
@@ -59,8 +65,6 @@ public class CTapp extends Application implements CTPushAmpListener, CTPushNotif
                 NotificationManager.IMPORTANCE_MAX,
                 true
         );
-
-
     }
 
 
@@ -83,21 +87,25 @@ public class CTapp extends Application implements CTPushAmpListener, CTPushNotif
 
     @Override
     public void onActivityStarted(@NonNull Activity activity) {
+        Toast.makeText(this,"Activty Started",Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onActivityResumed(@NonNull Activity activity) {
+        Toast.makeText(this,"Activty Resume",Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onActivityPaused(@NonNull Activity activity) {
+        Toast.makeText(this,"Activty Paused",Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void onActivityStopped(@NonNull Activity activity) {
+        Toast.makeText(this,"Activty Stopped",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -109,28 +117,53 @@ public class CTapp extends Application implements CTPushAmpListener, CTPushNotif
     @Override
     public void onActivityDestroyed(@NonNull Activity activity) {
 
+        Toast.makeText(this, "Activity Destroyed", Toast.LENGTH_SHORT).show();
     }
 
-
-    @Override
-    public void onPushAmpPayloadReceived(Bundle bundle) {
-        Log.d("CleverTap", "Push AMP payload received, ignoring...");
-//
-//        // Convert Bundle to HashMap
-//        HashMap<String, String> dataMap = new HashMap<>();
-//        for (String key : bundle.keySet()) {
-//            dataMap.put(key, bundle.getString(key));
+//    public void finish(Activity activity) {
+//        if (clevertapDefaultInstance != null) {
+//            clevertapDefaultInstance.pushEvent("App Finished");
+//            Log.d("CleverTap", "App Finished event logged.");
+//        } else {
+//            Log.e("CleverTap", "CleverTap instance is null. Event not logged.");
 //        }
+//        Toast.makeText(this, "Activity Finished 123", Toast.LENGTH_SHORT).show();
 //
-//        // Serialize HashMap to JSON
-//        Gson gson = new Gson();
-//        String jsonPayload = gson.toJson(dataMap);
-//
-//        // ✅ Send via Intent to MyFcmMessageListenerService
-//        Intent intent = new Intent(this, MyFcmMessageListenerService.class);
-//        intent.putExtra("amp_payload_json", jsonPayload);
-//        startService(intent);
-    }
+//        activity.finish(); // Ensure the activity actually finishes
+//    }
+
+
+//    @Override
+//    public void onTerminate() {
+//        super.onTerminate();
+//        if (clevertapDefaultInstance != null) {
+//            clevertapDefaultInstance.pushEvent("App Terminated");
+//            Log.d("CleverTap", "App Terminated event logged.");
+//        } else {
+//        } else {
+//            Log.e("CleverTap", "CleverTap instance is null. Event not logged.");
+//        }
+//    }
+
+//    @Override
+//    public void onPushAmpPayloadReceived(Bundle bundle) {
+//        Log.d("CleverTap", "Push AMP payload received, ignoring...");
+////
+////        // Convert Bundle to HashMap
+////        HashMap<String, String> dataMap = new HashMap<>();
+////        for (String key : bundle.keySet()) {
+////            dataMap.put(key, bundle.getString(key));
+////        }
+////
+////        // Serialize HashMap to JSON
+////        Gson gson = new Gson();
+////        String jsonPayload = gson.toJson(dataMap);
+////
+////        // ✅ Send via Intent to MyFcmMessageListenerService
+////        Intent intent = new Intent(this, MyFcmMessageListenerService.class);
+////        intent.putExtra("amp_payload_json", jsonPayload);
+////        startService(intent);
+//    }
 
     @Override
     public void onNotificationClickedPayloadReceived(HashMap<String, Object> hashMap) {

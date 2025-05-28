@@ -34,7 +34,7 @@ public class MyFcmMessageListenerService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage message) {
         Log.d("CleverTap", "FCM Message Received");
-
+        
         if (message.getData().size() > 0) {
             Bundle extras = new Bundle();
             boolean isCustom = false;

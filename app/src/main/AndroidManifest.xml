@@ -8,7 +8,7 @@
 
     <application
         android:name=".CTapp"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -22,15 +22,19 @@
             android:exported="true"
             android:label="@string/title_activity_login" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     <activity
         android:name=".MainActivity"
-        android:exported="true"/>
-
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity >
     <activity android:name=".AllProductActivity"
         android:exported="true">
         <intent-filter>
@@ -61,14 +65,23 @@
             android:value="1"/>
 
 
+<!--        <service-->
+<!--            android:name=".MyFcmMessageListenerService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT"/>-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+
+
         <service
-            android:name=".MyFcmMessageListenerService"
+            android:name="com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-
+        <service android:name="com.example.ecommercect.OnClearFromRecentService" android:stopWithTask="false" />
 
 
     </application>
