@@ -33,7 +33,7 @@ public class CTapp extends Application {
 
         // Create notification channels
         CleverTapAPI.createNotificationChannel(getApplicationContext(),
-                "henil123", "henil123", "henil123", NotificationManager.IMPORTANCE_MAX, true, "hb.mp3");
+                "henil123", "henil123", "henil123", NotificationManager.IMPORTANCE_MAX, true);
         CleverTapAPI.createNotificationChannel(getApplicationContext(),
                 "sound", "sound", "sound", NotificationManager.IMPORTANCE_MAX, true, "jsr.mp3");
         mFirebaseAnalytics.setUserProperty("ct_objectId", Objects.requireNonNull(CleverTapAPI.getDefaultInstance(this)).getCleverTapID());

@@ -44,12 +44,15 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
 
+import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
 import com.clevertap.android.sdk.inbox.CTInboxMessage;
 import com.clevertap.android.sdk.inbox.CTInboxMessageContent;
 import com.clevertap.android.sdk.pushnotification.CTPushNotificationListener;
@@ -125,7 +128,30 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             prodViewedAction.put("Price", 59.99);
             prodViewedAction.put("EndDate", "$D_1738125118");
 
-            clevertapDefaultInstance.pushEvent("Product2", prodViewedAction);
+//        HashMap<String, Object> prodViewedAction1 = new HashMap<String, Object>();
+//        prodViewedAction.put("Product Name", "Cyes");
+
+
+            clevertapDefaultInstance.pushEvent("Custom Event 3", prodViewedAction);
+//        clevertapDefaultInstance.pushEvent("Custom Event 2");
+//        clevertapDefaultInstance.pushEvent("Custom Event 3",prodViewedAction1);
+//        clevertapDefaultInstance.pushEvent("Custom Event 4");
+//        clevertapDefaultInstance.pushEvent("Custom Event 15");
+//
+//
+//
+//        HashMap<String, Object> updatedProfile = new HashMap<>();
+//        updatedProfile.put("Name", "Vaibhav");
+//        updatedProfile.put("Identity", 676745);
+//        updatedProfile.put("Prefered Language", "English");
+//        updatedProfile.put("Email", "t676745@gmail.com");
+//        updatedProfile.put("Phone", "+919786542089");
+//        updatedProfile.put("Gender", "M");
+//        updatedProfile.put("DOB", new Date());
+//
+//
+//        clevertapDefaultInstance.onUserLogin(updatedProfile);
+
 //            clevertapDefaultInstance.pushEvent("ImageURL");
 
 
@@ -140,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             Button CustomInbox = findViewById(R.id.custominbox);
             Button nativeDisplay = findViewById(R.id.nativedisplay);
             Button cache = findViewById(R.id.cache);
+            Button view3 = findViewById(R.id.View3);
 
 
 
@@ -175,14 +202,14 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
         // Set click listeners for each button
             buttonPush.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Push Notification Triggered"));
-            buttonInApp.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app Notification Triggered"));
+            buttonInApp.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("ct-nativedisplay"));
             buttonCustom.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Custom Notification Triggered"));
             in_app_2.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app_2 Notification Triggered"));
             in_app_3.setOnClickListener(v -> clevertapDefaultInstance.pushChargedEvent(chargeDetails, items));
 
         in_app_4.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app_4 Notification Triggered"));
 
-            nativeDisplay.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Native Display"));
+            nativeDisplay.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Custom Event 1"));
             cache.setOnClickListener(v -> {
                 Log.d("CleverTap", "CT_ID Before App Data clear   ➡️  "+clevertapDefaultInstance.getCleverTapID());
                 clearAppData();
@@ -208,28 +235,29 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             buttonProfileUpdate.setOnClickListener(v ->
             {
                 HashMap<String, Object> updatedProfile = new HashMap<>();
-                updatedProfile.put("Name", "Vaibhav");
-                updatedProfile.put("Identity", 94);
+                updatedProfile.put("Name", "snibbit");
+                updatedProfile.put("Identity", 00121);
                 updatedProfile.put("Prefered Language", "English");
-                updatedProfile.put("Email", "test12345@gmail.com");
-//                updatedProfile.put("Phone", "+919876542089");
+                updatedProfile.put("Email", "snibbit12@gmail.com");
+                updatedProfile.put("Phone", "+91987654321");
                 updatedProfile.put("Gender", "M");
                 updatedProfile.put("DOB", new Date());
 
-                // Array list example
-                ArrayList<String> updatedStuff = new ArrayList<>();
-                updatedStuff.add("Watch");
-                updatedStuff.add("Sunglasses");
-                updatedProfile.put("MyStuff", updatedStuff);
-                updatedProfile.put("MSG-sms", false);
-                // Add DND Preferences
-                updatedProfile.put("MSG-dndEmail", true);
-//                updatedProfile.put("MSG-dndPhone", checkSMS.isChecked());
-                updatedProfile.put("MSG-dndWhatsApp", checkWhatsApp.isChecked());
+                clevertapDefaultInstance.onUserLogin(updatedProfile);
 
-//                clevertapDefaultInstance.onUserLogin(updatedProfile,"123345");
+                HashMap<String, Object> prodViewedAction1 = new HashMap<String, Object>();
+                prodViewedAction1.put("Native Count", "0");
+                prodViewedAction1.put("Show Native Display", "Yes");
+                prodViewedAction1.put("content", "0");
+
+
+                clevertapDefaultInstance.pushEvent("Native Display", prodViewedAction1);
+//                clevertapDefaultInstance.pushEvent("ct-nativedisplay", prodViewedAction1);
+
+
             });
 
+        clevertapDefaultInstance.pushEvent("Native Display1");
 
 
         Location location = new Location("");
@@ -241,11 +269,15 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
         Button btnCall = findViewById(R.id.call);
         btnCall.setOnClickListener(v->{
-            SignedCallAndroid.makeSignedCall(getApplicationContext(), "johndoe", "Test CleverTap Call");
+            SignedCallAndroid.makeSignedCall(getApplicationContext(), "pranjal1507", "Test CleverTap Call");
         });
         Button view2 = findViewById(R.id.view2);
         view2.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+            startActivity(intent);
+        });
+        view3.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this,new_main.class);
             startActivity(intent);
         });
 
@@ -263,6 +295,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     @Override
     public void inboxDidInitialize() {
         CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
+
         Button inbox = findViewById(R.id.inbox);
         inbox.setOnClickListener(v -> {
             clevertapDefaultInstance.pushEvent("inbox");
@@ -314,26 +347,54 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     public void onDisplayUnitsLoaded(ArrayList<CleverTapDisplayUnit> displayUnits) {
         if (displayUnits != null && !displayUnits.isEmpty()) {
             for (CleverTapDisplayUnit unit : displayUnits) {
-                if (unit.getContents() != null && !unit.getContents().isEmpty()) {
-                    String title = unit.getContents().get(0).getTitle();
-                    String message = unit.getContents().get(0).getMessage();
-                    String imageUrl = unit.getContents().get(0).getMedia();
+                List<String> imageUrls = new ArrayList<>();
+//                Log.d("Native", "Image URLs: " + unit.toString());
 
-                    // ✅ Corrected: Extract the actual update message
-//                    String updateMessage = unit.getCustomExtras().get("update_alert");
 
-                    // Load Image into ImageView
-                    ImageView imageView = findViewById(R.id.native_image);
-                    Glide.with(this).load(imageUrl).into(imageView);
+                for (CleverTapDisplayUnitContent content : unit.getContents()) {
+                    if (content.getMedia() != null && !content.getMedia().isEmpty()) {
+                        imageUrls.add(content.getMedia());  // Add image URL
+                    }
+//                    if()
+                }
 
-                    // ✅ Show Snackbar if an update message exists
-//                    if (updateMessage != null && !updateMessage.isEmpty()) {
-//                        showSnackbar(updateMessage);
-//                    }
+                if (!imageUrls.isEmpty()) {
+                    setupViewPager(imageUrls);
+                    clevertapDefaultInstance.pushDisplayUnitViewedEventForID(unit.getUnitID());
+                    break; // Load only the first valid unit
                 }
             }
         }
     }
+    private void setupViewPager(List<String> imageUrls) {
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+        ImageCarouselAdapter adapter = new ImageCarouselAdapter(this, imageUrls);
+
+        viewPager.setAdapter(adapter);
+        viewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+
+        // 🔥 Enable Auto Slide Effect
+        setupAutoScroll(viewPager, imageUrls.size());
+    }
+
+    private void setupAutoScroll(ViewPager2 viewPager, int itemCount) {
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            int currentPage = 0;
+
+            @Override
+            public void run() {
+                if (currentPage == itemCount) {
+                    currentPage = 0;
+                }
+                viewPager.setCurrentItem(currentPage++, true);
+                handler.postDelayed(this, 5000); // Change image every 5 seconds
+            }
+        };
+
+        handler.postDelayed(runnable, 5000);
+    }
+
 
 
     private void showSnackbar(String message) {

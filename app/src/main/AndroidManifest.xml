@@ -21,6 +21,15 @@
         android:theme="@style/Theme.Test_push"
         tools:targetApi="31">
         <activity
+            android:name=".InApp_Templates"
+            android:exported="false" />
+        <activity
+            android:name=".signed_call"
+            android:exported="false" />
+        <activity
+            android:name=".PushTemplatesActivity"
+            android:exported="false" />
+        <activity
             android:name=".CustomInbox"
             android:exported="false" />
         <activity
@@ -34,16 +43,11 @@
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:exported="true" /> <!-- MARK:- TO ENABLE SIGNED CALL USE THE BELOW ACCOUNT ID -->
-        <!-- <meta-data -->
-        <!-- android:name="CLEVERTAP_ACCOUNT_ID" -->
-        <!-- android:value="679-8Z7-W66Z"/> -->
-        <!-- <meta-data -->
-        <!-- android:name="CLEVERTAP_TOKEN" -->
-        <!-- android:value="a1b-ca6"/> -->
-        <!-- <meta-data -->
-        <!-- android:name="CLEVERTAP_REGION" -->
-        <!-- android:value="in1"/> -->
+            android:exported="true" />
+        <activity
+            android:name=".new_main"
+            android:exported="true" />
+
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
             android:value="TEST-4R8-7ZK-6K7Z" />
@@ -52,13 +56,14 @@
             android:value="TEST-31a-b24" />
         <meta-data
             android:name="CLEVERTAP_REGION"
-            android:value="eu1" />
-<!--         <meta-data-->
-<!--         android:name="CLEVERTAP_USE_CUSTOM_ID"-->
-<!--         android:value="1"/>-->
-        <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->
+            android:value="eu1" /> <!-- <meta-data -->
+        <!-- android:name="CLEVERTAP_USE_CUSTOM_ID" -->
+        <!-- android:value="1"/> -->
         <meta-data
             android:name="CLEVERTAP_USE_GOOGLE_AD_ID"
+            android:value="0" />
+        <meta-data
+            android:name="CLEVERTAP_ENCRYPTION_LEVEL"
             android:value="1" />
 
         <!-- <meta-data -->
@@ -69,6 +74,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.clevertap.android.sdk.pushnotification.CTNotificationIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.clevertap.PUSH_EVENT" />
             </intent-filter>
         </service>
     </application>
