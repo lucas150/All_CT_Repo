@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 17,
+  "EndLine": 17,
+  "StartColumn": 19,
+  "EndColumn": 92,
+  "Match": "apikey: \"9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd\"",
+  "Secret": "9dcced09dae16c5e3606c22346d92361b77efdb360425913850bea4f22d812dd",
+  "File": "src/app/components/SignedCall.js",
+  "SymlinkFile": "",
+  "Commit": "3b065794ede5775d32a70f72ed5386e8ec70aed2",
+  "Entropy": 3.8649187,
+  "Author": "lucas150",
+  "Email": "henil.gandhi2003@gmail.com",
+  "Date": "2025-05-13T10:37:57Z",
+  "Message": "working",
+  "Tags": [],
+  "Fingerprint": "3b065794ede5775d32a70f72ed5386e8ec70aed2:src/app/components/SignedCall.js:generic-api-key:17"
+ }
+]
