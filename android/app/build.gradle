@@ -122,6 +122,7 @@ dependencies {
 implementation 'com.android.installreferrer:installreferrer:2.2'
 
 
+
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
