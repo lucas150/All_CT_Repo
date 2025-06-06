@@ -143,6 +143,9 @@ class _MyHomePageState extends State<MyHomePage> {
     CleverTapPlugin().setCleverTapInboxMessagesDidUpdateHandler(() => debugPrint("Inbox messages updated"));
     CleverTapPlugin().setCleverTapDisplayUnitsLoadedHandler(_onDisplayUnitsLoaded);
     CleverTapPlugin().setCleverTapPushClickedPayloadReceivedHandler(_onNotificationClicked);
+    var eventData = { 'ProductID': "123", };
+
+    CleverTapPlugin.recordEvent("Custom Event", eventData);
     // CleverTapPlugin().recordEvent("hi",{});
   }
 
@@ -161,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
 
   void _fetchNativeDisplay() async {
-    CleverTapPlugin.recordEvent("Native Display", {});
+    CleverTapPlugin.recordEvent("foo", {});
     await Future.delayed(const Duration(seconds: 2));
     var displayUnits = await CleverTapPlugin.getAllDisplayUnits();
     _onDisplayUnitsLoaded1(displayUnits);

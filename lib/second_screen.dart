@@ -19,16 +19,12 @@ class _SecondRouteState extends State<SecondRoute> {
   void initState() {
     super.initState();
     CleverTapPlugin.recordEvent("ct-nativedisplay",{});
-    CleverTapPlugin.recordEvent("Native Display",{});
-    var eventData = {
-      // Key:    Value
-    'first': 'partridge',
-    'second': 'turtledoves',
-    'date8': formatter.format(DateTime.now()),
 
-    };
+    // var eventData = { 'content': "0" };
+    CleverTapPlugin.recordEvent("foo",  {} );
 
-    CleverTapPlugin.recordEvent("DateTime Event", eventData);
+
+    // CleverTapPlugin.recordEvent("DateTime Event", eventData);
     _fetchNativeDisplay();
     _fetchNativeDisplay2();
   }
@@ -80,12 +76,13 @@ class _SecondRouteState extends State<SecondRoute> {
           children: [
             _buildNativeDisplaySection("Native Display 1", imageUrls1),
             const SizedBox(height: 20),
-            _buildNativeDisplaySection("Native Display 2", imageUrls2),
-            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false),
               child: const Text('Go Home'),
             ),
+            _buildNativeDisplaySection("Native Display 2", imageUrls2),
+            const SizedBox(height: 30),
+
           ],
         ),
       ),
