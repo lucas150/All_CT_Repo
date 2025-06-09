@@ -12,7 +12,7 @@ import SwiftUI
 struct MatchLiveScoreBundle: WidgetBundle {
     var body: some Widget {
         MatchLiveScore()
-        MatchLiveScoreControl()
+//        MatchLiveScoreControl()
         MatchLiveScoreLiveActivity()
     }
 }
