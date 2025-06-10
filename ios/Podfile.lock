@@ -2,7 +2,7 @@ PODS:
   - boost (1.84.0)
   - CleverTap-iOS-SDK (7.1.0):
     - SDWebImage (~> 5.11)
-  - clevertap-react-native (3.3.0):
+  - clevertap-react-native (3.2.0):
     - CleverTap-iOS-SDK (= 7.1.0)
     - DoubleConversion
     - glog
@@ -1863,7 +1863,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   CleverTap-iOS-SDK: 571ced90fc6378635db504f9767c62858e2c5286
-  clevertap-react-native: 7a8cc2e5c153862e7d9d93a4c6538710dbb760b2
+  clevertap-react-native: bc30f309f4df2062301a356761c2b011fe0f434e
   CTNotificationContent: bd84edc201e72cf6c88d6f44dac9bd68fa5fa7cd
   CTNotificationService: 3eceea27cf0e28a2e14267bb706013363eb620c6
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
