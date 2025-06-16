@@ -1,7 +1,9 @@
+import 'package:clevertap_flutter_app/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:clevertap_plugin/clevertap_plugin.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'firebase_options.dart';
 import 'dart:convert';
@@ -64,11 +66,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      initialRoute: '/signin',
       routes: {
-        '/': (context) => const MyHomePage(title: 'CleverTap Flutter Demo'),
+        '/signin': (context) => const SignInScreen(),
+        '/main': (context) => const MyHomePage(title: 'CleverTap Flutter Demo'),
         '/second': (context) => const SecondRoute(),
       },
+
+      // routes: {
+      //   '/': (context) => const MyHomePage(title: 'CleverTap Flutter Demo'),
+      //   '/second': (context) => const SecondRoute(),
+      // },
     );
   }
 }
@@ -112,6 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    // CleverTapPlugin.setOptOut(true);
     _initializeCleverTap();
     _setupFirebaseMessaging();
      if (Platform.isAndroid) {
@@ -135,7 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
       'Email': 'captain@america.com',
       'Phone': '+14121234',
       'stuff': ["bags", "shoes"],
-    });
+      'MSG-email': true,
+      'MSG-push': true,
+      'MSG-sms': true, 
+    },);
 
     CleverTapPlugin.createNotificationChannel("henil123", "Flutter Test", "Flutter Test", 3, true);
     CleverTapPlugin.initializeInbox();
@@ -208,6 +220,17 @@ class _MyHomePageState extends State<MyHomePage> {
     _onDisplayUnitsLoaded1(displayUnits);
     _onDisplayUnitsLoaded2(displayUnits);
   }
+
+  void fetchDataFromNative() async {
+    try {
+      final String result = await platformChannel.invokeMethod('getDataFromNative');
+      print('Result from Native: $result');
+    } on PlatformException catch (e) {
+      print('Error: ${e.message}');
+    }
+  }
+
+  
 
     @override
   Widget build(BuildContext context) {

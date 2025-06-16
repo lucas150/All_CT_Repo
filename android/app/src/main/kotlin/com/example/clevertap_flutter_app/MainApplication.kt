@@ -11,8 +11,13 @@ import com.clevertap.android.sdk.CleverTapAPI
 import com.clevertap.clevertap_plugin.CleverTapApplication
 
 class MainApplication : CleverTapApplication(), ActivityLifecycleCallbacks {
+
     override fun onCreate() {
+
+        
+
         ActivityLifecycleCallback.register(this);
+
         CleverTapAPI.setDebugLevel(3);
         CleverTapAPI.setNotificationHandler(PushTemplateNotificationHandler())
         super.onCreate()
