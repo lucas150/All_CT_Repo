@@ -25,25 +25,15 @@ class MainActivity: FlutterFragmentActivity() {
                 )
                 // To create a default instance with Custom CleverTap ID
                 val clevertapDefaultInstance =
-                    CleverTapAPI.getDefaultInstance(applicationContext, "123142225")
+                    CleverTapAPI.getDefaultInstance(applicationContext, "virus123")
 
 
                 val profileUpdate = HashMap<String, Any>()
-                profileUpdate["Name"] = "Jack Montana" // String
-                profileUpdate["Identity"] = 12342225 // String or number
-                profileUpdate["Email"] = "jack123aa34@gmail.com" // Email address of the user
-                profileUpdate["Phone"] = "+14155551234" // Phone (with the country code, starting with +)
-                profileUpdate["Gender"] = "M" // Can be either M or F
-                profileUpdate["DOB"] =
-                    Date() // Date of Birth. Set the Date object to the appropriate value first
-
-
-// optional fields. controls whether the user will be sent email, push etc.
-                profileUpdate["MSG-email"] = false // Disable email notifications
-                profileUpdate["MSG-push"] = true // Enable push notifications
-                profileUpdate["MSG-sms"] = false // Disable SMS notifications
-                profileUpdate["MSG-whatsapp"] = true // Enable WhatsApp notifications
-
+                profileUpdate["Name"] = "Dev Bathani" // String
+                profileUpdate["Identity"] = "virus123" // String or number
+                profileUpdate["Email"] = "virus123@gmail.com" // Email address of the user
+                profileUpdate["Phone"] = "+917202908711" // Phone (with the country code, starting with +)
+                profileUpdate["MSG-push"] = true
                 val stuff = ArrayList<String>()
                 stuff.add("bag")
                 stuff.add("shoes")
@@ -51,15 +41,14 @@ class MainActivity: FlutterFragmentActivity() {
 
                 val otherStuff = arrayOf("Jeans", "Perfume")
                 profileUpdate["MyStuff"] = otherStuff //String Array
-                clevertapDefaultInstance?.onUserLogin(profileUpdate, "123142225")
-
+                clevertapDefaultInstance?.onUserLogin(profileUpdate, "virus123")
+                //get notification permission
                 result.success(null)
             } else {
                 result.notImplemented()
             }
         }
     }
-
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
 

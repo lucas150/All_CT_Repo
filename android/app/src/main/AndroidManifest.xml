@@ -1,4 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Recommended so that CleverTap knows when to attempt a network call -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
             android:label="clevertap_flutter_app"
             android:name=".MainApplication"
@@ -39,15 +50,15 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <!-- <meta-data
+        <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
             android:value="TEST-4R8-7ZK-6K7Z"/>
 
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="TEST-31a-b24"/> -->
+            android:value="TEST-31a-b24"/> 
             <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->
-        <!-- <meta-data  
+         <!-- <meta-data  
             android:name="CLEVERTAP_USE_GOOGLE_AD_ID"
             android:value="0"/> -->
         <meta-data

@@ -16,7 +16,7 @@ class _SecondRouteState extends State<SecondRoute> {
   var formatter = DateFormat("dd/MM/yyyy hh:mm:ss a");
 
   @override
-  void initState() {
+void initState() {
     super.initState();
     CleverTapPlugin.recordEvent("ct-nativedisplay",{});
 

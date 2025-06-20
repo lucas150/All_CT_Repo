@@ -10,7 +10,6 @@ import 'dart:convert';
 import 'second_screen.dart';
 import 'dart:io';
 
-
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 // Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
@@ -24,9 +23,6 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 //   CleverTapPlugin.createNotification(jsonEncode(remoteMessage.data));
 // }
 
-
- 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
@@ -34,25 +30,25 @@ void main() async {
 
   // FirebaseMessaging.onMessage.listen(_firebaseForegroundMessageHandler);
   // FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundMessageHandler);
-  CleverTapPlugin.onKilledStateNotificationClicked(_onKilledStateNotificationClickedHandler);
-  
+  CleverTapPlugin.onKilledStateNotificationClicked(
+      _onKilledStateNotificationClickedHandler);
+
   runApp(const MyApp());
 }
 
 @pragma('vm:entry-point')
-void _onKilledStateNotificationClickedHandler(Map<String, dynamic> payload) async {
+void _onKilledStateNotificationClickedHandler(
+    Map<String, dynamic> payload) async {
   debugPrint("Notification clicked in Kill State: $payload");
   // print("Notification Foreground 1");
-  
-CleverTapPlugin.getAppLaunchNotification();
-  if (payload.containsKey("wzrk_dl") && payload["wzrk_dl"] == "myapp://second") {
-      // print("Notification Foreground 2");
+
+  CleverTapPlugin.getAppLaunchNotification();
+  if (payload.containsKey("wzrk_dl") &&
+      payload["wzrk_dl"] == "myapp://second") {
+    // print("Notification Foreground 2");
     navigatorKey.currentState?.pushNamed('/second');
   }
 }
-
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -92,8 +88,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<String> imageUrls1 = [];
   List<String> imageUrls2 = [];
-   void _handleKilledStateNotificationInteraction() async {
-    CleverTapAppLaunchNotification appLaunchNotification = await CleverTapPlugin.getAppLaunchNotification();
+  void _handleKilledStateNotificationInteraction() async {
+    CleverTapAppLaunchNotification appLaunchNotification =
+        await CleverTapPlugin.getAppLaunchNotification();
     // print("Notification Foreground 3");
 
     if (appLaunchNotification.didNotificationLaunchApp) {
@@ -102,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _handleDeeplink(notificationPayload);
     }
   }
+
   void _handleDeeplink(Map<String, dynamic> notificationPayload) {
     var type = notificationPayload["type"];
     // print("Notification Foreground 5");
@@ -111,11 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // print("_handleKilledStateNotificationInteraction => Type: $type");
       // print("Notification Foreground 3");
 
-         navigatorKey.currentState?.pushNamed('/second');
-      
+      navigatorKey.currentState?.pushNamed('/second');
     }
   }
-
 
   @override
   void initState() {
@@ -123,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // CleverTapPlugin.setOptOut(true);
     _initializeCleverTap();
     _setupFirebaseMessaging();
-     if (Platform.isAndroid) {
+    if (Platform.isAndroid) {
       _handleKilledStateNotificationInteraction();
     }
   }
@@ -138,42 +134,49 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _initializeCleverTap() {
-    CleverTapPlugin.onUserLogin({
-      'Name': 'Captain America',
-      'Identity': '101',
-      'Email': 'captain@america.com',
-      'Phone': '+14121234',
-      'stuff': ["bags", "shoes"],
-      'MSG-email': true,
-      'MSG-push': true,
-      'MSG-sms': true, 
-    },);
+    print("CleverTapPlugin.initialize __hajuuab");
+    platform.invokeMethod('changeCredentials');
+    //  await platform.invokeMethod('changeCredentials');
+    // CleverTapPlugin.onUserLogin({
+    //   'Name': 'Captain America',
+    //   'Identity': '101',
+    //   'Email': 'captain@america.com',
+    //   'Phone': '+14121234',
+    //   'stuff': ["bags", "shoes"],
+    //   'MSG-email': true,
+    //   'MSG-push': true,
+    //   'MSG-sms': true,
+    // },);
 
-    CleverTapPlugin.createNotificationChannel("henil123", "Flutter Test", "Flutter Test", 3, true);
+    CleverTapPlugin.createNotificationChannel(
+        "henil123", "Flutter Test", "Flutter Test", 3, true);
     CleverTapPlugin.initializeInbox();
-    CleverTapPlugin().setCleverTapInboxDidInitializeHandler(() => debugPrint("✅ CleverTap Inbox Initialized"));
-    CleverTapPlugin().setCleverTapInboxMessagesDidUpdateHandler(() => debugPrint("Inbox messages updated"));
-    CleverTapPlugin().setCleverTapDisplayUnitsLoadedHandler(_onDisplayUnitsLoaded);
-    CleverTapPlugin().setCleverTapPushClickedPayloadReceivedHandler(_onNotificationClicked);
-    var eventData = { 'ProductID': "123", };
+    CleverTapPlugin().setCleverTapInboxDidInitializeHandler(
+        () => debugPrint("✅ CleverTap Inbox Initialized"));
+    CleverTapPlugin().setCleverTapInboxMessagesDidUpdateHandler(
+        () => debugPrint("Inbox messages updated"));
+    CleverTapPlugin()
+        .setCleverTapDisplayUnitsLoadedHandler(_onDisplayUnitsLoaded);
+    CleverTapPlugin()
+        .setCleverTapPushClickedPayloadReceivedHandler(_onNotificationClicked);
+    var eventData = {
+      'ProductID': "123",
+    };
 
     CleverTapPlugin.recordEvent("Custom Event", eventData);
     // CleverTapPlugin().recordEvent("hi",{});
   }
 
- 
-
   void _onNotificationClicked(Map<String, dynamic> payload) {
     debugPrint("CleverTap Notification clicked in foreground : $payload");
 
-    if (payload.containsKey("wzrk_dl") && payload["wzrk_dl"] == "myapp://second") {
+    if (payload.containsKey("wzrk_dl") &&
+        payload["wzrk_dl"] == "myapp://second") {
       // print("Notification Foreground 4");
 
       navigatorKey.currentState?.pushNamed('/second');
     }
   }
-
-  
 
   void _fetchNativeDisplay() async {
     CleverTapPlugin.recordEvent("foo", {});
@@ -182,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _onDisplayUnitsLoaded1(displayUnits);
   }
 
-   void _onDisplayUnitsLoaded1(List<dynamic>? displayUnits) {
+  void _onDisplayUnitsLoaded1(List<dynamic>? displayUnits) {
     if (displayUnits == null || displayUnits.isEmpty) return;
     setState(() {
       imageUrls1 = displayUnits
@@ -201,11 +204,11 @@ class _MyHomePageState extends State<MyHomePage> {
     _onDisplayUnitsLoaded2(displayUnits);
   }
 
-   void _onDisplayUnitsLoaded2(List<dynamic>? displayUnits) {
+  void _onDisplayUnitsLoaded2(List<dynamic>? displayUnits) {
     if (displayUnits == null || displayUnits.isEmpty) return;
     setState(() {
       imageUrls2 = displayUnits
-          .where((unit) => unit["custom_kv"]?["id"] == "native2") 
+          .where((unit) => unit["custom_kv"]?["id"] == "native2")
           .expand((unit) => unit["content"])
           .map((content) => content["media"]?["url"])
           .whereType<String>()
@@ -223,16 +226,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void fetchDataFromNative() async {
     try {
-      final String result = await platformChannel.invokeMethod('getDataFromNative');
+      final String result =
+          await platformChannel.invokeMethod('getDataFromNative');
       print('Result from Native: $result');
     } on PlatformException catch (e) {
       print('Error: ${e.message}');
     }
   }
 
-  
-
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -246,7 +248,8 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => CleverTapPlugin.recordEvent("In-app Notification Triggered", {}),
+              onPressed: () => CleverTapPlugin.recordEvent(
+                  "In-app Notification Triggered", {}),
               child: const Text('Trigger In-app Notification'),
             ),
             const SizedBox(height: 10),
@@ -279,11 +282,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("Native Display 1 Images", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  const Text("Native Display 1 Images",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 5),
                   ...imageUrls1.map((url) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Image.network(url, height: 200, fit: BoxFit.contain),
+                        child: Image.network(url,
+                            height: 200, fit: BoxFit.contain),
                       )),
                 ],
               ),
@@ -292,11 +298,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("Native Display 2 Images", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  const Text("Native Display 2 Images",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 5),
                   ...imageUrls2.map((url) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Image.network(url, height: 200, fit: BoxFit.contain),
+                        child: Image.network(url,
+                            height: 200, fit: BoxFit.contain),
                       )),
                 ],
               ),
