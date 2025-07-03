@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         
         <CleverTapProvider /> 
         <ServiceWorkerRegister />
-        {/* <NativeDisplayPage/> */}
+        <NativeDisplayPage/>
         {/* <CleverTapProvider />  */}
         {/* <ServiceWorkerRegister /> */}
         {/* <SignedCall /> */}

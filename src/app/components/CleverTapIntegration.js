@@ -63,11 +63,11 @@ export default function CleverTapIntegration() {
 
     clevertap.onUserLogin.push({
       Site: {
-        name,
-        email,
-        identity: email,
-        membership_type: membership,
-        test: "hello",
+        // name,
+        // email,
+        "Identity": 87878798798,
+        // membership_type: membership,
+        // test: "hello",
       },
     });
 
