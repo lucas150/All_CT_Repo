@@ -34,36 +34,6 @@
             endingLineNumber = "61"
             landmarkName = "SecondViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "40496C69-0571-4DB2-8197-DAA401372B57 - aa9ea9f693696c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CT_Native_IOS.SecondViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CT_Native_IOS.SecondViewController"
-                  moduleName = "CT_Native_IOS.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/henil/Desktop/New_Projects/CT_Native_IOS/CT_Native_IOS/SecondViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65">
-               </Location>
-               <Location
-                  uuid = "40496C69-0571-4DB2-8197-DAA401372B57 - b0f4c7a41158588b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CT_Native_IOS.SecondViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CT_Native_IOS.SecondViewController&gt;"
-                  moduleName = "CT_Native_IOS.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/henil/Desktop/New_Projects/CT_Native_IOS/CT_Native_IOS/SecondViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

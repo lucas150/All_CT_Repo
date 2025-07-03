@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0712C2302DEEC198003CA2DD /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0712C20E2DEEB75E003CA2DD /* WidgetKit.framework */; };
-		0712C2312DEEC198003CA2DD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0712C2102DEEB75E003CA2DD /* SwiftUI.framework */; };
-		0712C2422DEEC19A003CA2DD /* MatchLiveScoreExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0712C22F2DEEC198003CA2DD /* MatchLiveScoreExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		07C0DAF12DD4859B00668A9B /* NoticationCT.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 07C0DAEA2DD4859B00668A9B /* NoticationCT.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		07C0DB142DD486F400668A9B /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C0DB132DD486F400668A9B /* UserNotifications.framework */; };
 		07C0DB162DD486F400668A9B /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C0DB152DD486F400668A9B /* UserNotificationsUI.framework */; };
@@ -20,13 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0712C2402DEEC19A003CA2DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 076C27BE2DD4731200B54D8E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0712C22E2DEEC198003CA2DD;
-			remoteInfo = MatchLiveScoreExtension;
-		};
 		07C0DAEF2DD4859B00668A9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 076C27BE2DD4731200B54D8E /* Project object */;
@@ -51,7 +41,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				07C0DAF12DD4859B00668A9B /* NoticationCT.appex in Embed Foundation Extensions */,
-				0712C2422DEEC19A003CA2DD /* MatchLiveScoreExtension.appex in Embed Foundation Extensions */,
 				07C0DB202DD486F400668A9B /* NotificationContent.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -63,7 +52,6 @@
 		058FEC3815935E5F7F75F08C /* Pods-CT_Native_IOS-NoticationCT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CT_Native_IOS-NoticationCT.release.xcconfig"; path = "Target Support Files/Pods-CT_Native_IOS-NoticationCT/Pods-CT_Native_IOS-NoticationCT.release.xcconfig"; sourceTree = "<group>"; };
 		0712C20E2DEEB75E003CA2DD /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		0712C2102DEEB75E003CA2DD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		0712C22F2DEEC198003CA2DD /* MatchLiveScoreExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MatchLiveScoreExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		076C27C62DD4731200B54D8E /* CT_Native_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CT_Native_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C0DAEA2DD4859B00668A9B /* NoticationCT.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NoticationCT.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C0DB122DD486F400668A9B /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,21 +68,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		0712C2462DEEC19A003CA2DD /* Exceptions for "MatchLiveScore" folder in "MatchLiveScoreExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 0712C22E2DEEC198003CA2DD /* MatchLiveScoreExtension */;
-		};
-		0712C29C2DEED2D0003CA2DD /* Exceptions for "MatchLiveScore" folder in "CT_Native_IOS" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				MatchScoreAttributes.swift,
-				Public/attributes.swift,
-			);
-			target = 076C27C52DD4731200B54D8E /* CT_Native_IOS */;
-		};
 		076C27D82DD4731500B54D8E /* Exceptions for "CT_Native_IOS" folder in "CT_Native_IOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -119,15 +92,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0712C2322DEEC198003CA2DD /* MatchLiveScore */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				0712C29C2DEED2D0003CA2DD /* Exceptions for "MatchLiveScore" folder in "CT_Native_IOS" target */,
-				0712C2462DEEC19A003CA2DD /* Exceptions for "MatchLiveScore" folder in "MatchLiveScoreExtension" target */,
-			);
-			path = MatchLiveScore;
-			sourceTree = "<group>";
-		};
 		076C27C82DD4731200B54D8E /* CT_Native_IOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -155,15 +119,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0712C22C2DEEC198003CA2DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0712C2312DEEC198003CA2DD /* SwiftUI.framework in Frameworks */,
-				0712C2302DEEC198003CA2DD /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		076C27C32DD4731200B54D8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,7 +154,6 @@
 				076C27C82DD4731200B54D8E /* CT_Native_IOS */,
 				07C0DAEB2DD4859B00668A9B /* NoticationCT */,
 				07C0DB172DD486F400668A9B /* NotificationContent */,
-				0712C2322DEEC198003CA2DD /* MatchLiveScore */,
 				076C27C72DD4731200B54D8E /* Products */,
 				5501DC97AC1A59AB3331F377 /* Pods */,
 				8363677BB73C965EB82424F7 /* Frameworks */,
@@ -212,7 +166,6 @@
 				076C27C62DD4731200B54D8E /* CT_Native_IOS.app */,
 				07C0DAEA2DD4859B00668A9B /* NoticationCT.appex */,
 				07C0DB122DD486F400668A9B /* NotificationContent.appex */,
-				0712C22F2DEEC198003CA2DD /* MatchLiveScoreExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,28 +200,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0712C22E2DEEC198003CA2DD /* MatchLiveScoreExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0712C2432DEEC19A003CA2DD /* Build configuration list for PBXNativeTarget "MatchLiveScoreExtension" */;
-			buildPhases = (
-				0712C22B2DEEC198003CA2DD /* Sources */,
-				0712C22C2DEEC198003CA2DD /* Frameworks */,
-				0712C22D2DEEC198003CA2DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				0712C2322DEEC198003CA2DD /* MatchLiveScore */,
-			);
-			name = MatchLiveScoreExtension;
-			packageProductDependencies = (
-			);
-			productName = MatchLiveScoreExtension;
-			productReference = 0712C22F2DEEC198003CA2DD /* MatchLiveScoreExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		076C27C52DD4731200B54D8E /* CT_Native_IOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 076C27D92DD4731500B54D8E /* Build configuration list for PBXNativeTarget "CT_Native_IOS" */;
@@ -285,7 +216,6 @@
 			dependencies = (
 				07C0DAF02DD4859B00668A9B /* PBXTargetDependency */,
 				07C0DB1F2DD486F400668A9B /* PBXTargetDependency */,
-				0712C2412DEEC19A003CA2DD /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				076C27C82DD4731200B54D8E /* CT_Native_IOS */,
@@ -347,9 +277,6 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					0712C22E2DEEC198003CA2DD = {
-						CreatedOnToolsVersion = 16.2;
-					};
 					076C27C52DD4731200B54D8E = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -378,19 +305,11 @@
 				076C27C52DD4731200B54D8E /* CT_Native_IOS */,
 				07C0DAE92DD4859B00668A9B /* NoticationCT */,
 				07C0DB112DD486F400668A9B /* NotificationContent */,
-				0712C22E2DEEC198003CA2DD /* MatchLiveScoreExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0712C22D2DEEC198003CA2DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		076C27C42DD4731200B54D8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,13 +420,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0712C22B2DEEC198003CA2DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		076C27C22DD4731200B54D8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -532,11 +444,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0712C2412DEEC19A003CA2DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0712C22E2DEEC198003CA2DD /* MatchLiveScoreExtension */;
-			targetProxy = 0712C2402DEEC19A003CA2DD /* PBXContainerItemProxy */;
-		};
 		07C0DAF02DD4859B00668A9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07C0DAE92DD4859B00668A9B /* NoticationCT */;
@@ -550,62 +457,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0712C2442DEEC19A003CA2DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7XM67G79YA;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MatchLiveScore/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MatchLiveScore;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.clevertap.csdemo.MatchLiveScore;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		0712C2452DEEC19A003CA2DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7XM67G79YA;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MatchLiveScore/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MatchLiveScore;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.clevertap.csdemo.MatchLiveScore;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		076C27DA2DD4731500B54D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D587DC78C7BC4A396E3E4609 /* Pods-CT_Native_IOS.debug.xcconfig */;
@@ -854,7 +705,7 @@
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationContent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -881,7 +732,7 @@
 				INFOPLIST_FILE = NotificationContent/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationContent;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -900,15 +751,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0712C2432DEEC19A003CA2DD /* Build configuration list for PBXNativeTarget "MatchLiveScoreExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0712C2442DEEC19A003CA2DD /* Debug */,
-				0712C2452DEEC19A003CA2DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		076C27C12DD4731200B54D8E /* Build configuration list for PBXProject "CT_Native_IOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
