@@ -4,14 +4,28 @@
  *
  * @format
  */
+import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
 
 import CleverTap from 'clevertap-react-native';
-import React, { JSX, useEffect, useState } from 'react';
+import React, {JSX, useEffect, useState} from 'react';
 // import messaging  from '@react-native-firebase/messaging';
 import {PermissionsAndroid, Platform} from 'react-native';
-import { Alert } from 'react-native';
+import {Alert} from 'react-native';
+// import {AsyncStorage} from 'react-native';
+import RNFS from 'react-native-fs';
+console.log('Document Directory:', RNFS.DocumentDirectoryPath);
+console.log('External Storage Directory:', RNFS.ExternalStorageDirectoryPath);
 
-
+const LOG_PATH = `${RNFS.ExternalStorageDirectoryPath}/clevertap_logs.txt`;
+// You can use DocumentDirectoryPath if you only want internal storage
+const appendLog = async (logText: string) => {
+  try {
+    await RNFS.appendFile(LOG_PATH, `${logText}\n`, 'utf8');
+    console.log('Log written to file:', logText);
+  } catch (err) {
+    console.error('Log write error:', err);
+  }
+};
 
 import {
   SafeAreaView,
@@ -25,26 +39,50 @@ import {
   Image,
 } from 'react-native';
 
-import {
-  Colors,
-  Header,
-} from 'react-native/Libraries/NewAppScreen';
-
+import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 
 // messaging().setBackgroundMessageHandler(async remoteMessage => {
 //   console.log('Message handled in the background!', remoteMessage);
 //   CleverTap.createNotification(remoteMessage.data);
 
 // });
+const requestStoragePermission = async () => {
+  if (Platform.OS === 'android') {
+    try {
+      if (Platform.Version >= 30) {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        );
 
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Manage External Storage permission granted');
+        } else {
+          console.log('Manage External Storage permission denied');
+        }
+      } else {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        );
+
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Write External Storage permission granted');
+        } else {
+          console.log('Write External Storage permission denied');
+        }
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+};
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  
-  //permission for push 
+
+  //permission for push
   PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
 
-  //foreground state mesage 
+  //foreground state mesage
   // useEffect(() => {
   //   const unsubscribe = messaging().onMessage(async remoteMessage => {
   //     const data = remoteMessage.data;
@@ -57,7 +95,6 @@ function App(): JSX.Element {
   //   return unsubscribe;
   // }, []);
 
-
   // const checkToken = async () => {
   //   const fcmToken = await messaging().getToken();
   //   if (fcmToken) {
@@ -67,67 +104,100 @@ function App(): JSX.Element {
 
   //      }
 
-  //   } 
+  //   }
   //  }
-   
-  //  checkToken();
 
+  //  checkToken();
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-    useEffect(() => {
-    const myStuff = ['bag', 'shoes'];
-    const props = {
-      Name: 'N',
-      Identity: '32',
-      Email: 'alt@gmail.com',
-      Phone: '+916375456123',
-      Gender: 'M',
-      DOB: new Date('1992-12-22T06:35:31'),
-      'MSG-email': false,
-      'MSG-push': true,
-      'MSG-sms': false,
-      'MSG-whatsapp': true,
-      Stuff: myStuff,
+
+  useEffect(() => {
+    var myStuff = ['bag', 'shoes'];
+
+    var props = {
+      Name: 'Jack Montana', // String
+      Identity: '61026032', // String or number
+      Email: 'jack@gmail.com', // Email address of the user
+      Phone: '+14155551234', // Phone (with the country code, starting with +)
+      Gender: 'M', // Can be either M or F
+      DOB: new Date('2003-12-22T06:35:31'), // Date of Birth. Set the Date object to the appropriate value first
+
+      // optional fields. controls whether the user will be sent email, push, etc.
+      'MSG-email': false, // Disable email notifications
+      'MSG-push': true, // Enable push notifications
+      'MSG-sms': false, // Disable SMS notifications
+      'MSG-whatsapp': true, // Enable WhatsApp notifications
+      Stuff: myStuff, //Array of Strings for user properties
     };
 
     CleverTap.onUserLogin(props);
-    
-
   }, []);
 
-  CleverTap.createNotificationChannel("henil123", "henil123", "CT React Native Testing", 5, true) // The notification channel importance can have any value from 1 to 5. A higher value means a more interruptive notification.
-  
+  CleverTap.createNotificationChannel(
+    'henil123',
+    'henil123',
+    'CT React Native Testing',
+    5,
+    true,
+  ); // The notification channel importance can have any value from 1 to 5. A higher value means a more interruptive notification.
 
-
-
+  // CleverTap.profileSet({
+  //       'DOB': new Date('1992-12-22T06:35:31'),
+  //       'Anniversary Date':new Date('1992-12-22T06:35:31'),
+  //       'Name': "Riya",
+  //       'Identity': 8781787211,
+  //       'Email': "riya211@details.com",
+  //       'Phone': +91686868686,
+  //       'MSG-whatsapp': true,
+  //     });
 
   useEffect(() => {
+    requestStoragePermission();
+
     // Initialize CleverTap Inbox
     CleverTap.initializeInbox();
 
     // Listen for CleverTap inbox initialization
-    CleverTap.addListener(CleverTap.CleverTapInboxDidInitialize, (event: any) => {
-      console.log('CleverTap Inbox Initialized:', event);
-    });
+    CleverTap.addListener(
+      CleverTap.CleverTapInboxDidInitialize,
+      (event: any) => {
+        console.log('CleverTap Inbox Initialized:', event);
+        CleverTap.getAllInboxMessages((err, res) => {
+          const inboxLog = console.log(
+            'All inbox messages:',
+            JSON.stringify(res),
+          );
+
+          const longMessage = JSON.stringify(res);
+          const chunkSize = 1000;
+
+          for (let i = 0; i < longMessage.length; i += chunkSize) {
+            console.log('Message Inbox Test' + longMessage.substring(i, i + chunkSize));
+          }
+        });
+      },
+    );
 
     // Listen for inbox message updates
-    CleverTap.addListener(CleverTap.CleverTapInboxMessagesDidUpdate, (event:any) => {
-      console.log('CleverTap Inbox Messages Updated:', event);
-    });
+    CleverTap.addListener(
+      CleverTap.CleverTapInboxMessagesDidUpdate,
+      (event: any) => {
+        console.log('CleverTap Inbox Messages Updated:', event);
+      },
+    );
 
     CleverTap.addListener(CleverTap.CleverTapInAppNotificationShowed, () => {
       Alert.alert('In-app Notification', 'In-app notification shown');
-      console.log("INAPP NOTIFICATION SHOWN 123");
+      console.log('INAPP NOTIFICATION SHOWN 123');
       // print('In-app notification shown');
-    // paint()
-  });
+      // paint()
+    });
 
     // function _handleCleverTapEvent(test, event) {
     //   console.log('CleverTap Event called - ', eventName, event);
     // }
-
 
     // Listen for inbox item click event
     // CleverTap.addListener('CleverTapInboxItemClicked', (event:any) => {
@@ -141,7 +211,6 @@ function App(): JSX.Element {
 
     //Cleanup listeners on unmount
 
-    
     return () => {
       CleverTap.removeListener(CleverTap.CleverTapInboxDidInitialize);
       CleverTap.removeListener(CleverTap.CleverTapInboxMessagesDidUpdate);
@@ -169,22 +238,28 @@ function App(): JSX.Element {
 
   // Push notification event
   const pushNotification = () => {
-    CleverTap.recordEvent('Push Notification Triggered', { 'Product name': 'Push Notification' });
+    CleverTap.recordEvent('Push Notification Triggered', {
+      'Product name': 'Push Notification',
+    });
   };
 
   // Record In-app event
   const recordInAppEvent = () => {
-    CleverTap.recordEvent('In-app 3 Notification', { 'Product name': 'CleverTap React Native' });
+    CleverTap.recordEvent('In-app 3 Notification', {
+      'Product name': 'CleverTap React Native',
+    });
   };
 
   // Record Inbox event
   const recordInboxEvent = () => {
-    CleverTap.recordEvent('Inbox', { 'Inbox name': 'CleverTap React Native' });
+    CleverTap.recordEvent('Inbox', {'Inbox name': 'CleverTap React Native'});
   };
 
   const nativedisplay = () => {
-    CleverTap.recordEvent('Native Display', { 'Product name': 'CleverTap React Native' });
-  
+    CleverTap.recordEvent('Native Display', {
+      'Product name': 'CleverTap React Native',
+    });
+
     // Fetch the display units explicitly when the button is clicked
     CleverTap.getAllDisplayUnits((err, res) => {
       if (err) {
@@ -195,8 +270,7 @@ function App(): JSX.Element {
       }
     });
   };
-  
-  
+
   // CleverTap.addListener(CleverTap.CleverTapDisplayUnitsLoaded, (data: any) => {
   //   /* consume the event data */
   //   CON
@@ -207,33 +281,31 @@ function App(): JSX.Element {
   // CleverTap.pushDisplayUnitViewedEventForID('Display Unit Id');
   // CleverTap.pushDisplayUnitClickedEventForID('Display Unit Id');
 
-
   const [displayUnits, setDisplayUnits] = useState<any[]>([]); // ✅ Ensures it's always an array
 
   useEffect(() => {
-  CleverTap.addListener('CleverTapDisplayUnitsLoaded', (data:any) => {
-    console.log('Native Display Units Loaded:', data);
+    CleverTap.addListener('CleverTapDisplayUnitsLoaded', (data: any) => {
+      console.log('Native Display Units Loaded:', data);
 
-    if (Array.isArray(data) && data.length > 0) {
-      setDisplayUnits(data);
-    }
-  });
+      if (Array.isArray(data) && data.length > 0) {
+        setDisplayUnits(data);
+      }
+    });
 
-  CleverTap.getAllDisplayUnits((err, res) => {
-    if (err) {
-      console.error('Error fetching display units:', err);
-    } else {
-      console.log('Fetched Display Units:', res);
-      setDisplayUnits(Array.isArray(res) ? res : []);
-    }
-  });
+    CleverTap.getAllDisplayUnits((err, res) => {
+      if (err) {
+        console.error('Error fetching display units:', err);
+      } else {
+        console.log('Fetched Display Units:', res);
+        setDisplayUnits(Array.isArray(res) ? res : []);
+      }
+    });
 
-  return () => {
-    CleverTap.removeListener('CleverTapDisplayUnitsLoaded');
-  };
-}, []);
+    return () => {
+      CleverTap.removeListener('CleverTapDisplayUnitsLoaded');
+    };
+  }, []);
 
-  
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -268,19 +340,29 @@ function App(): JSX.Element {
             <Text style={styles.buttonText}>Native Display</Text>
           </TouchableOpacity>
           {displayUnits.length === 0 ? (
-            <Text style={{ textAlign: 'center', margin: 10 }}>No Native Display Units Available</Text>
+            <Text style={{textAlign: 'center', margin: 10}}>
+              No Native Display Units Available
+            </Text>
           ) : (
             displayUnits.map((unit, index) => (
               <TouchableOpacity
                 key={index}
-                onPress={() => CleverTap.pushDisplayUnitClickedEventForID(unit.unitID)}
-                style={styles.nativeDisplayContainer}
-              >
+                onPress={() =>
+                  CleverTap.pushDisplayUnitClickedEventForID(unit.unitID)
+                }
+                style={styles.nativeDisplayContainer}>
                 {unit.content?.[0] ? (
                   <>
-                    <Image source={{ uri: unit.content[0].media?.url }} style={styles.nativeImage} />
-                    <Text style={styles.nativeTitle}>{unit.content[0].title?.text}</Text>
-                    <Text style={styles.nativeMessage}>{unit.content[0].message?.text}</Text>
+                    <Image
+                      source={{uri: unit.content[0].media?.url}}
+                      style={styles.nativeImage}
+                    />
+                    <Text style={styles.nativeTitle}>
+                      {unit.content[0].title?.text}
+                    </Text>
+                    <Text style={styles.nativeMessage}>
+                      {unit.content[0].message?.text}
+                    </Text>
                   </>
                 ) : (
                   <Text style={styles.nativeMessage}>No Content Available</Text>
@@ -288,13 +370,11 @@ function App(): JSX.Element {
               </TouchableOpacity>
             ))
           )}
-
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
   button: {
@@ -330,6 +410,5 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
-
 
 export default App;
