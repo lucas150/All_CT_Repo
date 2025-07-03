@@ -1,6 +1,7 @@
 package com.henil.test_push;
 
 import android.app.ActivityManager;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,6 +36,7 @@ import com.clevertap.android.sdk.CleverTapAPI;
 
 import com.clevertap.android.sdk.InAppNotificationButtonListener;
 import com.clevertap.android.sdk.InboxMessageListener;
+import com.clevertap.android.sdk.PushPermissionResponseListener;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 
@@ -68,13 +70,14 @@ import android.location.Location;
 import org.json.JSONObject;
 
 
-public class MainActivity extends AppCompatActivity implements CTInboxListener, DisplayUnitListener, InAppNotificationButtonListener, InboxMessageListener, CTPushNotificationListener {
+public class MainActivity extends AppCompatActivity implements CTInboxListener, DisplayUnitListener, InAppNotificationButtonListener, InboxMessageListener, CTPushNotificationListener, PushPermissionResponseListener {
     private FusedLocationProviderClient fusedLocationClient;
     private CoordinatorLayout coordinatorLayout;
     private static final int LOCATION_PERMISSION_REQUEST = 1001;
     private static final int RECORD_AUDIO_PERMISSION_CODE = 101;
 
     CleverTapAPI clevertapDefaultInstance;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         // Initialize CleverTap
         clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        clevertapDefaultInstance.enableDeviceNetworkInfoReporting(true);
+        clevertapDefaultInstance.registerPushPermissionNotificationResponseListener(this);
+
+//        clevertapDefaultInstance.push
+
 //        clevertapDefaultInstance.suspendInAppNotifications();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -96,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 //        cleverTapInstance.setInAppNotificationButtonListener(this);
 
         setContentView(R.layout.activity_main);
+
 
         // Enable edge-to-edge support after setting the content view
         EdgeToEdge.enable(this);
@@ -243,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
                 updatedProfile.put("Gender", "M");
                 updatedProfile.put("DOB", new Date());
 
-                clevertapDefaultInstance.onUserLogin(updatedProfile);
+//                clevertapDefaultInstance.onUserLogin(updatedProfile);
 
                 HashMap<String, Object> prodViewedAction1 = new HashMap<String, Object>();
                 prodViewedAction1.put("Native Count", "0");
@@ -341,6 +350,17 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     @Override
     public void inboxMessagesDidUpdate() {
         // Handle inbox message updates if needed
+    }
+    @Override
+    protected void onNewIntent(final Intent intent) {
+        super.onNewIntent(intent);
+        /**
+         * On Android 12, Raise notification clicked event when Activity is already running in activity backstack
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            CleverTapAPI cleverTapAPI = CleverTapAPI.getDefaultInstance(this);
+            cleverTapAPI.pushNotificationClickedEvent(intent.getExtras());
+        }
     }
 
     @Override
@@ -453,6 +473,15 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     @Override
     public void onNotificationClickedPayloadReceived(HashMap<String, Object> hashMap) {
         Log.d("CleverTap", "onNotificationClickedPayloadReceived: ");
+    }
+
+    @Override
+    public void onPushPermissionResponse(boolean accepted) {
+        Log.i("CleverTap", "onPushPermissionResponse :  InApp---> response() called accepted="+accepted);
+        if(accepted){
+            CleverTapAPI.createNotificationChannel(getApplicationContext(), "henil123", "henil123",
+                    "Testing Channel for BR", NotificationManager.IMPORTANCE_HIGH, true);
+        }
     }
 }
 

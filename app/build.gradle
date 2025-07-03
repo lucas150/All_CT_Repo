@@ -22,6 +22,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -63,7 +64,8 @@ dependencies {
 //  for push and inapp
     implementation 'androidx.core:core:1.13.0'
     implementation 'com.google.firebase:firebase-messaging:23.1.2'
-    implementation 'com.clevertap.android:clevertap-android-sdk:7.2.2'
+    implementation 'com.clevertap.android:clevertap-android-sdk:7.3.1'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
     implementation platform('com.google.firebase:firebase-bom:33.7.0')
     implementation 'com.google.firebase:firebase-analytics'
 
