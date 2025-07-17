@@ -332,11 +332,11 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 final GlobalKey<_MyAppState> myAppKey = GlobalKey<_MyAppState>();
 Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
-  Fluttertoast.showToast(
-    msg: "Background: ${message.data}",
-    toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.BOTTOM,
-  );
+  // Fluttertoast.showToast(
+  //   msg: "Background: ${message.data}",
+  //   toastLength: Toast.LENGTH_SHORT,
+  //   gravity: ToastGravity.BOTTOM,
+  // );
   print("On background ${message.data}");
   RemoteMessage? initialMessage =
       await FirebaseMessaging.instance.getInitialMessage();
@@ -439,9 +439,16 @@ class _MyAppState extends State<MyApp> {
     var initSetttings = InitializationSettings(
       android: androidInitializationSettings,
     );
-    flutterLocalNotificationsPlugin.initialize(
-      initSetttings,
-    );
+      flutterLocalNotificationsPlugin.initialize(initSetttings,
+      onDidReceiveNotificationResponse: (NotificationResponse response) {
+      debugPrint("Notification clicked in foreground: ${response.payload}");
+
+      Fluttertoast.showToast(
+        msg: "Clicked Notification (Foreground)",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+      );
+    });
   }
 
   //renderNotification is used to show a notification
