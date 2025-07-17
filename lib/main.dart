@@ -329,6 +329,7 @@ import 'second_screen.dart';
 import 'firebase_options.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 final GlobalKey<_MyAppState> myAppKey = GlobalKey<_MyAppState>();
 Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
   Fluttertoast.showToast(
@@ -339,12 +340,16 @@ Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
   print("On background ${message.data}");
   RemoteMessage? initialMessage =
       await FirebaseMessaging.instance.getInitialMessage();
+
   print("Initial message: ${initialMessage?.data}");
   await Firebase.initializeApp();
+
   final body = message.notification?.body ?? 'Notification Received';
+
   if (message.data.containsKey('wzrk_id')) {
     CleverTapPlugin.createNotification(jsonEncode(message.data));
   }
+
   // myAppKey.currentState?.renderNotification(body);
 }
 
@@ -354,12 +359,15 @@ void _firebaseForegroundMessageHandler(RemoteMessage message) {
   if (message.data.containsKey('wzrk_id')) {
     CleverTapPlugin.createNotification(jsonEncode(message.data));
   }
+  //render notification in foreground
   myAppKey.currentState?.renderNotification(body);
-  Fluttertoast.showToast(
-    msg: "Foreground: $body",
-    toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.BOTTOM,
-  );
+
+  // // show toast in foreground
+  // Fluttertoast.showToast(
+  //   msg: "Foreground: $body",
+  //   toastLength: Toast.LENGTH_SHORT,
+  //   gravity: ToastGravity.BOTTOM,
+  // );
 }
 
 // @pragma('vm:entry-point')
@@ -373,12 +381,15 @@ void _firebaseForegroundMessageHandler(RemoteMessage message) {
 //     navigatorKey.currentState?.pushNamed('/second');
 //   }
 // }
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseMessaging.onMessage.listen(_firebaseForegroundMessageHandler);
+
   FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundMessageHandler);
+
   FirebaseMessaging.onMessageOpenedApp.listen((message) {
     Fluttertoast.showToast(
       msg: "Notification clicked killed: ${message.data}",
@@ -396,8 +407,10 @@ void main() async {
       navigatorKey.currentState?.pushNamed('/second');
     }
   });
+
   // CleverTapPlugin.onKilledStateNotificationClicked(
   //     _onKilledStateNotificationClickedHandler);
+
   runApp(MyApp(key: myAppKey));
 }
 
@@ -412,6 +425,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
     // Get FCM token
     FirebaseMessaging.instance.getToken().then((token) {
       print('FCM Token: $token');
@@ -419,6 +433,7 @@ class _MyAppState extends State<MyApp> {
     }).catchError((error) {
       print('Failed to get FCM token: $error');
     });
+
     AndroidInitializationSettings androidInitializationSettings =
         const AndroidInitializationSettings('@mipmap/ic_launcher');
     var initSetttings = InitializationSettings(
@@ -429,6 +444,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  //renderNotification is used to show a notification
   Future<void> renderNotification(String body) async {
     await flutterLocalNotificationsPlugin.show(
       0,

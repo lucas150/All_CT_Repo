@@ -12,12 +12,14 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        // Enable core library desugaring
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = '17'
     }
 
     defaultConfig {
@@ -30,6 +32,7 @@ android {
         // targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -46,7 +49,8 @@ flutter {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-messaging:21.0.0'
+    // Update Firebase Messaging to latest version
+    implementation 'com.google.firebase:firebase-messaging:23.4.0'
     implementation 'androidx.core:core:1.3.0'
     implementation 'androidx.fragment:fragment:1.3.6'
     
@@ -73,5 +77,8 @@ dependencies {
 
     // // For building media playback UIs
     // implementation "androidx.media3:media3-ui:$media3_version"
+
+    // Add this at the end of dependencies
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
 }
 apply plugin: 'com.google.gms.google-services' //skip if not using FCM
