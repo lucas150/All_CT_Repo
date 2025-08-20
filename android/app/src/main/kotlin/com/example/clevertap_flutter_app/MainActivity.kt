@@ -57,6 +57,7 @@ class MainActivity: FlutterFragmentActivity() {
             val cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this)
 
             cleverTapDefaultInstance?.pushNotificationClickedEvent(intent!!.extras)
+
         }
     }
 }
