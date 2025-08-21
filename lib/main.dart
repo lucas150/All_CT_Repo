@@ -12,24 +12,26 @@ import 'dart:io';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-// Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
-//   await Firebase.initializeApp();
-//   debugPrint("clevertap _firebaseBackgroundMessageHandler Background");
-//   CleverTapPlugin.createNotification(jsonEncode(message.data));
-// }
+@pragma('vm:entry-point')
+Future<void> _firebaseBackgroundMessageHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  debugPrint("clevertap _firebaseBackgroundMessageHandler Background");
+  CleverTapPlugin.createNotification(jsonEncode(message.data));
+}
 
-// void _firebaseForegroundMessageHandler(RemoteMessage remoteMessage) {
-//   debugPrint('clevertap _firebaseForegroundMessageHandler called');
-//   CleverTapPlugin.createNotification(jsonEncode(remoteMessage.data));
-// }
+void _firebaseForegroundMessageHandler(RemoteMessage remoteMessage) {
+  debugPrint('clevertap _firebaseForegroundMessageHandler called');
+  CleverTapPlugin.createNotification(jsonEncode(remoteMessage.data));
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  // FirebaseMessaging.onMessage.listen(_firebaseForegroundMessageHandler);
-  // FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundMessageHandler);
+  FirebaseMessaging.onMessage.listen(_firebaseForegroundMessageHandler);
+  
+  FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundMessageHandler);
   CleverTapPlugin.onKilledStateNotificationClicked(
       _onKilledStateNotificationClickedHandler);
 
