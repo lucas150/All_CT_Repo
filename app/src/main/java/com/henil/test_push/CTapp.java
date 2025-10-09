@@ -14,6 +14,7 @@ import com.clevertap.android.signedcall.fcm.SignedCallNotificationHandler;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -32,6 +33,34 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
 
         super.onCreate();
 
+//        EncryptTool encrypttool = new EncryptTool();
+//        try {
+//            encrypttool.test();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//        Log.i("CleverTap", encrypttool);
+        String cipherText = getString(R.string.clevertap_cipher);
+        try {
+            String decrypted = SecureStorage.decrypt(cipherText);
+            // Split Account ID and Token
+            String[] parts = decrypted.split("::");
+            if (parts.length == 2) {
+                String accountId = parts[0];
+                String accountToken = parts[1];
+                // :three: Initialize CleverTap with real credentials
+                CleverTapAPI.getDefaultInstance(this)
+                        .changeCredentials(accountId, accountToken, "eu1");
+                // :four: Clear sensitive data from memory
+                decrypted = null;
+                Arrays.fill(parts, null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
         // Initialize CleverTap
         cleverTapAPI = CleverTapAPI.getDefaultInstance(getApplicationContext());
         CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
@@ -45,6 +74,7 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
             Log.i("CleverTap", "no ct :  1 InApp---> response() called accepted=");
 
             clevertapDefaultInstance.registerPushPermissionNotificationResponseListener(this);
+
         }
 
         // Create notification channels

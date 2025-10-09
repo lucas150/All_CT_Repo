@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.henil.test_push'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.henil.test_push"
@@ -35,6 +35,9 @@ android {
 }
 
 dependencies {
+    implementation "androidx.security:security-crypto:1.1.0"
+
+
     //Signed Call
     implementation "com.clevertap.android:clevertap-signedcall-sdk:0.0.6.2-m2p-beta"
     implementation "com.clevertap.android:clevertap-signedcall-sdk:0.0.8.1"
@@ -64,7 +67,7 @@ dependencies {
 //  for push and inapp
     implementation 'androidx.core:core:1.13.0'
     implementation 'com.google.firebase:firebase-messaging:23.1.2'
-    implementation 'com.clevertap.android:clevertap-android-sdk:7.3.1'
+    implementation 'com.clevertap.android:clevertap-android-sdk:7.5.1'
     implementation 'com.android.installreferrer:installreferrer:2.2'
     implementation platform('com.google.firebase:firebase-bom:33.7.0')
     implementation 'com.google.firebase:firebase-analytics'

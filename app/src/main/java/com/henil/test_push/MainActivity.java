@@ -88,6 +88,10 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         clevertapDefaultInstance.enableDeviceNetworkInfoReporting(true);
         clevertapDefaultInstance.registerPushPermissionNotificationResponseListener(this);
+        clevertapDefaultInstance.createNotificationChannelGroup(getApplicationContext(),"123","MyGroup1");
+        clevertapDefaultInstance.createNotificationChannel(getApplicationContext(),"channel1","channel1","channel1",NotificationManager.IMPORTANCE_MAX,"123",true);
+        clevertapDefaultInstance.createNotificationChannelGroup(getApplicationContext(),"456","MyGroup2");
+        clevertapDefaultInstance.createNotificationChannel(getApplicationContext(),"channel2","channel2","channel2",NotificationManager.IMPORTANCE_MAX,"456",true);
 
 //        clevertapDefaultInstance.push
 
@@ -210,13 +214,13 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
 
         // Set click listeners for each button
-            buttonPush.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Push Notification Triggered"));
+            buttonPush.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Custom Event"));
             buttonInApp.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("ct-nativedisplay"));
             buttonCustom.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Custom Notification Triggered"));
             in_app_2.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app_2 Notification Triggered"));
             in_app_3.setOnClickListener(v -> clevertapDefaultInstance.pushChargedEvent(chargeDetails, items));
 
-        in_app_4.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app_4 Notification Triggered"));
+//        in_app_4.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("In-app_4 Notification Triggered"));
 
             nativeDisplay.setOnClickListener(v -> clevertapDefaultInstance.pushEvent("Custom Event 1"));
             cache.setOnClickListener(v -> {
@@ -241,30 +245,73 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
             long temp2 = 1978594685790783689L;
 //            clevertapDefaultInstance.pushEvent(temp2"");
-            buttonProfileUpdate.setOnClickListener(v ->
+
+
+        in_app_4.setOnClickListener(v ->
+                {
+
+
+                    HashMap<String, Object> prodViewedAction1 = new HashMap<String, Object>();
+                    prodViewedAction1.put("Native Count", "0");
+                    prodViewedAction1.put("Show Native Display", "Yes");
+                    prodViewedAction1.put("content", "0");
+
+                    clevertapDefaultInstance.pushEvent("test event 123", prodViewedAction1);
+
+                    HashMap<String, Object> onuserlogin2 = new HashMap<>();
+                    onuserlogin2.put("Identity", 68718);
+                    onuserlogin2.put("Email", "snibbit68718@gmail.com");
+
+                    clevertapDefaultInstance.onUserLogin(onuserlogin2);
+
+
+                    HashMap<String, Object> updatedProfile1 = new HashMap<>();
+                    updatedProfile1.put("Name", "snibbit");
+                    updatedProfile1.put("Prefered Language", "English");
+                    updatedProfile1.put("Phone", "+91987634321");
+                    updatedProfile1.put("Gender", "M");
+                    updatedProfile1.put("DOB", new Date());
+
+                    clevertapDefaultInstance.onUserLogin(updatedProfile1);
+
+//                clevertapDefaultInstance.pushEvent("Native Display", prodViewedAction1);
+//                clevertapDefaultInstance.pushEvent("ct-nativedisplay", prodViewedAction1);
+
+
+                });
+
+
+
+                buttonProfileUpdate.setOnClickListener(v ->
             {
+                HashMap<String, Object> onuserlogin1 = new HashMap<>();
+                onuserlogin1.put("Identity", 6687777);
+                onuserlogin1.put("Email", "snibbit6687777@gmail.com");
+
+                clevertapDefaultInstance.onUserLogin(onuserlogin1);
+
+
                 HashMap<String, Object> updatedProfile = new HashMap<>();
-                updatedProfile.put("Name", "snibbit");
-                updatedProfile.put("Identity", 00121);
+                updatedProfile.put("Name", "dhaval");
                 updatedProfile.put("Prefered Language", "English");
-                updatedProfile.put("Email", "snibbit12@gmail.com");
-                updatedProfile.put("Phone", "+91987654321");
+                updatedProfile.put("Phone", "+91987634321");
                 updatedProfile.put("Gender", "M");
                 updatedProfile.put("DOB", new Date());
 
-//                clevertapDefaultInstance.onUserLogin(updatedProfile);
+                clevertapDefaultInstance.pushProfile(updatedProfile);
 
                 HashMap<String, Object> prodViewedAction1 = new HashMap<String, Object>();
                 prodViewedAction1.put("Native Count", "0");
                 prodViewedAction1.put("Show Native Display", "Yes");
                 prodViewedAction1.put("content", "0");
 
-
-                clevertapDefaultInstance.pushEvent("Native Display", prodViewedAction1);
+                clevertapDefaultInstance.pushEvent("test event 1234", prodViewedAction1);
+//                clevertapDefaultInstance.pushEvent("Native Display", prodViewedAction1);
 //                clevertapDefaultInstance.pushEvent("ct-nativedisplay", prodViewedAction1);
 
 
-            });
+            }
+            );
 
         clevertapDefaultInstance.pushEvent("Native Display1");
 
@@ -355,7 +402,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     protected void onNewIntent(final Intent intent) {
         super.onNewIntent(intent);
         /**
-         * On Android 12, Raise notification clicked event when Activity is already running in activity backstack
+         * On Android 12 onwards, Raise notification clicked event when Activity is already running in activity backstack
          */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             CleverTapAPI cleverTapAPI = CleverTapAPI.getDefaultInstance(this);
@@ -481,6 +528,10 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         if(accepted){
             CleverTapAPI.createNotificationChannel(getApplicationContext(), "henil123", "henil123",
                     "Testing Channel for BR", NotificationManager.IMPORTANCE_HIGH, true);
+            CleverTapAPI.createNotificationChannelGroup(getApplicationContext(),"123","MyGroup1");
+            CleverTapAPI.createNotificationChannel(getApplicationContext(),"channel1","channel1","channel1",NotificationManager.IMPORTANCE_MAX,"123",true);
+            CleverTapAPI.createNotificationChannelGroup(getApplicationContext(),"456","MyGroup2");
+            CleverTapAPI.createNotificationChannel(getApplicationContext(),"channel2","channel2","channel2",NotificationManager.IMPORTANCE_MAX,"456",true);
         }
     }
 }

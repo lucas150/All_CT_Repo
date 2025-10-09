@@ -241,6 +241,7 @@ public class CustomInbox extends AppCompatActivity implements InboxMessageListen
     @Override
     public void onInboxItemClicked(CTInboxMessage ctInboxMessage, int i, int i1) {
         Log.i("CleverTap", "InboxItemClicked at page-index " + i + " with button-index " + i1);
-
+        cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
+        cleverTapDefaultInstance.pushEvent("Test Event");
     }
 }

@@ -3,6 +3,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="clevertap_cipher">/scZQjTJFREN+tDcSbGwuc75bQb6u3WTB5N/5xI0CGG6IttW8Zpleg1IZiFKBw8r7q54SUyGH2kda14=</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string-array name="events_array">

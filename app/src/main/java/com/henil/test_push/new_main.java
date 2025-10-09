@@ -54,6 +54,7 @@ public class new_main extends AppCompatActivity implements CTInboxListener, Disp
         clevertapDefaultInstance.setCTNotificationInboxListener(this);
         clevertapDefaultInstance.initializeInbox();
         clevertapDefaultInstance.setDisplayUnitListener(this);
+        clevertapDefaultInstance.pushEvent("test");
 //        HashMap<String, Object> prodViewedAction = new HashMap<String, Object>();
 //        prodViewedAction.put("content", "0");
 
@@ -120,17 +121,20 @@ public class new_main extends AppCompatActivity implements CTInboxListener, Disp
 
                 // Add key-value pairs dynamically to the ScrollView
                 LinearLayout linearLayout = findViewById(R.id.linearLayout);
-                for (Map.Entry<String, String> entry : customExtras.entrySet()) {
-                    String key = entry.getKey();
-                    String value = entry.getValue();
+                if (customExtras != null) {
+                    for (Map.Entry<String, String> entry : customExtras.entrySet()) {
+                        String key = entry.getKey();
+                        String value = entry.getValue();
 
-                    if (!"NA".equals(value)) {
-                        TextView textView = new TextView(this);
-                        textView.setText(key + ": " + value);
-                        textView.setPadding(8, 8, 8, 8);
-//                        linearLayout.addView(textView);
+                        if (!"NA".equals(value)) {
+                            TextView textView = new TextView(this);
+                            textView.setText(key + ": " + value);
+                            textView.setPadding(8, 8, 8, 8);
+                            // linearLayout.addView(textView);
+                        }
                     }
                 }
+
 
                 // You can also handle images and other content as needed here
             }

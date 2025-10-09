@@ -99,6 +99,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InboxViewHolder> {
         holder.itemView.setOnClickListener(v -> {
             if (cleverTapDefaultInstance != null && item.getMessageId() != null && !item.getMessageId().isEmpty()) {
                 cleverTapDefaultInstance.pushInboxNotificationClickedEvent(item.getMessageId()); // ✅ Raise event
+
+                cleverTapDefaultInstance.pushEvent("Test12344");
             }
 
             if (item.getBodyLink() != null && !item.getBodyLink().isEmpty()) {
@@ -109,7 +111,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.InboxViewHolder> {
         // Open button link when clicking the button
         holder.button.setOnClickListener(v -> {
             if (cleverTapDefaultInstance != null && item.getMessageId() != null && !item.getMessageId().isEmpty()) {
-                cleverTapDefaultInstance.pushInboxNotificationClickedEvent(item.getMessageId()); // ✅ Raise event
+                cleverTapDefaultInstance.pushInboxNotificationClickedEvent(item.getMessageId());
+                // ✅ Raise event
+
+                cleverTapDefaultInstance.pushEvent("test");
             }
 
             if (item.getButtonLink() != null && !item.getButtonLink().isEmpty()) {
