@@ -102,13 +102,13 @@ public class LoginActivity extends AppCompatActivity {
             if (loginResult.getSuccess() != null) {
                 String username = loginResult.getSuccess().getDisplayName();
                 String email = emailEditText.getText().toString();
-//                Number identity = ; // ✅ Ensure string type consistency
+                String identity = ""; // ✅ Ensure string type consistency
 
                 // ✅ Save login state using SharedPreferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("username", username);
                 editor.putString("email", email);
-//                editor.putString("Identity", identity);
+                editor.putString("Identity", identity);
 
                 editor.putBoolean("isLoggedIn", true);
                 editor.putLong("loginTimestamp", Calendar.getInstance().getTimeInMillis());
@@ -118,8 +118,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (clevertapDefaultInstance != null) {
                     HashMap<String, Object> profileUpdate = new HashMap<>();
                     profileUpdate.put("Name", username);
-                    profileUpdate.put("Email", email);
-//                    profileUpdate.put("Identity", identity);
+                    profileUpdate.put("email", email);
+                    profileUpdate.put("identity", identity);
                     clevertapDefaultInstance.onUserLogin(profileUpdate);
                 }
 
