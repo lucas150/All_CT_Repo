@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         clevertapDefaultInstance.initializeInbox();
         clevertapDefaultInstance.setDisplayUnitListener(this);
         clevertapDefaultInstance.pushEvent("Native Display");
+        clevertapDefaultInstance.pushEvent("Custom Event 1");
         clevertapDefaultInstance.dismissAppInbox();
 
         clevertapDefaultInstance.getUnreadInboxMessages();

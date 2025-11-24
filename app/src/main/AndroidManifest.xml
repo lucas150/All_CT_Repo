@@ -65,13 +65,13 @@
             android:value="1"/>
 
 
-<!--        <service-->
-<!--            android:name=".MyFcmMessageListenerService"-->
-<!--            android:exported="false">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="com.google.firebase.MESSAGING_EVENT"/>-->
-<!--            </intent-filter>-->
-<!--        </service>-->
+        <service
+            android:name=".MyFcmMessageListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
 
          <service
              android:name="com.clevertap.android.sdk.pushnotification.CTNotificationIntentService"
@@ -81,13 +81,13 @@
                  </intent-filter>
          </service>
 
-        <service
-            android:name="com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
+<!--        <service-->
+<!--            android:name="com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT"/>-->
+<!--            </intent-filter>-->
+<!--        </service>-->
 <!--        <service android:name="com.example.ecommercect.OnClearFromRecentService" android:stopWithTask="false" />-->
 
 
