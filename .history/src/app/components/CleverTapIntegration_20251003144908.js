@@ -15,7 +15,6 @@ export default function CleverTapIntegration() {
     clevertap.privacy.push({ optOut: false });
     clevertap.privacy.push({ useIP: false });
     clevertap.getLocation();
-    clevertap.privacy.push({useIP: true});
 
     // Ask for permission but don't register service worker yet
     clevertap.notifications.push({

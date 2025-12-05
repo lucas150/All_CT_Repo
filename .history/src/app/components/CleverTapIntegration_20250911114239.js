@@ -14,11 +14,14 @@ export default function CleverTapIntegration() {
     clevertap.init("TEST-4R8-7ZK-6K7Z", "eu1");
     clevertap.privacy.push({ optOut: false });
     clevertap.privacy.push({ useIP: false });
-    clevertap.getLocation();
-    clevertap.privacy.push({useIP: true});
 
-    // Ask for permission but don't register service worker yet
+    Ask for permission but don't register service worker yet
     clevertap.notifications.push({
+      titleText: "Would you like to receive Push Notifications?",
+      bodyText: "We promise to only send you relevant updates and offers.",
+      okButtonText: "Allow",
+      rejectButtonText: "No, Thanks",
+      okButtonColor: "#F28046",
       serviceWorkerPath: "/clevertap_sw.js",
       onSuccess: function () {
         console.log("User granted notification permission");

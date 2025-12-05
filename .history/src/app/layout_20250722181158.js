@@ -32,17 +32,17 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         
-        {/* <CleverTapProvider />  */}
-        {/* <ServiceWorkerRegister />
-        <NativeDisplayPage/> */}
+        <CleverTapProvider /> 
+        <ServiceWorkerRegister />
+        <NativeDisplayPage/>
         {/* <CleverTapProvider />  */}
         {/* <ServiceWorkerRegister /> */}
         {/* <SignedCall /> */}
-         <CleverTapIntegration/> 
-        {/*<CsvUploader/>
+        <CleverTapIntegration/> 
+        <CsvUploader/>
         <CleverTapObjectIdExtractor/>
         <CleverTapDemerge/>
-        <CsvToApiUploader/>  */}
+        <CsvToApiUploader/> 
         {children}
       </body>
     </html>

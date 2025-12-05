@@ -10,12 +10,12 @@ export default function CleverTapProvider() {
         clevertap.default.privacy.push({ optOut: false });
         clevertap.default.privacy.push({ useIP: false });
         clevertap.enableLocalStorageEncryption(true)
-        // if ("serviceWorker" in navigator) {
-        //   navigator.serviceWorker
-        //     .register("/clevertap_sw.js")
-        //     .then(() => console.log("Service Worker Registered"))
-        //     .catch((error) => console.error("Service Worker Registration failed:", error));
-        // }
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+            .register("/clevertap_sw.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch((error) => console.error("Service Worker Registration failed:", error));
+        }
       });
     }
   }, []);

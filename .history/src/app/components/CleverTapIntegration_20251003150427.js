@@ -17,6 +17,12 @@ export default function CleverTapIntegration() {
     clevertap.getLocation();
     clevertap.privacy.push({useIP: true});
 
+
+
+
+
+
+
     // Ask for permission but don't register service worker yet
     clevertap.notifications.push({
       serviceWorkerPath: "/clevertap_sw.js",
