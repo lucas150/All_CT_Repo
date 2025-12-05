@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         {/* <CleverTapProvider />  */}
         {/* <ServiceWorkerRegister /> */}
         {/* <SignedCall /> */}
-        <CleverTapIntegration/> 
+        {/* <CleverTapIntegration/>  */}
         <CsvUploader/>
         <CleverTapObjectIdExtractor/>
         <CleverTapDemerge/>
