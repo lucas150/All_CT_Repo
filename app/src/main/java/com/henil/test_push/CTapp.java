@@ -8,6 +8,7 @@ import android.util.Log;
 import com.clevertap.android.sdk.ActivityLifecycleCallback;
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.pushtemplates.PushTemplateNotificationHandler;
+import com.clevertap.android.sdk.CleverTapInstanceConfig;
 import com.clevertap.android.sdk.PushPermissionResponseListener;
 import com.clevertap.android.sdk.pushnotification.CTPushNotificationListener;
 import com.clevertap.android.signedcall.fcm.SignedCallNotificationHandler;
@@ -33,41 +34,21 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
 
         super.onCreate();
 
-//        EncryptTool encrypttool = new EncryptTool();
-//        try {
-//            encrypttool.test();
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        Log.i("CleverTap", encrypttool);
-        String cipherText = getString(R.string.clevertap_cipher);
-        try {
-            String decrypted = SecureStorage.decrypt(cipherText);
-            // Split Account ID and Token
-            String[] parts = decrypted.split("::");
-            if (parts.length == 2) {
-                String accountId = parts[0];
-                String accountToken = parts[1];
-                // :three: Initialize CleverTap with real credentials
-                CleverTapAPI.getDefaultInstance(this)
-                        .changeCredentials(accountId, accountToken, "eu1");
-                // :four: Clear sensitive data from memory
-                decrypted = null;
-                Arrays.fill(parts, null);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-
-
-        // Initialize CleverTap
+        // Initialize CleverTap - Normal
         cleverTapAPI = CleverTapAPI.getDefaultInstance(getApplicationContext());
         CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
         CleverTapAPI clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
 
         cleverTapAPI.setCTPushNotificationListener(this);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+
+        // Multi Instance
+        CleverTapInstanceConfig clevertapAdditionalInstanceConfig =  CleverTapInstanceConfig.createInstance(this, "65W-9R6-K67Z", "62c-056");
+        clevertapAdditionalInstanceConfig.setDebugLevel(3);
+        CleverTapAPI clevertapAdditionalInstance =
+                CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
 
 
         if (clevertapDefaultInstance != null) {
@@ -90,9 +71,6 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
 
         // Set CleverTap notification handler
         CleverTapAPI.setNotificationHandler(new PushTemplateNotificationHandler());
-        CleverTapAPI.setSignedCallNotificationHandler(new SignedCallNotificationHandler());
-        //Signed Call initialisation
-        SignedCallAndroid.initialize(getApplicationContext(), cleverTapAPI);
 
 
     }
@@ -118,9 +96,6 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
         } else {
             Log.d("CleverTap", "Deep Link not found in payload");
         }
-
-//        NotificationUtils.dismissNotification(Intent.makeMainActivity(), getApplicationContext())
-
 
     }
 
