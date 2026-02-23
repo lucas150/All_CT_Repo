@@ -47,10 +47,10 @@
 
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="65W-9R6-K67Z" />
+            android:value="TEST-4R8-7ZK-6K7Z" />
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="62c-056" />
+            android:value="TEST-31a-b24" />
         <meta-data
             android:name="CLEVERTAP_REGION"
             android:value="eu1" />

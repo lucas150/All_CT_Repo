@@ -5,11 +5,7 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.clevertap.android.sdk.CTWebInterface;
 import com.clevertap.android.sdk.CleverTapAPI;
@@ -45,4 +41,5 @@ public class WebViewActivity extends AppCompatActivity {
             // Load your desired URL
             webView.loadUrl("https://shim-byte.github.io/ct-webview-tester");
         }
-    }
+
+}

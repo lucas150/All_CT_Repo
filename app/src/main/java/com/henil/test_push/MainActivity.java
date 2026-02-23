@@ -174,8 +174,8 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         final int[] contentIndex = {0};
 
         btnCustomEvent.setOnClickListener(v -> {
-            clevertapDefaultInstance.pushEvent("Custom Event 2");
-            showToast("Event pushed: Custom Event 2");
+            clevertapDefaultInstance.pushEvent("Custom Event");
+            showToast("Event pushed: Custom Event");
             // Declare outside the OnClickListener
 
 
@@ -346,7 +346,6 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             ArrayList<String> tabs = new ArrayList<>();
             tabs.add("Promotions");
             tabs.add("Default");
-
             CTInboxStyleConfig styleConfig = new CTInboxStyleConfig();
             styleConfig.setTabs(tabs);
             styleConfig.setNavBarTitle("MY INBOX");
