@@ -8,26 +8,50 @@ export default function CleverTapIntegration() {
   const [membership, setMembership] = useState("");
   const [message, setMessage] = useState("");
   const [customNotificationEnabled, setCustomNotificationEnabled] = useState(false);
+  const [selectedAccount, setSelectedAccount] = useState(""); // New state for account selection
+  const [isInitialized, setIsInitialized] = useState(false); // Track if CleverTap is initialized
+
+  const accounts = [
+    { label: "Select Account", value: "", id: "", region: "" },
+    { label: "Account 1", value: "TEST-4R8-7ZK-6K7Z", id: "TEST-4R8-7ZK-6K7Z", region: "eu1" },
+    { label: "Account 2", value: "65W-9R6-K67Z", id: "65W-9R6-K67Z", region: "eu1" },
+    // { label: "Test Account", value: "test", id: "TEST-4R8-7ZK-6K7Z", region: "eu1" },
+  ];
+
+  const initializeCleverTap = (accountId, region) => {
+    if (clevertap && accountId && region) {
+      try {
+        clevertap.init(accountId, region);
+        clevertap.privacy.push({ optOut: false });
+        clevertap.privacy.push({ useIP: false });
+        clevertap.getLocation();
+        clevertap.privacy.push({useIP: true});
+        
+        setIsInitialized(true);
+        setMessage(`CleverTap initialized with account: ${accountId}`);
+        console.log(`CleverTap initialized with account: ${accountId}, region: ${region}`);
+      } catch (error) {
+        console.error("Failed to initialize CleverTap:", error);
+        setMessage("Failed to initialize CleverTap");
+      }
+    }
+  };
+
+  const handleAccountChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedAccount(selectedValue);
+    
+    const selectedAccountData = accounts.find(acc => acc.value === selectedValue);
+    if (selectedAccountData && selectedAccountData.id) {
+      initializeCleverTap(selectedAccountData.id, selectedAccountData.region);
+    } else {
+      setIsInitialized(false);
+      setMessage("Please select a valid account to initialize CleverTap");
+    }
+  };
 
   useEffect(() => {
-    // Initialize CleverTap
-    clevertap.init("TEST-4R8-7ZK-6K7Z", "eu1");
-    clevertap.privacy.push({ optOut: false });
-    clevertap.privacy.push({ useIP: false });
-    clevertap.getLocation();
-    clevertap.privacy.push({useIP: true});
-
-    // Ask for permission but don't register service worker yet
-    clevertap.notifications.push({
-      serviceWorkerPath: "/clevertap_sw.js",
-      onSuccess: function () {
-        console.log("User granted notification permission");
-        registerServiceWorker();
-      },
-      onFailure: function () {
-        console.log("User denied notification permission");
-      },
-    });
+    // Remove the automatic initialization since we want it to be user-controlled
   }, []);
 
   const registerServiceWorker = () => {
@@ -40,7 +64,7 @@ export default function CleverTapIntegration() {
   };
 
   useEffect(() => {
-    if (customNotificationEnabled) {
+    if (customNotificationEnabled && isInitialized) {
       clevertap.notificationCallback = function (msg) {
         console.log("Custom Notification Callback called");
         console.log(JSON.stringify(msg));
@@ -48,11 +72,18 @@ export default function CleverTapIntegration() {
       };
     } else {
       clevertap.notificationCallback = null;
-      setMessage("");
+      if (!isInitialized && customNotificationEnabled) {
+        setMessage("Please initialize CleverTap first by selecting an account");
+      }
     }
-  }, [customNotificationEnabled]);
+  }, [customNotificationEnabled, isInitialized]);
 
   const submitForm = () => {
+    if (!isInitialized) {
+      alert("Please select and initialize a CleverTap account first!");
+      return;
+    }
+
     if (!name || !email || !membership) {
       alert("Please fill in all fields!");
       return;
@@ -72,10 +103,49 @@ export default function CleverTapIntegration() {
   };
 
   const triggerEvent = (eventName) => {
+    if (!isInitialized) {
+      alert("Please initialize CleverTap first by selecting an account!");
+      return;
+    }
     clevertap.event.push(eventName);
   };
 
+  const triggerChargedEvent = () => {
+    if (!isInitialized) {
+      alert("Please initialize CleverTap first by selecting an account!");
+      return;
+    }
+    
+    clevertap.event.push("Charged", {
+      "Amount": 300,
+      "Payment mode": "Credit Card",
+      "Charged ID": crypto.randomUUID(),
+      "Items": [
+        {
+          "Category": "Books",
+          "Book name": "The Millionaire next door",
+          "Quantity": 1
+        },
+        {
+          "Category": "Books",
+          "Book name": "Achieving inner zen",
+          "Quantity": 1
+        },
+        {
+          "Category": "Books",
+          "Book name": "Chuck it, let's do it",
+          "Quantity": 5
+        }
+      ]
+    });
+  };
+
   const logout = () => {
+    if (!isInitialized) {
+      alert("CleverTap is not initialized!");
+      return;
+    }
+
     clevertap.logout();
     localStorage.clear();
     sessionStorage.clear();
@@ -95,6 +165,36 @@ export default function CleverTapIntegration() {
 
   return (
     <div className="container">
+      {/* CleverTap Account Selection Dropdown */}
+      <div style={{ marginBottom: "20px" }}>
+        <label htmlFor="account-select" style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          Select CleverTap Account:
+        </label>
+        <select 
+          id="account-select"
+          value={selectedAccount} 
+          onChange={handleAccountChange}
+          style={{ 
+            padding: "8px 12px", 
+            fontSize: "16px", 
+            borderRadius: "4px", 
+            border: "1px solid #ccc",
+            minWidth: "200px"
+          }}
+        >
+          {accounts.map((account) => (
+            <option key={account.value} value={account.value}>
+              {account.label}
+            </option>
+          ))}
+        </select>
+        {isInitialized && (
+          <span style={{ marginLeft: "10px", color: "green", fontWeight: "bold" }}>
+            ✓ Initialized
+          </span>
+        )}
+      </div>
+
       <h1>User Registration</h1>
       <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -106,28 +206,7 @@ export default function CleverTapIntegration() {
       <button onClick={() => triggerEvent("Interstitial Popup")}>Trigger Interstitial</button>
       <button onClick={() => triggerEvent("Web Exit Intent")}>Trigger Web Exit Intent</button>
       <button onClick={() => triggerEvent("Web Event")}>Show Native Display</button>
-      <button onClick={() => clevertap.event.push("Charged", {
-    "Amount": 300,
-    "Payment mode": "Credit Card",
-    "Charged ID": crypto.randomUUID() ,
-    "Items": [
-        {
-            "Category": "Books",
-            "Book name": "The Millionaire next door",
-            "Quantity": 1
-        },
-        {
-            "Category": "Books",
-            "Book name": "Achieving inner zen",
-            "Quantity": 1
-        },
-        {
-            "Category": "Books",
-            "Book name": "Chuck it, let's do it",
-            "Quantity": 5
-        }
-    ]
-})}>Charged</button>
+      <button onClick={triggerChargedEvent}>Charged</button>
       <button onClick={logout}>Logout</button>
       <button onClick={() => setCustomNotificationEnabled(true)}>Customize</button>
       <button onClick={() => setCustomNotificationEnabled(false)}>DeCustomize</button>
