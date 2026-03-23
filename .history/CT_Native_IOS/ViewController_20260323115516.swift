@@ -28,32 +28,32 @@ class ViewController: UIViewController,CleverTapInboxViewControllerDelegate,Clev
         
     var latestDisplayUnit: CleverTapDisplayUnit?
 
-   func displayUnitsUpdated(_ displayUnits: [CleverTapDisplayUnit]) {
-       print("🔹 Native Display Units Updated: \(displayUnits.count)")
-
-       for unit in displayUnits {
-           latestDisplayUnit = unit  // Store the latest unit
-
-           if let unitID = unit.unitID {
-               print("📢 Received Display Unit ID: \(unitID)")
-
-               let contents = unit.contents ?? []
-               for content in contents {
-                   if let imageUrl = content.mediaUrl {
-                       print("✅ Image URL: \(imageUrl)")
-
-                       DispatchQueue.main.async {
-                           self.NativeDisplay.sd_setImage(with: URL(string: imageUrl), completed: nil)
-
-                           // 🔹 Record Notification Viewed Event
-                           CleverTap.sharedInstance()?.recordDisplayUnitViewedEvent(forID: unitID)
-                           print("📢 Notification Viewed Event Recorded for ID: \(unitID)")
-                       }
-                   }
-               }
-           }
-       }
-   }
+//    func displayUnitsUpdated(_ displayUnits: [CleverTapDisplayUnit]) {
+//        print("🔹 Native Display Units Updated: \(displayUnits.count)")
+//
+//        for unit in displayUnits {
+//            latestDisplayUnit = unit  // Store the latest unit
+//
+//            if let unitID = unit.unitID {
+//                print("📢 Received Display Unit ID: \(unitID)")
+//
+//                let contents = unit.contents ?? []
+//                for content in contents {
+//                    if let imageUrl = content.mediaUrl {
+//                        print("✅ Image URL: \(imageUrl)")
+//
+//                        DispatchQueue.main.async {
+//                            self.NativeDisplay.sd_setImage(with: URL(string: imageUrl), completed: nil)
+//
+//                            // 🔹 Record Notification Viewed Event
+//                            CleverTap.sharedInstance()?.recordDisplayUnitViewedEvent(forID: unitID)
+//                            print("📢 Notification Viewed Event Recorded for ID: \(unitID)")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 
 
