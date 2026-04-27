@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         clevertapDefaultInstance.registerPushPermissionNotificationResponseListener(this);
         requestPushPermissionIfRequired();
 
-        clevertapDefaultInstance.pushEvent("test");
-        showToast("Event pushed: Custom Event 1");
-
+//        clevertapDefaultInstance.pushEvent("test");
+//        showToast("Event pushed: Custom Event 1");
+//
 
         Bundle extras = getIntent().getExtras();
         if (extras != null && clevertapDefaultInstance != null) {
@@ -277,12 +277,50 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
 
             // Create a HashMap to store updated profile
             HashMap<String, Object> updatedProfile = new HashMap<>();
-//            updatedProfile.put("Name", name);
+            updatedProfile.put("Name", name);
             updatedProfile.put("Identity", identity);
-//            updatedProfile.put("Email", email);
-//            updatedProfile.put("Phone", phone);
-//            updatedProfile.put("Customer Type", CustomerType);
+            updatedProfile.put("Email", email);
+            updatedProfile.put("Phone", phone);
 
+// -------- InsuranceDetails կառուց --------
+
+// Beneficiary 1
+            HashMap<String, Object> beneficiary1 = new HashMap<>();
+            beneficiary1.put("Name", "John Doe");
+            beneficiary1.put("Email", "john@example.com");
+            beneficiary1.put("DOB", "2020-01-20");
+
+// Beneficiary 2
+            HashMap<String, Object> beneficiary2 = new HashMap<>();
+            beneficiary2.put("Name", "Emily Doe");
+            beneficiary2.put("Email", "emily@example.com");
+            beneficiary2.put("DOB", "2018-05-12");
+
+
+// Beneficiary list
+            ArrayList<HashMap<String, Object>> beneficiaryList = new ArrayList<>();
+            beneficiaryList.add(beneficiary1);
+            beneficiaryList.add(beneficiary2);
+
+// Policy object
+            HashMap<String, Object> policy = new HashMap<>();
+            policy.put("PolicyID", "POL123");
+            policy.put("Type", "Health");
+            policy.put("PremiumAmount", 1200);
+            policy.put("Beneficiary", beneficiaryList);
+
+// Policy list
+            ArrayList<HashMap<String, Object>> policyList = new ArrayList<>();
+            policyList.add(policy);
+
+// InsuranceDetails map
+            HashMap<String, Object> insuranceDetails = new HashMap<>();
+            insuranceDetails.put("Policy", policyList);
+
+// Add to main profile
+            updatedProfile.put("InsuranceDetails", insuranceDetails);
+
+// Send to CleverTap
             clevertapDefaultInstance.onUserLogin(updatedProfile);
             String message = "onUserLogin called with:\n" +
                     "Name: " + name + "\n" +
