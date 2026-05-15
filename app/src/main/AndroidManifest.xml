@@ -41,16 +41,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".EventsActivity"
+            android:label="Events"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".LogActivity"
+            android:label="Activity Logs"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".SecondActivity"
             android:exported="true" />
 
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="65W-9R6-K67Z" />
+            android:value="TEST-58Z-5W6-866Z-PRANJALAPP1" />
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="62c-056" />
+            android:value="605-1b5" />
         <meta-data
             android:name="CLEVERTAP_REGION"
             android:value="eu1" />

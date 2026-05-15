@@ -44,11 +44,11 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
-        // Multi Instance
-        CleverTapInstanceConfig clevertapAdditionalInstanceConfig =  CleverTapInstanceConfig.createInstance(this, "65W-9R6-K67Z", "62c-056");
+//        // Multi Instance
+        CleverTapInstanceConfig clevertapAdditionalInstanceConfig =  CleverTapInstanceConfig.createInstance(this, "TEST-58Z-5W6-866Z", "605-1b5");
         clevertapAdditionalInstanceConfig.setDebugLevel(3);
         CleverTapAPI clevertapAdditionalInstance =
-                CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
+         CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
 
 
         if (clevertapDefaultInstance != null) {
@@ -63,6 +63,9 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
                 "henil123", "henil123", "henil123", NotificationManager.IMPORTANCE_MAX, true);
         CleverTapAPI.createNotificationChannel(getApplicationContext(),
                 "sound", "sound", "sound", NotificationManager.IMPORTANCE_MAX, true, "jsr.mp3");
+        CleverTapAPI.createNotificationChannel(getApplicationContext(),
+                "P01", "P01", "P01", NotificationManager.IMPORTANCE_MAX, true);
+
         mFirebaseAnalytics.setUserProperty("ct_objectId", Objects.requireNonNull(CleverTapAPI.getDefaultInstance(this)).getCleverTapID());
 
         // Set badge count
@@ -74,7 +77,7 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
 
 
     }
-  
+
 
     @Override
     public void onNotificationClickedPayloadReceived(HashMap<String, Object> hashMap) {

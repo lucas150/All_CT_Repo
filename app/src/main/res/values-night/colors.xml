@@ -1,0 +1,25 @@
+<resources>
+
+    <color name="bg_main">#030712</color>
+    <color name="bg_card">#0B1220</color>
+    <color name="bg_console">#020617</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#94A3B8</color>
+
+    <color name="input_bg">#111827</color>
+    <color name="input_border">#334155</color>
+    <color name="input_hint">#64748B</color>
+
+    <color name="button_bg">#0F172A</color>
+    <color name="console_bg">#FFFFFF</color>
+    <color name="button_border">#334155</color>
+
+    <color name="console_top">#111827</color>
+    <color name="console_body">#020617</color>
+
+    <color name="success">#22C55E</color>
+    <color name="warning">#FACC15</color>
+    <color name="accent">#3B82F6</color>
+
+</resources>

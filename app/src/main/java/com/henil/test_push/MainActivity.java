@@ -1,556 +1,526 @@
 package com.henil.test_push;
 
 import android.app.NotificationManager;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.clevertap.android.sdk.PushPermissionResponseListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.content.SharedPreferences;
 
-import com.clevertap.android.sdk.CTInboxListener;
-import com.clevertap.android.sdk.CTInboxStyleConfig;
-import com.clevertap.android.sdk.CleverTapAPI;
-import com.clevertap.android.sdk.CleverTapInstanceConfig;
-import com.clevertap.android.sdk.PushPermissionResponseListener;
-import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
-import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
-import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
-import com.squareup.picasso.Picasso;
+public class MainActivity extends AppCompatActivity
+        implements
+        CTInboxListener,
+        PushPermissionResponseListener,
+        LogManager.Listener {
 
-import javax.annotation.Nullable;
+    private CleverTapAPI clevertap;
 
-public class MainActivity extends AppCompatActivity implements CTInboxListener, DisplayUnitListener, PushPermissionResponseListener {
-    CleverTapAPI clevertapDefaultInstance;
+    private EditText etName;
+    private EditText etEmail;
+    private EditText etPhone;
+    private EditText etIdentity;
 
-    private EditText etName, etEmail, etPhone, etIdentity, etCustomerType;
-
-
+    private TextView tvConsoleLine1;
+    private TextView tvConsoleLine2;
+    private TextView tvConsoleLine3;
+    private TextView tvConsoleLine4;
+    private static final String PREFS = "theme_prefs";
+    private static final String KEY_THEME = "theme";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        applySavedTheme();
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        clevertapDefaultInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
-        clevertapDefaultInstance.setCTNotificationInboxListener(this);
-        clevertapDefaultInstance.initializeInbox();
-        clevertapDefaultInstance.setDisplayUnitListener(this);
-        clevertapDefaultInstance.registerPushPermissionNotificationResponseListener(this);
-        requestPushPermissionIfRequired();
+        SharedPreferences prefs =
+                getSharedPreferences(PREFS, MODE_PRIVATE);
 
-//        clevertapDefaultInstance.pushEvent("test");
-//        showToast("Event pushed: Custom Event 1");
-//
+        boolean dark =
+                prefs.getBoolean(KEY_THEME, true);
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null && clevertapDefaultInstance != null) {
-            clevertapDefaultInstance.pushNotificationClickedEvent(extras);
+        updateThemeToggle(dark);
+        // ================= CONSOLE =================
+
+        tvConsoleLine1 = findViewById(R.id.tvConsoleLine1);
+        tvConsoleLine2 = findViewById(R.id.tvConsoleLine2);
+        tvConsoleLine3 = findViewById(R.id.tvConsoleLine3);
+        tvConsoleLine4 = findViewById(R.id.tvConsoleLine4);
+
+        // ================= Light & Dark Theme =================
+
+        TextView tvDark = findViewById(R.id.tvDark);
+        TextView tvLight = findViewById(R.id.tvLight);
+
+        tvDark.setOnClickListener(v -> {
+
+            getSharedPreferences(PREFS, MODE_PRIVATE)
+                    .edit()
+                    .putBoolean(KEY_THEME, true)
+                    .apply();
+
+            updateThemeToggle(true);
+
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+        });
+
+        tvLight.setOnClickListener(v -> {
+
+            getSharedPreferences(PREFS, MODE_PRIVATE)
+                    .edit()
+                    .putBoolean(KEY_THEME, false)
+                    .apply();
+
+            updateThemeToggle(false);
+
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+        });
+
+        // ================= CLEVERTAP =================
+
+        clevertap = CleverTapAPI.getDefaultInstance(getApplicationContext());
+
+        if (clevertap != null) {
+
+            clevertap.setCTNotificationInboxListener(this);
+            clevertap.initializeInbox();
+
+            clevertap.registerPushPermissionNotificationResponseListener(this);
+
+            CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.VERBOSE);
+
+            LogManager.get().logSuccess(
+                    "CleverTap initialized",
+                    "SDK connected successfully"
+            );
+
+        } else {
+
+            LogManager.get().logError(
+                    "CleverTap init failed",
+                    "Default instance returned null"
+            );
         }
 
-
-        ArrayList<CleverTapDisplayUnit> displayUnits = clevertapDefaultInstance.getAllDisplayUnits();
-        if (displayUnits != null && !displayUnits.isEmpty()) {
-            for (CleverTapDisplayUnit unit : displayUnits) {
-                HashMap<String, String> customExtras = unit.getCustomExtras();
-
-                // Check if values are not "NA" and set them in the TextViews
-                if (customExtras != null && !customExtras.isEmpty()) {
-                    String name = customExtras.get("Name");
-                    String email = customExtras.get("Email");
-                    String phone = customExtras.get("Phone");
-                    String identity = customExtras.get("Identity");
-                    String customerType = customExtras.get("Customer Type");
-                    String Image = customExtras.get("Native Image Switch");
-                    List<String> imageList = new ArrayList<>();
-                    imageList.add(Image);
-
-                    if (!imageList.isEmpty()) {
-                        setupViewPager(imageList, unit);
-                        clevertapDefaultInstance.pushDisplayUnitViewedEventForID(unit.getUnitID());
-//                        break; // Load only the first valid unit
-                    }
-
-                    if (!"NA".equals(name)) {
-                        findViewById(R.id.tvName).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvName)).setText("Name: " + name);
-                    }
-
-                    if (!"NA".equals(email)) {
-                        findViewById(R.id.tvEmail).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvEmail)).setText("Email: " + email);
-                    }
-
-                    if (!"NA".equals(phone)) {
-                        findViewById(R.id.tvPhone).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvPhone)).setText("Phone: " + phone);
-                    }
-
-                    if (!"NA".equals(identity)) {
-                        findViewById(R.id.tvIdentity).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvIdentity)).setText("Identity: " + identity);
-                    }
-
-                    if (!"NA".equals(customerType)) {
-                        findViewById(R.id.tvCustomerType).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvCustomerType)).setText("Customer Type: " + customerType);
-                    }
-
-
-                    // Make the rolling info section visible if any value is not "NA"
-                    findViewById(R.id.rollingInfoSection).setVisibility(View.VISIBLE);
-                }
-
-                // Add key-value pairs dynamically to the ScrollView
-//                LinearLayout linearLayout = findViewById(R.id.linearLayout);
-                if (customExtras != null) {
-                    for (Map.Entry<String, String> entry : customExtras.entrySet()) {
-                        String key = entry.getKey();
-                        String value = entry.getValue();
-
-                        if (!"NA".equals(value)) {
-                            TextView textView = new TextView(this);
-                            textView.setText(key + ": " + value);
-                            textView.setPadding(8, 8, 8, 8);
-                            // linearLayout.addView(textView);
-                        }
-                    }
-                }
-
-
-                // You can also handle images and other content as needed here
-            }
-        }
-
-
-        Button btnOnUserLogin = findViewById(R.id.btnOnUserLogin);
-        Button btnProfilePush = findViewById(R.id.btnProfilePush);
-
+        // ================= INPUTS =================
 
         etName = findViewById(R.id.etName);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
         etIdentity = findViewById(R.id.etIdentity);
-        etCustomerType = findViewById(R.id.etCustomerType);
-        Button btnPushTemplates = findViewById(R.id.btnPushTemplates);
-        Button btnNativeDisplay = findViewById(R.id.btnNativeDisplay);
-        Button btnInAppTemplates = findViewById(R.id.btnInAppTemplates);
-        Button btnCTID = findViewById(R.id.btnCTID);
-        Button btnWebView = findViewById(R.id.btnWebView);
 
-        Button btnCustomInbox = findViewById(R.id.btnCustomInbox);
-        Button btnCustomEvent = findViewById(R.id.btnSendEvent);
-        Button btnCharged = findViewById(R.id.btnCharged);
+        // ================= BUTTONS =================
 
+        bindButtons();
 
-        btnNativeDisplay.setOnClickListener(v -> {
-            clevertapDefaultInstance.pushEvent("Custom Event 3");
-            showToast("Event pushed:Custom Event 3");
+        // ================= PERMISSIONS =================
 
-        });
-        final int[] contentCounter = {0};
+        requestPushPermissionIfRequired();
 
-        String[] contentLevels = {"0", "1", "2", "3"};
-        final int[] contentIndex = {0};
+        // ================= NOTIFICATION CLICK =================
 
-        btnCustomEvent.setOnClickListener(v -> {
-            clevertapDefaultInstance.pushEvent("Custom Event");
-            showToast("Event pushed: Custom Event");
-            // Declare outside the OnClickListener
+        forwardNotificationClickIfAny(getIntent());
 
-
-            String currentContent = contentLevels[contentIndex[0]];
-
-            HashMap<String, Object> prodViewedAction = new HashMap<>();
-            prodViewedAction.put("content", currentContent);
-
-            clevertapDefaultInstance.pushEvent("Native Display", prodViewedAction);
-//                showToast("Event pushed: " + currentContent);
-
-            // Cycle to next
-            contentIndex[0] = (contentIndex[0] + 1) % contentLevels.length;
-        });
-
-
-        btnCharged.setOnClickListener(v -> {
-            HashMap<String, Object> chargeDetails = new HashMap<String, Object>();
-            chargeDetails.put("Amount", 300);
-            chargeDetails.put("Payment Mode", "Credit card");
-            chargeDetails.put("Charged ID", 24052013);
-            chargeDetails.put("Category", "Cash");
-
-            HashMap<String, Object> item1 = new HashMap<String, Object>();
-            item1.put("Product category", "books");
-            item1.put("L3 Category", "Books");
-            item1.put("Book name", "The Millionaire next door");
-            item1.put("Quantity", 1);
-
-            HashMap<String, Object> item2 = new HashMap<String, Object>();
-            item2.put("Product category", "Shoes");
-            item2.put("L3 Category", "Shoes");
-            item2.put("Puma", "Shoes");
-            item2.put("Quantity", 1);
-
-            HashMap<String, Object> item3 = new HashMap<String, Object>();
-            item3.put("Product category", "Watches");
-            item3.put("L3 Category", "Watches");
-            item3.put("Titan", "Chuck it, let's do it");
-            item3.put("Quantity", 5);
-
-            ArrayList<HashMap<String, Object>> items = new ArrayList<HashMap<String, Object>>();
-            items.add(item1);
-            items.add(item2);
-            items.add(item3);
-
-            clevertapDefaultInstance.pushChargedEvent(chargeDetails, items);
-        });
-
-        btnCTID.setOnClickListener(v -> {
-            clevertapDefaultInstance.getCleverTapID(CTID -> {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                showToast("CT ID fetched");
-                builder.setTitle("CleverTap ID")
-                        .setMessage(CTID)
-                        .setPositiveButton("Copy", (dialog, which) -> {
-                            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                            ClipData clip = ClipData.newPlainText("CleverTap ID", CTID);
-                            clipboard.setPrimaryClip(clip);
-                            Toast.makeText(MainActivity.this, "CT ID copied to clipboard", Toast.LENGTH_SHORT).show();
-                            showToast("CT ID copied to clipboard");
-                        })
-                        .setNegativeButton("Close", null)
-                        .show();
-            });
-        });
-
-        btnPushTemplates.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PushTemplatesActivity.class);
-            startActivity(intent);
-        });
-
-
-        btnCustomInbox.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CustomInbox.class);
-            startActivity(intent);
-        });
-
-        btnInAppTemplates.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, InApp_Templates.class);
-            startActivity(intent);
-        });
-
-        btnWebView.setOnClickListener(v -> {
-            //webview
-            Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-            startActivity(intent);
-        });
-
-
-        btnOnUserLogin.setOnClickListener(v -> {
-            // Retrieve text values from the EditText fields
-            String name = etName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
-            String phone = etPhone.getText().toString().trim();
-            String identity = etIdentity.getText().toString().trim();
-            String CustomerType = etCustomerType.getText().toString().trim();
-
-
-            // Create a HashMap to store updated profile
-            HashMap<String, Object> updatedProfile = new HashMap<>();
-            updatedProfile.put("Name", name);
-            updatedProfile.put("Identity", identity);
-            updatedProfile.put("Email", email);
-            updatedProfile.put("Phone", phone);
-
-// -------- InsuranceDetails կառուց --------
-
-// Beneficiary 1
-            HashMap<String, Object> beneficiary1 = new HashMap<>();
-            beneficiary1.put("Name", "John Doe");
-            beneficiary1.put("Email", "john@example.com");
-            beneficiary1.put("DOB", "2020-01-20");
-
-// Beneficiary 2
-            HashMap<String, Object> beneficiary2 = new HashMap<>();
-            beneficiary2.put("Name", "Emily Doe");
-            beneficiary2.put("Email", "emily@example.com");
-            beneficiary2.put("DOB", "2018-05-12");
-
-
-// Beneficiary list
-            ArrayList<HashMap<String, Object>> beneficiaryList = new ArrayList<>();
-            beneficiaryList.add(beneficiary1);
-            beneficiaryList.add(beneficiary2);
-
-// Policy object
-            HashMap<String, Object> policy = new HashMap<>();
-            policy.put("PolicyID", "POL123");
-            policy.put("Type", "Health");
-            policy.put("PremiumAmount", 1200);
-            policy.put("Beneficiary", beneficiaryList);
-
-// Policy list
-            ArrayList<HashMap<String, Object>> policyList = new ArrayList<>();
-            policyList.add(policy);
-
-// InsuranceDetails map
-            HashMap<String, Object> insuranceDetails = new HashMap<>();
-            insuranceDetails.put("Policy", policyList);
-
-// Add to main profile
-            updatedProfile.put("InsuranceDetails", insuranceDetails);
-
-// Send to CleverTap
-            clevertapDefaultInstance.onUserLogin(updatedProfile);
-            String message = "onUserLogin called with:\n" +
-                    "Name: " + name + "\n" +
-                    "Identity: " + identity + "\n" +
-                    "Email: " + email + "\n" +
-                    "Phone: " + phone + "\n" +
-                    "Customer Type: " + CustomerType;
-
-            showToast(message);
-        });
-
-        btnProfilePush.setOnClickListener(v -> {
-            // Retrieve text values from the EditText fields
-            String name = etName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim();
-            String phone = etPhone.getText().toString().trim();
-            String identity = etIdentity.getText().toString().trim();
-            String CustomerType = etCustomerType.getText().toString().trim();
-
-
-            // Create a HashMap to store updated profile
-            HashMap<String, Object> updatedProfile = new HashMap<>();
-            updatedProfile.put("Name", name);
-            updatedProfile.put("Identity", identity);
-            updatedProfile.put("Email", email);
-            updatedProfile.put("Phone", phone);
-            updatedProfile.put("Customer Type", CustomerType);
-
-
-            clevertapDefaultInstance.pushProfile(updatedProfile);
-            String message = "onUserLogin called with:\n" +
-                    "Name: " + name + "\n" +
-                    "Identity: " + identity + "\n" +
-                    "Email: " + email + "\n" +
-                    "Phone: " + phone + "\n" +
-                    "Customer Type: " + CustomerType;
-
-            showToast(message);
-        });
-
-
+        refreshConsole();
     }
 
-    @Override
-    protected void onNewIntent(final Intent intent) {
-        super.onNewIntent(intent);
-        /**
-         * On Android 12, Raise notification clicked event when Activity is already running in activity backstack
-         */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            CleverTapAPI cleverTapAPI = CleverTapAPI.getDefaultInstance(this);
-            cleverTapAPI.pushNotificationClickedEvent(intent.getExtras());
+    private void applySavedTheme() {
+
+        SharedPreferences prefs =
+                getSharedPreferences(PREFS, MODE_PRIVATE);
+
+        boolean dark =
+                prefs.getBoolean(KEY_THEME, true);
+
+        AppCompatDelegate.setDefaultNightMode(
+
+                dark
+                        ? AppCompatDelegate.MODE_NIGHT_YES
+                        : AppCompatDelegate.MODE_NIGHT_NO
+        );
+    }
+
+    // =========================================================
+    // BUTTONS
+    // =========================================================
+
+    private void bindButtons() {
+
+        findViewById(R.id.btnOnUserLogin)
+                .setOnClickListener(v -> performOnUserLogin());
+
+        findViewById(R.id.btnProfilePush)
+                .setOnClickListener(v -> performProfilePush());
+
+        findViewById(R.id.btnInbox)
+                .setOnClickListener(v -> openInbox());
+
+        findViewById(R.id.btnCustomInbox)
+                .setOnClickListener(v ->
+                        startActivity(new Intent(this, CustomInbox.class)));
+
+        findViewById(R.id.btnPushTemplates)
+                .setOnClickListener(v ->
+                        startActivity(new Intent(this, PushTemplatesActivity.class)));
+
+        findViewById(R.id.btnWebView)
+                .setOnClickListener(v ->
+                        startActivity(new Intent(this, WebViewActivity.class)));
+
+        findViewById(R.id.btnEvents)
+                .setOnClickListener(v ->
+                        startActivity(new Intent(this, EventsActivity.class)));
+
+        findViewById(R.id.btnLogs)
+                .setOnClickListener(v ->
+                        startActivity(new Intent(this, LogActivity.class)));
+    }
+
+    // =========================================================
+    // PROFILE ACTIONS
+    // =========================================================
+
+    private void performOnUserLogin() {
+
+        HashMap<String, Object> profile = buildProfile();
+
+        if (profile.isEmpty()) {
+
+            LogManager.get().logError(
+                    "onUserLogin failed",
+                    "No profile fields entered"
+            );
+
+            return;
         }
+
+        if (clevertap != null) {
+
+            clevertap.onUserLogin(profile);
+
+            LogManager.get().logSuccess(
+                    "onUserLogin",
+                    profile.toString()
+            );
+        }
+    }
+
+    private void performProfilePush() {
+
+        HashMap<String, Object> profile = buildProfile();
+
+        if (profile.isEmpty()) {
+
+            LogManager.get().logError(
+                    "Profile push failed",
+                    "No profile fields entered"
+            );
+
+            return;
+        }
+
+        if (clevertap != null) {
+
+            clevertap.pushProfile(profile);
+
+            LogManager.get().logSuccess(
+                    "Profile push",
+                    profile.toString()
+            );
+        }
+    }
+
+    private HashMap<String, Object> buildProfile() {
+
+        HashMap<String, Object> map = new HashMap<>();
+
+        putIfNotEmpty(map, "Name",
+                etName.getText().toString());
+
+        putIfNotEmpty(map, "Email",
+                etEmail.getText().toString());
+
+        putIfNotEmpty(map, "Phone",
+                etPhone.getText().toString());
+
+        putIfNotEmpty(map, "Identity",
+                etIdentity.getText().toString());
+
+        return map;
+    }
+
+    private void putIfNotEmpty(
+            HashMap<String, Object> map,
+            String key,
+            String value
+    ) {
+
+        if (value != null && !value.trim().isEmpty()) {
+
+            map.put(key, value.trim());
+        }
+    }
+
+    // =========================================================
+    // INBOX
+    // =========================================================
+
+    private void openInbox() {
+
+        if (clevertap == null) return;
+
+        CTInboxStyleConfig style = new CTInboxStyleConfig();
+
+        ArrayList<String> tabs = new ArrayList<>();
+
+        tabs.add("Promotions");
+        tabs.add("Default");
+
+        style.setTabs(tabs);
+        style.setNavBarTitle("MY INBOX");
+
+        clevertap.showAppInbox(style);
+
+        LogManager.get().logSuccess(
+                "Inbox opened",
+                "App Inbox displayed"
+        );
     }
 
     @Override
     public void inboxDidInitialize() {
-        Button btnInbox = findViewById(R.id.btnInbox);
-        btnInbox.setOnClickListener(v -> {
-            clevertapDefaultInstance.pushEvent("inbox");
-            ArrayList<String> tabs = new ArrayList<>();
-            tabs.add("Promotions");
-            tabs.add("Default");
-            CTInboxStyleConfig styleConfig = new CTInboxStyleConfig();
-            styleConfig.setTabs(tabs);
-            styleConfig.setNavBarTitle("MY INBOX");
 
-            clevertapDefaultInstance.showAppInbox(styleConfig);
-
-        });
-
+        LogManager.get().logInfo(
+                "Inbox initialized",
+                null
+        );
     }
 
     @Override
     public void inboxMessagesDidUpdate() {
 
+        LogManager.get().logInfo(
+                "Inbox updated",
+                null
+        );
     }
 
-    private void requestPushPermissionIfRequired() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            CleverTapAPI clevertapAPI = CleverTapAPI.getDefaultInstance(this);
-            if (clevertapAPI != null) {
-                clevertapAPI.promptForPushPermission(true);
-            }
-        }
-    }
-
+    // =========================================================
+    // CONSOLE
+    // =========================================================
 
     @Override
-    public void onDisplayUnitsLoaded(ArrayList<CleverTapDisplayUnit> displayUnits) {
-//        if (displayUnits != null && !displayUnits.isEmpty()) {
-//            for (CleverTapDisplayUnit unit : displayUnits) {
-//                List<String> imageUrls = new ArrayList<>();
-//                Log.d("Native", "Image URLs: " + unit.getContents());
-//
-//                for (CleverTapDisplayUnitContent content : unit.getContents()) {
-//                    if (content.getMedia() != null && !content.getMedia().isEmpty()) {
-//                        imageUrls.add(content.getMedia());  // Add image URL
-//                    }
-//                }
-//
-//                if (!imageUrls.isEmpty()) {
-//                    setupViewPager(imageUrls, unit);
-//                    clevertapDefaultInstance.pushDisplayUnitViewedEventForID(unit.getUnitID());
-//                    break; // Load only the first valid unit
-//                }
-//            }
-//        }
+    public void onLogsChanged() {
 
+        runOnUiThread(this::refreshConsole);
+    }
 
-        if (displayUnits != null && !displayUnits.isEmpty()) {
-            for (CleverTapDisplayUnit unit : displayUnits) {
-                List<String> imageUrls = new ArrayList<>();
-                Log.d("Native", "Image URLs: " + unit.getContents());
+    private void refreshConsole() {
 
-                for (CleverTapDisplayUnitContent content : unit.getContents()) {
-                    if (content.getMedia() != null && !content.getMedia().isEmpty()) {
-                        imageUrls.add(content.getMedia());  // Add image URL
-                    }
-                }
+        ArrayList<LogEntry> logs =
+                new ArrayList<>(LogManager.get().getLogs());
 
-                if (!imageUrls.isEmpty()) {
-                    setupViewPager(imageUrls, unit);
-                    clevertapDefaultInstance.pushDisplayUnitViewedEventForID(unit.getUnitID());
-                    break; // Load only the first valid unit
-                }
+        if (logs.isEmpty()) {
 
-                HashMap<String, String> customExtras = unit.getCustomExtras();
+            tvConsoleLine1.setText("> waiting for CleverTap actions...");
+            tvConsoleLine2.setText("");
+            tvConsoleLine3.setText("");
+            tvConsoleLine4.setText("_");
 
-                // Check if values are not "NA" and set them in the TextViews
-                if (customExtras != null && !customExtras.isEmpty()) {
-                    String name = customExtras.get("Name");
-                    String email = customExtras.get("Email");
-                    String phone = customExtras.get("Phone");
-                    String identity = customExtras.get("Identity");
-                    String customerType = customExtras.get("Customer Type");
-                    String Image = customExtras.get("Native Image Switch");
-                    List<String> imageList = new ArrayList<>();
-                    imageList.add(Image);
+            return;
+        }
 
-                    if (!imageList.isEmpty()) {
-                        setupViewPager(imageList, unit);
-                        clevertapDefaultInstance.pushDisplayUnitViewedEventForID(unit.getUnitID());
-//                        break; // Load only the first valid unit
-                    }
+        setConsoleLine(tvConsoleLine1, logs, 0);
+        setConsoleLine(tvConsoleLine2, logs, 1);
+        setConsoleLine(tvConsoleLine3, logs, 2);
 
-                    if (!"NA".equals(name)) {
-                        findViewById(R.id.tvName).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvName)).setText("Name: " + name);
-                    }
+        tvConsoleLine4.setText("_");
+    }
 
-                    if (!"NA".equals(email)) {
-                        findViewById(R.id.tvEmail).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvEmail)).setText("Email: " + email);
-                    }
+    private void setConsoleLine(
+            TextView tv,
+            ArrayList<LogEntry> logs,
+            int index
+    ) {
 
-                    if (!"NA".equals(phone)) {
-                        findViewById(R.id.tvPhone).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvPhone)).setText("Phone: " + phone);
-                    }
+        if (index >= logs.size()) {
 
-                    if (!"NA".equals(identity)) {
-                        findViewById(R.id.tvIdentity).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvIdentity)).setText("Identity: " + identity);
-                    }
+            tv.setText("");
+            return;
+        }
 
-                    if (!"Bronze".equals(customerType)) {
-                        findViewById(R.id.tvCustomerType).setVisibility(View.VISIBLE);
-                        ((TextView) findViewById(R.id.tvCustomerType)).setText("Customer Type: " + customerType);
-                    }
+        LogEntry e = logs.get(index);
 
+        String line =
+                "> "
+                        + e.getFormattedTime()
+                        + "  "
+                        + e.getTitle();
 
-                    findViewById(R.id.rollingInfoSection).setVisibility(View.VISIBLE);
-                }
+        if (e.getDetails() != null &&
+                !e.getDetails().isEmpty()) {
 
-                for (Map.Entry<String, String> entry : customExtras.entrySet()) {
-                    String key = entry.getKey();
-                    String value = entry.getValue();
+            line += " : " + e.getDetails();
+        }
 
-                    if (!"NA".equals(value)) {
-                        TextView textView = new TextView(this);
-                        textView.setText(key + ": " + value);
-                        textView.setPadding(8, 8, 8, 8);
-                    }
-                }
+        tv.setText(line);
 
-            }
+        switch (e.getType()) {
+
+            case SUCCESS:
+
+                tv.setTextColor(0xFF00FF85);
+                break;
+
+            case ERROR:
+
+                tv.setTextColor(0xFFFF4D4D);
+                break;
+
+            default:
+
+                tv.setTextColor(0xFFE2E8F0);
+                break;
         }
     }
 
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    // =========================================================
+    // LIFECYCLE
+    // =========================================================
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        LogManager.get().addListener(this);
+
+        refreshConsole();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
 
-    private void setupViewPager(List<String> imageUrls, CleverTapDisplayUnit unit) {
-        ViewPager2 viewPager = findViewById(R.id.Native);
-        ImageCarouselAdapter adapter = new ImageCarouselAdapter(this, imageUrls);
-
-        viewPager.setAdapter(adapter);
-        viewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-
-        // 🔥 Enable Auto Slide Effect
-        setupAutoScroll(viewPager, imageUrls.size());
+        LogManager.get().removeListener(this);
     }
 
-    private void setupAutoScroll(ViewPager2 viewPager, int itemCount) {
-        final Handler handler = new Handler();
-        final Runnable runnable = new Runnable() {
-            int currentPage = 0;
+    // =========================================================
+    // PUSH PERMISSION
+    // =========================================================
 
-            @Override
-            public void run() {
-                if (currentPage == itemCount) {
-                    currentPage = 0;
-                }
-                viewPager.setCurrentItem(currentPage++, true);
-                handler.postDelayed(this, 5000); // Change image every 5 seconds
-            }
-        };
+    private void requestPushPermissionIfRequired() {
 
-        handler.postDelayed(runnable, 5000);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && clevertap != null) {
+
+            clevertap.promptForPushPermission(true);
+        }
     }
+    // =========================================================
+    // Theme
+    // =========================================================
+
+
+    private void updateThemeToggle(boolean darkMode) {
+
+        TextView tvDark = findViewById(R.id.tvDark);
+        TextView tvLight = findViewById(R.id.tvLight);
+
+        if (darkMode) {
+
+            tvDark.setBackgroundResource(R.drawable.bg_toggle_selected);
+            tvLight.setBackground(null);
+
+            tvDark.setTextColor(getColor(R.color.text_primary));
+            tvLight.setTextColor(getColor(R.color.text_secondary));
+
+        } else {
+
+            tvLight.setBackgroundResource(R.drawable.bg_toggle_selected);
+            tvDark.setBackground(null);
+
+            tvLight.setTextColor(getColor(R.color.text_primary));
+            tvDark.setTextColor(getColor(R.color.text_secondary));
+        }
+    }
+
 
     @Override
     public void onPushPermissionResponse(boolean accepted) {
-        Log.i("CleverTap", "onPushPermissionResponse :  InApp---> response() called accepted=" + accepted);
+
+        Log.i("CleverTap",
+                "Push permission accepted=" + accepted);
+
         if (accepted) {
-            CleverTapAPI.createNotificationChannel(getApplicationContext(), "henil123", "henil123",
-                    "henil123", NotificationManager.IMPORTANCE_HIGH, true);
+
+            CleverTapAPI.createNotificationChannel(
+                    getApplicationContext(),
+                    "henil123",
+                    "Testing Channel",
+                    "Testing Channel",
+                    NotificationManager.IMPORTANCE_HIGH,
+                    true
+            );
+
+            LogManager.get().logSuccess(
+                    "Push permission",
+                    "Accepted"
+            );
+
+        } else {
+
+            LogManager.get().logError(
+                    "Push permission",
+                    "Denied"
+            );
         }
+    }
+
+    // =========================================================
+    // NOTIFICATION CLICK
+    // =========================================================
+
+    private void forwardNotificationClickIfAny(
+            @Nullable Intent intent
+    ) {
+
+        if (intent == null || clevertap == null) return;
+
+        Bundle extras = intent.getExtras();
+
+        if (extras != null) {
+
+            clevertap.pushNotificationClickedEvent(extras);
+
+            LogManager.get().logInfo(
+                    "Notification clicked",
+                    extras.toString()
+            );
+        }
+    }
+
+    @Override
+    protected void onNewIntent(@NonNull Intent intent) {
+        super.onNewIntent(intent);
+
+        forwardNotificationClickIfAny(intent);
     }
 }

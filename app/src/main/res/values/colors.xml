@@ -1,5 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_main">#F1F5F9</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_console">#E2E8F0</color>
+
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_border">#CBD5E1</color>
+    <color name="input_hint">#94A3B8</color>
+
+    <color name="button_bg">#FFFFFF</color>
+    <color name="console_bg">#000000</color>
+    <color name="button_border">#CBD5E1</color>
+
+    <color name="console_top">#CBD5E1</color>
+    <color name="console_body">#020617</color>
+
+    <color name="success">#16A34A</color>
+    <color name="warning">#CA8A04</color>
+    <color name="accent">#2563EB</color>
+
 </resources>
