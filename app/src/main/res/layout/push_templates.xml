@@ -5,35 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"> <com.google.android.material.appbar.AppBarLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#121212"
-    app:elevation="0dp">
+    android:background="@color/bg_main">
 
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:background="@color/bg_main"
+        app:elevation="0dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Push Lab"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
-            android:fontFamily="sans-serif-black" />
+            android:orientation="vertical"
+            android:padding="24dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select a template to test the payload"
-            android:textColor="#99AAB5"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"/>
-    </LinearLayout>
-</com.google.android.material.appbar.AppBarLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Push Lab"
+                android:textColor="@color/text_primary"
+                android:textSize="32sp"
+                android:fontFamily="sans-serif-black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a template to test the payload"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/template_recycler"

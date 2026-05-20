@@ -364,6 +364,7 @@
                     android:textSize="15sp"
                     android:fontFamily="monospace"/>
             </LinearLayout>
+
             <!-- 0x02 ProfilePush -->
             <LinearLayout
                 android:id="@+id/btnProfilePush"
@@ -402,10 +403,9 @@
                     android:textSize="15sp"
                     android:fontFamily="monospace"/>
             </LinearLayout>
-
-            <!-- 0x03 OpenInbox -->
+            <!-- 0x03 Events -->
             <LinearLayout
-                android:id="@+id/btnInbox"
+                android:id="@+id/btnEvents"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -428,20 +428,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="✉"
+                    android:text="⚡"
                     android:textSize="52sp"
-                    android:textColor="@color/text_primary"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OpenInbox"
+                    android:text="Events"
                     android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:fontFamily="monospace"/>
             </LinearLayout>
+
+
 
             <!-- 0x04 PushTemplates -->
             <LinearLayout
@@ -483,9 +484,10 @@
                     android:fontFamily="monospace"/>
             </LinearLayout>
 
-            <!-- 0x05 WebView -->
+
+            <!-- 0x05 OpenInbox -->
             <LinearLayout
-                android:id="@+id/btnWebView"
+                android:id="@+id/btnInbox"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -508,15 +510,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🌐"
+                    android:text="✉"
                     android:textSize="52sp"
+                    android:textColor="@color/text_primary"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WebView"
+                    android:text="OpenInbox"
                     android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:fontFamily="monospace"/>
@@ -561,9 +564,9 @@
                     android:fontFamily="monospace"/>
             </LinearLayout>
 
-            <!-- 0x07 Events -->
+            <!-- 0x07 WebView -->
             <LinearLayout
-                android:id="@+id/btnEvents"
+                android:id="@+id/btnWebView"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_columnWeight="1"
@@ -586,7 +589,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⚡"
+                    android:text="🌐"
                     android:textSize="52sp"
                     android:paddingTop="12dp"
                     android:paddingBottom="12dp"/>
@@ -594,7 +597,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Events"
+                    android:text="WebView"
                     android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:fontFamily="monospace"/>
@@ -641,89 +644,6 @@
         </GridLayout>
         <!-- ================= SYSTEM CONSOLE ================= -->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_console">
-
-            <!-- TOP BAR -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:gravity="center_vertical"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:background="@color/console_top">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="system.log"
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:fontFamily="monospace"/>
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="● ● ●"
-                    android:textColor="#64748B"
-                    android:textSize="12sp"/>
-            </LinearLayout>
-
-            <!-- TERMINAL BODY -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:background="@color/console_body">
-
-                <TextView
-                    android:id="@+id/tvConsoleLine1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#00FF85"
-                    android:textSize="15sp"
-                    android:fontFamily="monospace"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/tvConsoleLine2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#00FF85"
-                    android:textSize="15sp"
-                    android:fontFamily="monospace"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/tvConsoleLine3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#00FF85"
-                    android:textSize="15sp"
-                    android:fontFamily="monospace"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/tvConsoleLine4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#FACC15"
-                    android:textSize="15sp"
-                    android:fontFamily="monospace"/>
-            </LinearLayout>
-        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

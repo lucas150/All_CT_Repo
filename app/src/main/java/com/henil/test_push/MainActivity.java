@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,8 +25,7 @@ import android.content.SharedPreferences;
 public class MainActivity extends AppCompatActivity
         implements
         CTInboxListener,
-        PushPermissionResponseListener,
-        LogManager.Listener {
+        PushPermissionResponseListener{
 
     private CleverTapAPI clevertap;
 
@@ -36,10 +34,6 @@ public class MainActivity extends AppCompatActivity
     private EditText etPhone;
     private EditText etIdentity;
 
-    private TextView tvConsoleLine1;
-    private TextView tvConsoleLine2;
-    private TextView tvConsoleLine3;
-    private TextView tvConsoleLine4;
     private static final String PREFS = "theme_prefs";
     private static final String KEY_THEME = "theme";
     @Override
@@ -56,12 +50,7 @@ public class MainActivity extends AppCompatActivity
                 prefs.getBoolean(KEY_THEME, true);
 
         updateThemeToggle(dark);
-        // ================= CONSOLE =================
 
-        tvConsoleLine1 = findViewById(R.id.tvConsoleLine1);
-        tvConsoleLine2 = findViewById(R.id.tvConsoleLine2);
-        tvConsoleLine3 = findViewById(R.id.tvConsoleLine3);
-        tvConsoleLine4 = findViewById(R.id.tvConsoleLine4);
 
         // ================= Light & Dark Theme =================
 
@@ -139,7 +128,6 @@ public class MainActivity extends AppCompatActivity
 
         forwardNotificationClickIfAny(getIntent());
 
-        refreshConsole();
     }
 
     private void applySavedTheme() {
@@ -323,104 +311,6 @@ public class MainActivity extends AppCompatActivity
         );
     }
 
-    // =========================================================
-    // CONSOLE
-    // =========================================================
-
-    @Override
-    public void onLogsChanged() {
-
-        runOnUiThread(this::refreshConsole);
-    }
-
-    private void refreshConsole() {
-
-        ArrayList<LogEntry> logs =
-                new ArrayList<>(LogManager.get().getLogs());
-
-        if (logs.isEmpty()) {
-
-            tvConsoleLine1.setText("> waiting for CleverTap actions...");
-            tvConsoleLine2.setText("");
-            tvConsoleLine3.setText("");
-            tvConsoleLine4.setText("_");
-
-            return;
-        }
-
-        setConsoleLine(tvConsoleLine1, logs, 0);
-        setConsoleLine(tvConsoleLine2, logs, 1);
-        setConsoleLine(tvConsoleLine3, logs, 2);
-
-        tvConsoleLine4.setText("_");
-    }
-
-    private void setConsoleLine(
-            TextView tv,
-            ArrayList<LogEntry> logs,
-            int index
-    ) {
-
-        if (index >= logs.size()) {
-
-            tv.setText("");
-            return;
-        }
-
-        LogEntry e = logs.get(index);
-
-        String line =
-                "> "
-                        + e.getFormattedTime()
-                        + "  "
-                        + e.getTitle();
-
-        if (e.getDetails() != null &&
-                !e.getDetails().isEmpty()) {
-
-            line += " : " + e.getDetails();
-        }
-
-        tv.setText(line);
-
-        switch (e.getType()) {
-
-            case SUCCESS:
-
-                tv.setTextColor(0xFF00FF85);
-                break;
-
-            case ERROR:
-
-                tv.setTextColor(0xFFFF4D4D);
-                break;
-
-            default:
-
-                tv.setTextColor(0xFFE2E8F0);
-                break;
-        }
-    }
-
-    // =========================================================
-    // LIFECYCLE
-    // =========================================================
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        LogManager.get().addListener(this);
-
-        refreshConsole();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        LogManager.get().removeListener(this);
-    }
 
     // =========================================================
     // PUSH PERMISSION

@@ -9,25 +9,36 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Renders LogEntry rows with a clear visual distinction:
- *   SUCCESS = green dot + left green border
- *   ERROR   = red dot + left red border
- *   INFO    = gray dot
+ * Renders LogEntry rows with:
+ *   - Left color bar: green (success) / red (error) / transparent (info)
+ *   - Status dot:     green / red / gray
+ *   - Source badge:   "APP" in blue-ish or "SDK" in orange-ish
+ *   - Level char for SDK entries: V D I W E
  */
 public class LogAdapter extends RecyclerView.Adapter<LogAdapter.VH> {
 
-    private final List<LogEntry> data = new ArrayList<>();
+    private List<LogEntry> data = new ArrayList<>();
 
-    public void setData(List<LogEntry> entries) {
-        data.clear();
-        data.addAll(entries);
-        notifyDataSetChanged();
+    public void setData(List<LogEntry> newData) {
+        DiffUtil.DiffResult diff = DiffUtil.calculateDiff(new DiffUtil.Callback() {
+            @Override public int getOldListSize() { return data.size(); }
+            @Override public int getNewListSize() { return newData.size(); }
+            @Override public boolean areItemsTheSame(int o, int n) {
+                return data.get(o).getTimestamp() == newData.get(n).getTimestamp();
+            }
+            @Override public boolean areContentsTheSame(int o, int n) {
+                return data.get(o).getTitle().equals(newData.get(n).getTitle());
+            }
+        });
+        data = new ArrayList<>(newData);
+        diff.dispatchUpdatesTo(this);
     }
 
     @NonNull
@@ -44,53 +55,59 @@ public class LogAdapter extends RecyclerView.Adapter<LogAdapter.VH> {
     }
 
     @Override
-    public int getItemCount() {
-        return data.size();
-    }
+    public int getItemCount() { return data.size(); }
 
     static class VH extends RecyclerView.ViewHolder {
-        private final View dot;
-        private final View leftBar;
-        private final TextView tvTime;
-        private final TextView tvTitle;
-        private final TextView tvDetails;
+        private final View     dot, leftBar;
+        private final TextView tvTime, tvTitle, tvDetails, tvSource;
 
-        VH(View itemView) {
-            super(itemView);
-            dot = itemView.findViewById(R.id.logDot);
-            leftBar = itemView.findViewById(R.id.logLeftBar);
-            tvTime = itemView.findViewById(R.id.logTime);
-            tvTitle = itemView.findViewById(R.id.logTitle);
-            tvDetails = itemView.findViewById(R.id.logDetails);
+        VH(View v) {
+            super(v);
+            dot       = v.findViewById(R.id.logDot);
+            leftBar   = v.findViewById(R.id.logLeftBar);
+            tvTime    = v.findViewById(R.id.logTime);
+            tvTitle   = v.findViewById(R.id.logTitle);
+            tvDetails = v.findViewById(R.id.logDetails);
+            tvSource  = v.findViewById(R.id.logSource);
         }
 
         void bind(LogEntry e) {
-            Context ctx = itemView.getContext();
             tvTime.setText(e.getFormattedTime());
             tvTitle.setText(e.getTitle());
-            if (e.getDetails() == null || e.getDetails().isEmpty()) {
+
+            String details = e.getDetails();
+            if (details == null || details.isEmpty()) {
                 tvDetails.setVisibility(View.GONE);
             } else {
                 tvDetails.setVisibility(View.VISIBLE);
-                tvDetails.setText(e.getDetails());
+                tvDetails.setText(details);
             }
 
-            int color;
+            // --- type colors ---
+            int typeColor;
             switch (e.getType()) {
-                case SUCCESS: color = Color.parseColor("#22C55E"); break; // green
-                case ERROR:   color = Color.parseColor("#EF4444"); break; // red
-                default:      color = Color.parseColor("#9CA3AF");        // gray
+                case SUCCESS: typeColor = Color.parseColor("#22C55E"); break;
+                case ERROR:   typeColor = Color.parseColor("#EF4444"); break;
+                default:      typeColor = Color.parseColor("#9CA3AF");
             }
-
-            // Tint the colored dot
             GradientDrawable dotBg = new GradientDrawable();
             dotBg.setShape(GradientDrawable.OVAL);
-            dotBg.setColor(color);
+            dotBg.setColor(typeColor);
             dot.setBackground(dotBg);
-
-            // Left accent bar only for success/error to make scanning easier
             leftBar.setBackgroundColor(
-                    e.getType() == LogEntry.Type.INFO ? Color.TRANSPARENT : color);
+                    e.getType() == LogEntry.Type.INFO ? Color.TRANSPARENT : typeColor);
+
+            // --- source badge ---
+            boolean isSdk = e.getSource() == LogEntry.Source.SDK;
+            tvSource.setText(isSdk ? "SDK" : "APP");
+            int badgeColor = isSdk
+                    ? Color.parseColor("#F97316") // orange for SDK
+                    : Color.parseColor("#3B82F6"); // blue for app
+            GradientDrawable badge = new GradientDrawable();
+            badge.setShape(GradientDrawable.RECTANGLE);
+            badge.setCornerRadius(8f);
+            badge.setColor(badgeColor);
+            tvSource.setBackground(badge);
         }
     }
 }

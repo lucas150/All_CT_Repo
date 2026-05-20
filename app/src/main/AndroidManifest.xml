@@ -60,7 +60,7 @@
 
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="TEST-58Z-5W6-866Z-PRANJALAPP1" />
+            android:value="58Z-5W6-866Z-PRANJALAPP2" />
         <meta-data
             android:name="CLEVERTAP_TOKEN"
             android:value="605-1b5" />

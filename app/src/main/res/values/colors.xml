@@ -4,14 +4,14 @@
     <color name="bg_card">#FFFFFF</color>
     <color name="bg_console">#E2E8F0</color>
 
-    <color name="text_primary">#0F172A</color>
+    <color name="text_primary">#000000</color>
     <color name="text_secondary">#475569</color>
 
     <color name="input_bg">#FFFFFF</color>
     <color name="input_border">#CBD5E1</color>
     <color name="input_hint">#94A3B8</color>
 
-    <color name="button_bg">#FFFFFF</color>
+    <color name="button_bg">#3FBDA4</color>
     <color name="console_bg">#000000</color>
     <color name="button_border">#CBD5E1</color>
 
