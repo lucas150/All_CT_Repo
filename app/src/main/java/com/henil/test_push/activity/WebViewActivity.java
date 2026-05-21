@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.clevertap.android.sdk.CTWebInterface;
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.CleverTapInstanceConfig;
+import com.henil.test_push.R;
 
 public class WebViewActivity extends AppCompatActivity {
 

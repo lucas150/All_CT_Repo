@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.activity;
 
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -18,7 +18,10 @@ import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.PushPermissionResponseListener;
-import android.view.HapticFeedbackConstants;
+import com.henil.test_push.inbox.CustomInbox;
+import com.henil.test_push.logs.LogManager;
+import com.henil.test_push.R;
+import com.henil.test_push.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.model;
 
 public class PushTemplate {
     public String title;

@@ -1,6 +1,8 @@
-package com.henil.test_push;
+package com.henil.test_push.logs;
 
 import android.util.Log;
+
+import com.henil.test_push.model.LogEntry;
 
 import java.util.ArrayList;
 import java.util.Collections;

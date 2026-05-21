@@ -1,6 +1,5 @@
-package com.henil.test_push;
+package com.henil.test_push.adapter;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
@@ -11,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.henil.test_push.model.LogEntry;
+import com.henil.test_push.R;
 
 import java.util.ArrayList;
 import java.util.List;

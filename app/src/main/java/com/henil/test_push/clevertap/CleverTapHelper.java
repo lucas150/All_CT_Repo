@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.clevertap;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.henil.test_push.logs.LogManager;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

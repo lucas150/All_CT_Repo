@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

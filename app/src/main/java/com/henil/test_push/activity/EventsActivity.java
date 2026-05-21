@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,8 +18,11 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
+import com.henil.test_push.R;
+import com.henil.test_push.Utils;
 import com.henil.test_push.adapter.ImageCarouselAdapter;
 import com.henil.test_push.clevertap.CleverTapHelper;
+import com.henil.test_push.logs.LogManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;

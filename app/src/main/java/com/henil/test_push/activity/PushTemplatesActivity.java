@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.activity;
 
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.henil.test_push.model.PushTemplate;
+import com.henil.test_push.R;
 import com.henil.test_push.adapter.TemplateAdapter;
 
 import java.util.ArrayList;

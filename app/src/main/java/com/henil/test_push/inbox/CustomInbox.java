@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.inbox;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,6 +23,8 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.InboxMessageListener;
 import com.clevertap.android.sdk.inbox.CTInboxMessage;
 import com.clevertap.android.sdk.inbox.CTInboxMessageContent;
+import com.henil.test_push.model.InboxItem;
+import com.henil.test_push.R;
 import com.henil.test_push.adapter.Adapter;
 
 import org.json.JSONArray;

@@ -1,6 +1,5 @@
-package com.henil.test_push;
+package com.henil.test_push.adapter;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.henil.test_push.model.PushTemplate;
+import com.henil.test_push.R;
+import com.henil.test_push.Utils;
 
 import java.util.HashMap;
 import java.util.List;

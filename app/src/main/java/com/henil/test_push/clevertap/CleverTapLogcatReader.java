@@ -1,6 +1,8 @@
-package com.henil.test_push;
+package com.henil.test_push.clevertap;
 
 import android.util.Log;
+
+import com.henil.test_push.logs.LogManager;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

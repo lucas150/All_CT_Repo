@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.activity;
 
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.henil.test_push.model.LogEntry;
+import com.henil.test_push.logs.LogManager;
+import com.henil.test_push.R;
+import com.henil.test_push.Utils;
 import com.henil.test_push.adapter.LogAdapter;
 import com.henil.test_push.clevertap.CleverTapHelper;
 import com.henil.test_push.clevertap.CleverTapLogcatReader;

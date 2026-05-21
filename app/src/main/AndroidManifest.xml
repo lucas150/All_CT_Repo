@@ -21,19 +21,17 @@
         android:theme="@style/Theme.Test_push"
         tools:targetApi="31">
         <activity
-            android:name=".WebViewActivity"
+            android:name=".activity.WebViewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.PushTemplatesActivity"
             android:exported="false" />
         <activity
-            android:name=".InApp_Templates"
+            android:name=".inbox.CustomInbox"
             android:exported="false" />
         <activity
-            android:name=".PushTemplatesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CustomInbox"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,27 +41,25 @@
         </activity>
 
         <activity
-            android:name=".EventsActivity"
+            android:name=".activity.EventsActivity"
             android:label="Events"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activity.MainActivity" />
 
         <activity
-            android:name=".LogActivity"
+            android:name=".activity.LogActivity"
             android:label="Activity Logs"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activity.MainActivity" />
 
-        <activity
-            android:name=".SecondActivity"
-            android:exported="true" />
+
 
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="58Z-5W6-866Z-PRANJALAPP2" />
+            android:value="4R8-7ZK-6K7Z" />
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="605-1b5" />
+            android:value="31a-b24" />
         <meta-data
             android:name="CLEVERTAP_REGION"
             android:value="eu1" />

@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
-import com.clevertap.android.sdk.CleverTapAPI;
+
+import com.henil.test_push.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
