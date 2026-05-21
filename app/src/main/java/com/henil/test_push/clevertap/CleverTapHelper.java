@@ -168,19 +168,5 @@ public final class CleverTapHelper {
         }
     }
 
-//    public static void getCleverTapID(Context ctx, CleverTapAPI.OnInitCleverTapIDListener listener) {
-//        CleverTapAPI api = ct(ctx);
-//        if (api == null) {
-//            LogManager.get().logError("getCleverTapID failed", "CleverTap instance null");
-//            return;
-//        }
-//        try {
-//            api.getCleverTapID(ctId -> {
-//                LogManager.get().logSuccess("CT ID fetched", ctId);
-//                if (listener != null) listener.onInitCleverTapID(ctId);
-//            });
-//        } catch (Throwable t) {
-//            LogManager.get().logError("getCleverTapID threw", t.getMessage());
-//        }
-//    }
+
 }

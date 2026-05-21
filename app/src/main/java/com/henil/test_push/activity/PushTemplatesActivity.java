@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.clevertap.android.sdk.CleverTapAPI;
+import com.henil.test_push.adapter.TemplateAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

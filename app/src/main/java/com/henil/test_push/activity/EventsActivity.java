@@ -18,6 +18,8 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
+import com.henil.test_push.adapter.ImageCarouselAdapter;
+import com.henil.test_push.clevertap.CleverTapHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,6 +78,8 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
         btnPush.setOnClickListener(v -> {
             String name = etEventName.getText().toString().trim();
             String propsJson = etEventProps.getText().toString().trim();
+            Utils.haptic(v);
+
             if (name.isEmpty()) {
                 CleverTapHelper.toast(this, "Event name is required");
                 return;
@@ -88,6 +92,7 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
                 LogManager.get().logError("Bad event JSON", e.getMessage());
                 CleverTapHelper.toast(this, "Invalid JSON in Event Properties");
             }
+
         });
     }
 
@@ -95,10 +100,12 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
 
     private void bindSampleEvents() {
         findViewById(R.id.btnSamplePurchase).setOnClickListener(v -> {
+            Utils.haptic(v);
             CleverTapHelper.pushEvent(this, "Purchase");
             CleverTapHelper.toast(this, "Sample sent: Purchase");
         });
         findViewById(R.id.btnSampleCustom3).setOnClickListener(v -> {
+            Utils.haptic(v);
             CleverTapHelper.pushEvent(this, "Custom Event 3");
             CleverTapHelper.toast(this, "Sample sent: Custom Event 3");
         });
@@ -108,6 +115,8 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
         final String[] contentLevels = {"0", "1", "2", "3"};
         final int[] contentIndex = {0};
         findViewById(R.id.btnSampleNativeDisplay).setOnClickListener(v -> {
+            Utils.haptic(v);
+
             HashMap<String, Object> props = new HashMap<>();
             props.put("content", contentLevels[contentIndex[0]]);
             CleverTapHelper.pushEvent(this, "Native Display", props);
@@ -128,6 +137,7 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
 
         // Prefill sample button
         findViewById(R.id.btnSampleCharged).setOnClickListener(v -> {
+            Utils.haptic(v);
             etChargeDetails.setText(
                     "{\"Amount\": 300, \"Payment Mode\": \"Credit card\", " +
                             "\"Charged ID\": 24052013, \"Category\": \"Cash\"}");
@@ -138,6 +148,8 @@ public class EventsActivity extends AppCompatActivity implements DisplayUnitList
         });
 
         btnCharged.setOnClickListener(v -> {
+            Utils.haptic(v);
+
             String detailsJson = etChargeDetails.getText().toString().trim();
             String itemsJson = etChargeItems.getText().toString().trim();
             if (detailsJson.isEmpty() || itemsJson.isEmpty()) {

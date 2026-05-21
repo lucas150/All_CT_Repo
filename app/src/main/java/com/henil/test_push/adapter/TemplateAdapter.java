@@ -46,6 +46,8 @@ public class TemplateAdapter extends RecyclerView.Adapter<TemplateAdapter.ViewHo
 
         // Click Listener to send CleverTap Event
         holder.itemView.setOnClickListener(v -> {
+            Utils.haptic(v);
+
             // Prepare properties for the event
             HashMap<String, Object> eventProps = new HashMap<>();
             eventProps.put("Template Name", item.title);

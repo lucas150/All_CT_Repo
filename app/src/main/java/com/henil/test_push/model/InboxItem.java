@@ -1,4 +1,4 @@
-package com.henil.test_push;
+package com.henil.test_push.model;
 
 
 import android.content.Context;
@@ -33,19 +33,19 @@ public class InboxItem {
     public String getButtonLink() { return buttonLink; }
     public String getMessageId() { return messageId; }
 
-    // ✅ Check if the message was already viewed
+    //  Check if the message was already viewed
     public boolean isViewed(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return prefs.getBoolean(messageId, false);
     }
 
-    // ✅ Mark the message as viewed
+    //  Mark the message as viewed
     public void setViewed(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         prefs.edit().putBoolean(messageId, true).apply();
     }
 
-    // ✅ Remove message from SharedPreferences
+    //  Remove message from SharedPreferences
     public void removeMessage(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         prefs.edit().remove(messageId).apply();

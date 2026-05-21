@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -12,20 +11,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.henil.test_push.adapter.LogAdapter;
+import com.henil.test_push.clevertap.CleverTapHelper;
+import com.henil.test_push.clevertap.CleverTapLogcatReader;
+
 import java.util.List;
 
 /**
  * Activity Logs screen.
  *
  * ┌─────────────────────────────────────┐
- * │  Header: Total / Success / Errors   │
- * │  [Clear Logs]                       │
+ * │ Header: Total / Success / Errors │
+ * │ [Clear Logs] │
  * ├─────────────────────────────────────┤
- * │  🖥 SDK Console (last 4 SDK lines)  │  ← monospace terminal widget
+ * │ 🖥 SDK Console (last 4 SDK lines) │ ← monospace terminal widget
  * ├─────────────────────────────────────┤
- * │  [All] [App] [SDK]   filter tabs    │
+ * │ [All] [App] [SDK] filter tabs │
  * ├─────────────────────────────────────┤
- * │  RecyclerView of log entries        │
+ * │ RecyclerView of log entries │
  * └─────────────────────────────────────┘
  *
  * CleverTapLogcatReader is started on resume and stopped on pause so it
@@ -84,11 +87,12 @@ public class LogActivity extends AppCompatActivity implements LogManager.Listene
     // ================== View wiring ==================
 
     private void bindHeader() {
-        tvTotal   = findViewById(R.id.tvLogTotal);
+        tvTotal = findViewById(R.id.tvLogTotal);
         tvSuccess = findViewById(R.id.tvLogSuccess);
-        tvErrors  = findViewById(R.id.tvLogErrors);
+        tvErrors = findViewById(R.id.tvLogErrors);
 
         findViewById(R.id.btnClearLogs).setOnClickListener(v -> {
+            Utils.haptic(v);
             LogManager.get().clear();
             CleverTapHelper.toast(this, "Logs cleared");
         });
@@ -106,16 +110,33 @@ public class LogActivity extends AppCompatActivity implements LogManager.Listene
         tabApp = findViewById(R.id.tabApp);
         tabSdk = findViewById(R.id.tabSdk);
 
-        tabAll.setOnClickListener(v -> applyFilter(LogManager.FilterMode.ALL));
-        tabApp.setOnClickListener(v -> applyFilter(LogManager.FilterMode.APP));
-        tabSdk.setOnClickListener(v -> applyFilter(LogManager.FilterMode.SDK));
+        tabAll.setOnClickListener(v -> {
+
+            Utils.haptic(v);
+
+            applyFilter(LogManager.FilterMode.ALL);
+        });
+
+        tabApp.setOnClickListener(v -> {
+
+            Utils.haptic(v);
+
+            applyFilter(LogManager.FilterMode.APP);
+        });
+
+        tabSdk.setOnClickListener(v -> {
+
+            Utils.haptic(v);
+
+            applyFilter(LogManager.FilterMode.SDK);
+        });
 
         highlightTab(LogManager.get().getFilter());
     }
 
     private void bindList() {
         tvEmpty = findViewById(R.id.tvLogEmpty);
-        rv      = findViewById(R.id.rvLogs);
+        rv = findViewById(R.id.rvLogs);
         adapter = new LogAdapter();
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
@@ -171,8 +192,8 @@ public class LogActivity extends AppCompatActivity implements LogManager.Listene
                 // Last shown line uses the "warning yellow" treatment
                 boolean isLast = (i == sdkLines.size() - 1);
                 int textColor = isLast
-                        ? Color.parseColor("#FACC15")   // yellow — newest line
-                        : Color.parseColor("#00FF85");  // green  — older lines
+                        ? Color.parseColor("#FACC15") // yellow — newest line
+                        : Color.parseColor("#00FF85"); // green — older lines
                 consoleViews[i].setTextColor(textColor);
                 consoleViews[i].setVisibility(View.VISIBLE);
             } else {
