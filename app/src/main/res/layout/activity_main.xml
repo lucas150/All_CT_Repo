@@ -23,8 +23,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dev"
-                android:textColor="@color/text_primary"
+                android:text="Clever"
+                android:textColor="@color/warning"
                 android:textStyle="bold"
                 android:textSize="28sp" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Console"
-                android:textColor="@color/accent"
+                android:textColor="@color/success"
                 android:textStyle="bold"
                 android:textSize="28sp" />
 

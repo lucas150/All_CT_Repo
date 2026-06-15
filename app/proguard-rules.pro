@@ -19,3 +19,18 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+#
+## Keep CT but remove CTInAppWebView
+#-keep class com.clevertap.android.sdk.** { *; }
+#
+#-dontwarn com.clevertap.android.sdk.**
+##-assumenosideeffects class com.clevertap.android.sdk.inapp.CTInAppWebView {
+##    public <methods>;
+##    public <fields>;
+##}
+#
+## Remove entire inapp package
+#-assumenosideeffects class com.clevertap.android.sdk.inapp.** { *; }
+#-dontwarn com.clevertap.android.sdk.inapp.**
