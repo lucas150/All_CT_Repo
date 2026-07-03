@@ -44,9 +44,9 @@ public class CTapp extends Application implements CTPushNotificationListener, Pu
 
 
 //        // Multi Instance
-//        CleverTapInstanceConfig clevertapAdditionalInstanceConfig =  CleverTapInstanceConfig.createInstance(this, "TEST-58Z-5W6-866Z", "605-1b5");
-//        clevertapAdditionalInstanceConfig.setDebugLevel(3);
-//        CleverTapAPI clevertapAdditionalInstance = CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
+        CleverTapInstanceConfig clevertapAdditionalInstanceConfig =  CleverTapInstanceConfig.createInstance(this, "TEST-58Z-5W6-866Z", "605-1b5");
+        clevertapAdditionalInstanceConfig.setDebugLevel(3);
+        CleverTapAPI clevertapAdditionalInstance = CleverTapAPI.instanceWithConfig(this, clevertapAdditionalInstanceConfig);
 
 
         if (clevertapDefaultInstance != null) {
